@@ -16,18 +16,17 @@ void setup()
   LoRa.onTxDone(onTxDone);
   LoRa_rxMode();
 
+  prevMil = millis();
+
   Serial.begin(9600);
   Serial.println("Startup complete");
 }
 
 void loop()
 {
-
-  // implement queue and print formated data
-
+  unsigned long currentMillis = millis();
   
-  if(newmsg == 1){    
-    //Serial.println(bufferG);
-    newmsg = 0;
+  if((currentMillis-prevMil) > RELAY_INTERVAL){
+    relayMsgFromQueueToServer(currentMillis);
   }
 }

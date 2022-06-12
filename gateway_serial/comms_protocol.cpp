@@ -8,8 +8,9 @@ uint8_t key[] = { //
     0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x1e, 0x1f
   };
 
-int newmsg = 0;
+unsigned long prevMil;
 
+cppQueue  msg_q(sizeof(char)*MAX_JSON_PAYLOAD_SIZE, MAX_QUEUE_SIZE, IMPLEMENTATION);
 aes256_context ctxt;
 
 
@@ -75,7 +76,8 @@ void onReceive(int packetSize) {
       sendAck(p.msgID, p.nodeID);
       p.RSSI = LoRa.packetRssi();
       p.SNR = LoRa.packetSnr();
-      newmsg = 1;
+      
+      constructJsonAndAddToQueue(p);
     }
     aes256_done(&ctxt); 
 }
@@ -132,4 +134,25 @@ void sendAck(int msgID, int nodeID) {
   enc.toCharArray(encP, MAX_ENC_PAYLOAD_SIZE);
 
   LoRa_sendMessage(encP);
+}
+
+// Get a message from the send queue and send it
+void relayMsgFromQueueToServer(unsigned long currentMillis){
+  if(!msg_q.isEmpty()){
+    char msg[MAX_JSON_PAYLOAD_SIZE];
+    msg_q.pop(&msg);
+    
+    Serial.print("relay msg: ");
+    Serial.println(msg);
+    prevMil = currentMillis;
+  }
+}
+
+// Construct json string and add to queue
+void constructJsonAndAddToQueue(Payload p){
+  char msg[MAX_JSON_PAYLOAD_SIZE];
+
+  sprintf(msg, "{\"nodeID\":\"%d\",\"sensorID\":\"%d\"}", p.nodeID, p.sensorID);
+  
+  msg_q.push(&msg);
 }

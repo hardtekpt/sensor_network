@@ -13,7 +13,6 @@ void setup() {
   pinMode(gLedPin, OUTPUT);
   pinMode(btnPin, INPUT);
   Serial.begin(9600);
-  while (!Serial);
 
   LoRa.setPins(csPin, resetPin, irqPin);
   LoRa.setTxPower(txPower);

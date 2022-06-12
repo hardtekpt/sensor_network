@@ -5,19 +5,22 @@
 #include <SPI.h>              
 #include <LoRa.h>
 #include "gateway_serial_definitions.h"
+#include <cppQueue.h>
 #include <aes256.h>
 
 #define  IMPLEMENTATION  FIFO
 
 // LoRa msg payload settings
-#define MAX_N_RETRY 5
-#define TIMEOUT_INTERVAL 3000
+#define RELAY_INTERVAL 200
+#define MAX_JSON_PAYLOAD_SIZE 40
 #define MAX_QUEUE_SIZE 5
 
 #define BLOCK_SIZE 16
 #define MAX_PAYLOAD_SIZE 16
 #define ENC_BLOCK_SIZE (2*BLOCK_SIZE)
 #define MAX_ENC_PAYLOAD_SIZE ((MAX_PAYLOAD_SIZE/BLOCK_SIZE)*ENC_BLOCK_SIZE)+1
+
+
 
 // Encryption key
 extern uint8_t key[];
@@ -38,7 +41,9 @@ typedef struct strPayload {
   float SNR;
 } Payload;
 
-extern int newmsg;
+extern unsigned long prevMil;
+
+extern cppQueue msg_q;
 extern aes256_context ctxt;
 
 void LoRa_rxMode();
@@ -49,5 +54,7 @@ void onReceive(int packetSize);
 void onTxDone();
 String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]);
 void sendAck(int msgID, int nodeID);
+void relayMsgFromQueueToServer(unsigned long currentMillis);
+void constructJsonAndAddToQueue(Payload p);
 
 #endif
