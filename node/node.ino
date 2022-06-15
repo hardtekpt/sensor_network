@@ -10,22 +10,25 @@ unsigned long lastDebounceTime = 0;
 unsigned long debounceDelay = 50;  
 
 void setup() {
-  pinMode(gLedPin, OUTPUT);
+  //pinMode(gLedPin, OUTPUT);
   pinMode(btnPin, INPUT);
+  for(int i=0; i<actN; i++){
+    pinMode(actPin[i], OUTPUT); 
+  }
   Serial.begin(9600);
-
   LoRa.setPins(csPin, resetPin, irqPin);
-  LoRa.setTxPower(txPower);
-  LoRa.setSpreadingFactor(spreadingFactor);
-  LoRa.setSignalBandwidth(signalBandwidth);
-  LoRa.setCodingRate4(codingRateDenominator);
+  //LoRa.setTxPower(txPower);
+  //LoRa.setSpreadingFactor(spreadingFactor);
+  //LoRa.setSignalBandwidth(signalBandwidth);
+  //LoRa.setCodingRate4(codingRateDenominator);
+
 
   if (!LoRa.begin(frequency)) {
-    Serial.println("LoRa init failed. Check your connections.");
+    Serial.println("LoRa init failed.");
     while (true);
   }
 
-  Serial.println("LoRa init succeeded.");
+  //Serial.println("LoRa init succeeded.");
 
   LoRa.onReceive(onReceive);
   LoRa.onTxDone(onTxDone);
@@ -33,6 +36,8 @@ void setup() {
 
   prevMil = millis();
   buttonState = digitalRead(btnPin);
+  
+  Serial.println("Node startup complete");
 }
 
 void loop() {
@@ -46,7 +51,7 @@ void loop() {
   if ((currentMillis - lastDebounceTime) > debounceDelay) {
     if (reading != buttonState){
       // Send sensor data
-      sendSensorData(0);
+      sendSensorData(0, buttonState);
       buttonState = reading;
     }
   }

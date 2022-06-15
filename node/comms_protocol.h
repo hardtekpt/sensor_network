@@ -34,7 +34,7 @@ typedef struct strPayload {
   int nodeID;
   int sensorID;
   int msgID;
-  int ack;
+  char flag;
   int RSSI;
   float SNR;
 } Payload;
@@ -58,7 +58,10 @@ char  *decryptMsg(String msg);
 void onReceive(int packetSize);
 void onTxDone();
 String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]);
-void sendSensorData(int sensorID);
+void sendSensorData(int sensorID, int sensorVal);
 void getMsgFromQueueAndSend(unsigned long currentMillis);
+void sendStatus();
+void sendAck(int msgID);
+void setActState(int ID, int val);
 
 #endif

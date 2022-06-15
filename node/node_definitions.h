@@ -15,7 +15,10 @@ const char appID[] = "90077";
 const int nodeID = 1;
 
 // Node I/O Pinout
-const int gLedPin = 4;
+//const int gLedPin = 4;
 const int btnPin = 3;
+const int actPin[] = {4, 5};
+const int actN = sizeof(actPin)/sizeof(int);
+
 
 #endif

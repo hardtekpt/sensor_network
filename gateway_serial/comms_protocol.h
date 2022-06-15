@@ -1,3 +1,5 @@
+
+
 #ifndef COMMS_PROTOCOL_H
 #define COMMS_PROTOCOL_H
 
@@ -12,8 +14,11 @@
 
 // LoRa msg payload settings
 #define RELAY_INTERVAL 200
-#define MAX_JSON_PAYLOAD_SIZE 40
+#define MAX_JSON_PAYLOAD_SIZE 100
+#define MAX_R_QUEUE_SIZE 1
 #define MAX_QUEUE_SIZE 5
+#define MAX_N_RETRY 5
+#define TIMEOUT_INTERVAL 3000
 
 #define BLOCK_SIZE 16
 #define MAX_PAYLOAD_SIZE 16
@@ -35,14 +40,26 @@ const int codingRateDenominator = 5;
 typedef struct strPayload {
   int nodeID;
   int sensorID;
+  int sensorVal;
   int msgID;
-  int ack;
+  char flag;
   int RSSI;
   float SNR;
 } Payload;
 
+typedef struct strMsg {
+  char msg[MAX_ENC_PAYLOAD_SIZE];
+  int msgID;
+  char flag;
+  int nodeID;
+} Msg;
+
+extern int currMsg;
+extern int count;
+extern unsigned long prevMilR;
 extern unsigned long prevMil;
 
+extern cppQueue relay_q;
 extern cppQueue msg_q;
 extern aes256_context ctxt;
 
@@ -56,5 +73,9 @@ String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]);
 void sendAck(int msgID, int nodeID);
 void relayMsgFromQueueToServer(unsigned long currentMillis);
 void constructJsonAndAddToQueue(Payload p);
+void relayDownlinkMsg(char *dlMsg);
+void getMsgFromQueueAndSend(unsigned long currentMillis);
+void sendStatusRequest(int nodeID);
+void sendActuatorControl(int nodeID, int actID, int actVal);
 
 #endif

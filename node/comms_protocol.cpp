@@ -12,6 +12,7 @@ int currMsg = -1;
 int count = 0;
 unsigned long prevMil;
 
+
 cppQueue  msg_q(sizeof(Msg), MAX_QUEUE_SIZE, IMPLEMENTATION);
 aes256_context ctxt;
 
@@ -87,13 +88,30 @@ String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]){
 }
 
 // Add a message to the send queue when a sensor is triggered
-void sendSensorData(int sensorID){
+void sendSensorData(int sensorID, int sensorVal){
   Msg msg;
   String enc;
   char payload[MAX_PAYLOAD_SIZE];
   msg.msgID = (int) random(1000);
   
-  sprintf(payload, "%s%.3d%.3d%.3d%.1d", appID, nodeID, sensorID, msg.msgID, 0);
+  sprintf(payload, "%s%c%.3d%.2d%.3d%c", appID,'u', nodeID, sensorID, msg.msgID, sensorVal);
+  Serial.println(payload);
+
+  enc = splitAndEncrypt(payload);
+  enc.toCharArray(msg.msg, MAX_ENC_PAYLOAD_SIZE);
+  
+  // Add msg to msg queue
+  msg_q.push(&msg);
+}
+
+// Send a status msg informing the gateway that this node is alive
+void sendStatus(int msgID){
+  Msg msg;
+  String enc;
+  char payload[MAX_PAYLOAD_SIZE];
+  msg.msgID = msgID;
+  
+  sprintf(payload, "%s%c%.3d%.2d%.3d", appID, 's', nodeID, 0, msgID);
   Serial.println(payload);
 
   enc = splitAndEncrypt(payload);
@@ -128,6 +146,22 @@ void getMsgFromQueueAndSend(unsigned long currentMillis){
   }
 }
 
+
+void sendAck(int msgID) {
+  String enc;
+  char payload[MAX_PAYLOAD_SIZE];
+  char encP[MAX_ENC_PAYLOAD_SIZE];
+  
+  sprintf(payload, "%s%c%.3d%.2d%.3d", appID,'a', nodeID, 0, msgID);
+  //Serial.print("Send ack: ");
+  //Serial.println(payload);
+
+  enc = splitAndEncrypt(payload);
+  enc.toCharArray(encP, MAX_ENC_PAYLOAD_SIZE);
+
+  LoRa_sendMessage(encP);
+}
+
 // Handle received messages by the node
 void onReceive(int packetSize) {
   Serial.println("New msg received");
@@ -153,21 +187,34 @@ void onReceive(int packetSize) {
 
   // Check for appID!!!
   if(strstr(buffer1, appID) != NULL){
-    sscanf(buffer1, "%*c%*c%*c%*c%*c%3d%3d%3d%d", &p.nodeID, &p.sensorID, &p.msgID, &p.ack);
+    Serial.println(buffer1);
+    sscanf(buffer1, "%*c%*c%*c%*c%*c%c%3d%2d%3d", &p.flag, &p.nodeID, &p.sensorID, &p.msgID);
     Msg msg;
     msg_q.peek(&msg);
     if(p.nodeID == nodeID){
-      if(p.msgID == msg.msgID){
-        if(p.ack){
+      if(p.flag == 'a'){
+        if(p.msgID == msg.msgID){
           Serial.print("Message with ID: ");
           Serial.print(p.msgID);
           Serial.println(" delivered!");
           msg_q.drop();
-          digitalWrite(gLedPin, 1);
-          delay(400);
-          digitalWrite(gLedPin, 0);
         }
+      } else if(p.flag == 's'){
+        Serial.println(p.msgID);
+        sendStatus(p.msgID);
+      } else if(p.flag == 'c'){
+        // Set actuator value and send ack
+        setActState(p.sensorID, buffer1[14]);
+        sendAck(p.msgID);
       }
-    }
+    } 
   }
+}
+
+void setActState(int ID, int val){
+  Serial.print("Set actuator: ");
+  Serial.print(ID);
+  Serial.print(" with value: ");
+  Serial.println(val);
+  digitalWrite(actPin[ID], val);
 }
