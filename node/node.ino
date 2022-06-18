@@ -28,7 +28,9 @@ void setup() {
     while (true);
   }
 
-  //Serial.println("LoRa init succeeded.");
+  //LoRa.setSyncWord(0xF3);
+  LoRa.enableCrc();
+
 
   LoRa.onReceive(onReceive);
   LoRa.onTxDone(onTxDone);
@@ -51,7 +53,7 @@ void loop() {
   if ((currentMillis - lastDebounceTime) > debounceDelay) {
     if (reading != buttonState){
       // Send sensor data
-      sendSensorData(0, buttonState);
+      sendSensorData((byte) 0x00, (byte) buttonState);
       buttonState = reading;
     }
   }

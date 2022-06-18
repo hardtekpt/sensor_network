@@ -7,11 +7,18 @@ void setup()
 {
   
   LoRa.setPins(csPin, resetPin, irqPin);
+//  LoRa.setTxPower(txPower);
+//  LoRa.setSpreadingFactor(spreadingFactor);
+//  LoRa.setSignalBandwidth(signalBandwidth);
+//  LoRa.setCodingRate4(codingRateDenominator);
 
   if (!LoRa.begin(frequency)) {
     Serial.println("LoRa init failed.");
     while (true);                       // if failed, do nothing
   }
+
+  //LoRa.setSyncWord(0xF3);
+  LoRa.enableCrc();
 
   LoRa.onReceive(onReceive);
   LoRa.onTxDone(onTxDone);

@@ -11,7 +11,8 @@ const int resetPin = 9;
 const int irqPin = 2;   
 
 // Gateway Settings
-const char appID[] = "90077";
-const int gatewayID = 0;
+const int gatewayID = 0xFF;
+const byte netID = 0xF3;
+
 
 #endif

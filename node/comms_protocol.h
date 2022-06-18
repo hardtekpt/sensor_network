@@ -20,28 +20,31 @@
 #define ENC_BLOCK_SIZE (2*BLOCK_SIZE)
 #define MAX_ENC_PAYLOAD_SIZE ((MAX_PAYLOAD_SIZE/BLOCK_SIZE)*ENC_BLOCK_SIZE)+1
 
+#define MAX_MSG_ID 256
+
 // Encryption key
 extern uint8_t key[];
 
 // LoRa Modem Settings
 const long frequency = 868E6;
-const int txPower = 17;
+const int txPower = 14;
 const int spreadingFactor = 7;
 const long signalBandwidth = 125E3;
 const int codingRateDenominator = 5;
 
 typedef struct strPayload {
-  int nodeID;
-  int sensorID;
-  int msgID;
+  byte nodeID;
+  byte sensorID;
+  byte msgID;
   char flag;
+  byte sensorVal;
   int RSSI;
   float SNR;
 } Payload;
 
 typedef struct strMsg {
   char msg[MAX_ENC_PAYLOAD_SIZE];
-  int msgID;
+  byte msgID;
 } Msg;
 
 extern int currMsg;
@@ -58,10 +61,10 @@ char  *decryptMsg(String msg);
 void onReceive(int packetSize);
 void onTxDone();
 String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]);
-void sendSensorData(int sensorID, int sensorVal);
+void sendSensorData(byte sensorID, byte sensorVal);
 void getMsgFromQueueAndSend(unsigned long currentMillis);
-void sendStatus();
-void sendAck(int msgID);
+void sendStatus(byte msgID);
+void sendAck(byte msgID);
 void setActState(int ID, int val);
 
 #endif

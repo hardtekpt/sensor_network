@@ -25,23 +25,23 @@
 #define ENC_BLOCK_SIZE (2*BLOCK_SIZE)
 #define MAX_ENC_PAYLOAD_SIZE ((MAX_PAYLOAD_SIZE/BLOCK_SIZE)*ENC_BLOCK_SIZE)+1
 
-
+#define MAX_MSG_ID 256
 
 // Encryption key
 extern uint8_t key[];
 
 // LoRa Modem Settings
 const long frequency = 868E6;
-const int txPower = 17;
+const int txPower = 14;
 const int spreadingFactor = 7;
 const long signalBandwidth = 125E3;
 const int codingRateDenominator = 5;
 
 typedef struct strPayload {
-  int nodeID;
-  int sensorID;
-  int sensorVal;
-  int msgID;
+  byte nodeID;
+  byte sensorID;
+  byte sensorVal;
+  byte msgID;
   char flag;
   int RSSI;
   float SNR;
@@ -49,9 +49,11 @@ typedef struct strPayload {
 
 typedef struct strMsg {
   char msg[MAX_ENC_PAYLOAD_SIZE];
-  int msgID;
+  byte msgID;
   char flag;
-  int nodeID;
+  byte nodeID;
+  byte actID;
+  byte actVal;
 } Msg;
 
 extern int currMsg;
@@ -70,12 +72,12 @@ char  *decryptMsg(String msg);
 void onReceive(int packetSize);
 void onTxDone();
 String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]);
-void sendAck(int msgID, int nodeID);
+void sendAck(byte msgID, byte nodeID);
 void relayMsgFromQueueToServer(unsigned long currentMillis);
 void constructJsonAndAddToQueue(Payload p);
 void relayDownlinkMsg(char *dlMsg);
 void getMsgFromQueueAndSend(unsigned long currentMillis);
-void sendStatusRequest(int nodeID);
-void sendActuatorControl(int nodeID, int actID, int actVal);
+void sendStatusRequest(byte nodeID);
+void sendActuatorControl(byte nodeID, byte actID, byte actVal);
 
 #endif

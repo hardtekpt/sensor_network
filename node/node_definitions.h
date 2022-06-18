@@ -11,8 +11,8 @@ const int resetPin = 9;        // LoRa radio reset
 const int irqPin = 2;          // change for your board; must be a hardware interrupt pin
 
 // Node Settings
-const char appID[] = "90077";
-const int nodeID = 1;
+const byte netID = 0xF3;
+const byte nodeID = 0x02;
 
 // Node I/O Pinout
 //const int gLedPin = 4;
