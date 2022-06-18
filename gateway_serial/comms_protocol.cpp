@@ -199,7 +199,10 @@ void relayDownlinkMsg(char *dlMsg) {
   switch (flag) {
     case 's':
       sscanf(dlMsg, "%*c,%d", &nodeID);
-      sendStatusRequest((byte)nodeID);
+      if(nodeID == -1)
+        sendStatusRequest((byte)BROADCAST_ID);
+      else
+        sendStatusRequest((byte)nodeID);
       break;
     case 'c':
       int actID;

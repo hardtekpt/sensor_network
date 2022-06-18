@@ -22,6 +22,8 @@
 
 #define MAX_MSG_ID 256
 
+#define BROADCAST_ID 0xFF
+
 // Encryption key
 extern uint8_t key[];
 

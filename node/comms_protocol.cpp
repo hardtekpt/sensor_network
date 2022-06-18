@@ -193,7 +193,7 @@ void onReceive(int packetSize) {
     sscanf(buffer1, "%c%c%c%c%c%c", &p.nodeID, &p.msgID, &len, &p.flag, &p.sensorID, &p.sensorVal);
     Msg msg;
     msg_q.peek(&msg);
-    if (p.nodeID == nodeID) {
+    if (p.nodeID == nodeID || p.nodeID == BROADCAST_ID) {
       if (p.flag == 'a') {
         if (p.msgID == msg.msgID) {
           Serial.print("Message with ID: ");
