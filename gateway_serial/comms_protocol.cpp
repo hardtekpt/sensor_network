@@ -79,30 +79,31 @@ void onReceive(int packetSize) {
     }
     aes256_done(&ctxt);
 
-    sscanf(buffer1, "%c%c%c%c%c%c", &p.nodeID, &p.msgID, &len, &p.flag, &p.sensorID, &p.sensorVal);
+    if(sscanf(buffer1, "%c%c%c%c%c%c", &p.nodeID, &p.msgID, &len, &p.flag, &p.sensorID, &p.sensorVal) == 6){
 
-    Msg msg;
-    p.RSSI = LoRa.packetRssi();
-    p.SNR = LoRa.packetSnr();
-    if (p.flag == 'u') {
-      sendAck(p.msgID, p.nodeID);
-      //p.sensorVal = buffer1[14];
-    }
-    if (p.flag == 's') {
-      sendAck(p.msgID, p.nodeID);
-      msg_q.peek(&msg);
-      if (p.msgID == msg.msgID) {
-        msg_q.drop();
+      Msg msg;
+      p.RSSI = LoRa.packetRssi();
+      p.SNR = LoRa.packetSnr();
+      if (p.flag == 'u') {
+        sendAck(p.msgID, p.nodeID);
+        //p.sensorVal = buffer1[14];
       }
-    } else if (p.flag == 'a') {
-      msg_q.peek(&msg);
-      if (p.msgID == msg.msgID) {
-        p.sensorID = msg.actID;
-        p.sensorVal = msg.actVal;
-        msg_q.drop();
+      if (p.flag == 's') {
+        sendAck(p.msgID, p.nodeID);
+        msg_q.peek(&msg);
+        if (p.msgID == msg.msgID) {
+          msg_q.drop();
+        }
+      } else if (p.flag == 'a') {
+        msg_q.peek(&msg);
+        if (p.msgID == msg.msgID) {
+          p.sensorID = msg.actID;
+          p.sensorVal = msg.actVal;
+          msg_q.drop();
+        }
       }
+      constructJsonAndAddToQueue(p);
     }
-    constructJsonAndAddToQueue(p);
   }
 }
 
@@ -247,8 +248,8 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
       LoRa_sendMessage(msg.msg);
       prevMil = currentMillis;
     } else {
-      Serial.print("Failed to send msg with id: ");
-      Serial.println(msg.msgID);
+      //Serial.print("Failed to send msg with id: ");
+      //Serial.println(msg.msgID);
       // Check flag and relay a msg to the server!!!
       if (msg.flag == 's' || msg.flag == 'c') {
         Payload p;

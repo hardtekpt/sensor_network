@@ -190,24 +190,25 @@ void onReceive(int packetSize) {
     }
     aes256_done(&ctxt);
 
-    sscanf(buffer1, "%c%c%c%c%c%c", &p.nodeID, &p.msgID, &len, &p.flag, &p.sensorID, &p.sensorVal);
-    Msg msg;
-    msg_q.peek(&msg);
-    if (p.nodeID == nodeID || p.nodeID == BROADCAST_ID) {
-      if (p.flag == 'a') {
-        if (p.msgID == msg.msgID) {
-          Serial.print("Message with ID: ");
-          Serial.print(p.msgID);
-          Serial.println(" delivered!");
-          msg_q.drop();
+    if(sscanf(buffer1, "%c%c%c%c%c%c", &p.nodeID, &p.msgID, &len, &p.flag, &p.sensorID, &p.sensorVal) == 6){
+      Msg msg;
+      msg_q.peek(&msg);
+      if (p.nodeID == nodeID || p.nodeID == BROADCAST_ID) {
+        if (p.flag == 'a') {
+          if (p.msgID == msg.msgID) {
+            Serial.print("Message with ID: ");
+            Serial.print(p.msgID);
+            Serial.println(" delivered!");
+            msg_q.drop();
+          }
+        } else if (p.flag == 's') {
+          Serial.println(p.msgID);
+          sendStatus(p.msgID);
+        } else if (p.flag == 'c') {
+          // Set actuator value and send ack
+          setActState((int)(p.sensorID - 1), (int)(p.sensorVal - 1));
+          sendAck(p.msgID);
         }
-      } else if (p.flag == 's') {
-        Serial.println(p.msgID);
-        sendStatus(p.msgID);
-      } else if (p.flag == 'c') {
-        // Set actuator value and send ack
-        setActState((int)(p.sensorID - 1), (int)(p.sensorVal - 1));
-        sendAck(p.msgID);
       }
     }
   }

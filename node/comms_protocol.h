@@ -8,6 +8,7 @@
 #include <aes256.h>
 #include "node_definitions.h"
 
+
 #define  IMPLEMENTATION  FIFO
 
 // LoRa msg payload settings

@@ -12,7 +12,7 @@ const int irqPin = 2;          // change for your board; must be a hardware inte
 
 // Node Settings
 const byte netID = 0xF3;
-const byte nodeID = 0x02;
+const byte nodeID = 0x01;
 
 // Node I/O Pinout
 //const int gLedPin = 4;
