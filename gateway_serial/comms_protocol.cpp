@@ -1,12 +1,8 @@
-#include "comms_protocol.h"
+/*
+ * Communication Protocol library - set of functions and data structures used to build a network using the LoRa modulation radios
+ */
 
-// Encryption key
-uint8_t key[] = { //
-  0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
-  0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f,
-  0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17,
-  0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x1e, 0x1f
-};
+#include "comms_protocol.h"
 
 int currMsg = -1;
 int count = 0;
@@ -18,43 +14,311 @@ cppQueue  msg_q(sizeof(Msg), MAX_QUEUE_SIZE, IMPLEMENTATION);
 aes256_context ctxt;
 
 
+/*
+ * Function: LoRa_rxMode
+ * ----------------------------
+ *   Sets the LoRa radio to receive mode
+ *
+ *   returns: void
+ */
 void LoRa_rxMode() {
-  LoRa.disableInvertIQ();               // normal mode
-  LoRa.receive();                       // set receive mode
+  LoRa.disableInvertIQ();
+  LoRa.receive();
 }
 
+/*
+ * Function: LoRa_txMode
+ * ----------------------------
+ *   Sets the LoRa radio to transmit mode
+ *
+ *   returns: void
+ */
 void LoRa_txMode() {
   LoRa.idle();                          // set standby mode
   LoRa.enableInvertIQ();                // active invert I and Q signals
 }
 
-void LoRa_sendMessage(String message) {
-  LoRa_txMode();                        // set tx mode
-  LoRa.beginPacket();                   // start packet
+/*
+ * Function: LoRa_sendMessage
+ * ----------------------------
+ *   Sets the radio to transmit mode, sends a message string using the LoRa radio
+ *   and sets the radio back to receive mode
+ *   
+ *   message: message to send
+ *   nodeID: ID of the destination node
+ *
+ *   returns: void
+ */
+void LoRa_sendMessage(String message, byte nodeID) {
+  LoRa_txMode();
+  LoRa.beginPacket();
   LoRa.write(netID);
-  LoRa.print(message);                  // add payload
-  LoRa.endPacket(true);                 // finish packet and send it
+  LoRa.write(nodeID);
+  LoRa.print(message);
+  LoRa.endPacket(false);
+  LoRa_rxMode();
 }
 
+/*
+ * Function: splitAndEncrypt
+ * ----------------------------
+ *   Encrypts a message (character array) using the AES256 algorythm with the corresponding node key
+ *   The encryption is made by encrypting blocks of 16 bytes and joining them together
+ *   
+ *   msg: message array to be decrypted
+ *
+ *   returns: a string containing the encrypted message
+ */
+String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]) {
+  String enc = "";
+  const char * p = msg;
+  while (strlen (p) > 0) {
+    byte plain [BLOCK_SIZE];
+    memset (plain, 0, BLOCK_SIZE);  // ensure trailing zeros
+    memcpy (plain, p, min (strlen (p), BLOCK_SIZE));
+    aes256_encrypt_ecb(&ctxt, plain);
+    enc += String((char *)plain);
+    // advance past this block
+    p += min (strlen (p), BLOCK_SIZE);
+  }  
+  return enc;
+}
+
+/*
+ * Function: decryptMsg
+ * ----------------------------
+ *   Decrypts a message string using the AES256 algorythm with the corresponding node key
+ *   
+ *   msg: message string to be decrypted
+ *
+ *   returns: an array of characters containing the decrypted message
+ */
 char  *decryptMsg(String msg) {
-  static uint8_t data[17];
-  char aux[3];
-  int i = 0;
-
-  for (size_t count = 0; count < 32; count += 2) {
-
-    msg.substring(count, count + 2).toCharArray(aux, 3);
-    sscanf(aux, "%x", &data[i]);
-    i++;
-  }
-
-  aes256_decrypt_ecb(&ctxt, data);
-  //Serial.print((char *)data);
-  return (char *)data;
+  static char m[MAX_PAYLOAD_SIZE+1];
+  msg.toCharArray(m, MAX_PAYLOAD_SIZE+1);
+  aes256_decrypt_ecb(&ctxt, (uint8_t *)m);
+  return (char *)m;
 }
 
+/*
+ * Function: sendAck
+ * ----------------------------
+ *   Send an acknowledge message confirming the reception of an uplink transmission
+ *   
+ *   msgID: ID of the message being acknowledged
+ *   nodeID: ID of the destination node
+ *
+ *   returns: void
+ */
+void sendAck(byte msgID, byte nodeID) {
+  String enc;
+  char payload[MAX_PAYLOAD_SIZE];
+  char encP[MAX_ENC_PAYLOAD_SIZE];
+  byte l = MAX_PAYLOAD_SIZE;
+
+  sprintf(payload, "%c%c%c%c%c%c", (char)nodeID, (char)msgID, (char)l, 'a', (char)48, (char)48);
+
+  aes256_init(&ctxt, keys[(int)nodeID]);
+  enc = splitAndEncrypt(payload);
+  enc.toCharArray(encP, MAX_ENC_PAYLOAD_SIZE);
+  aes256_done(&ctxt);
+  
+  LoRa_sendMessage(encP, nodeID);
+}
+
+/*
+ * Function: sendStatusRequest
+ * ----------------------------
+ *   Send a downlink message asking for a status update from the node
+ *   
+ *   nodeID: ID of the destination node
+ *
+ *   returns: void
+ */
+void sendStatusRequest(byte nodeID) {
+  Msg msg;
+  String enc;
+  char payload[MAX_PAYLOAD_SIZE];
+  msg.msgID = (byte) random(MAX_MSG_ID);
+  msg.flag = 's';
+  msg.nodeID = nodeID;
+  byte l = (byte) MAX_PAYLOAD_SIZE;
+
+  sprintf(payload, "%c%c%c%c%c%c\0", (char)nodeID, (char)msg.msgID, (char)l, 's', (char)48, (char)48);
+
+  if (nodeID == BROADCAST_ID)
+    aes256_init(&ctxt, keys[0]);
+  else
+    aes256_init(&ctxt, keys[(int)nodeID]);
+  enc = splitAndEncrypt(payload);
+  aes256_done(&ctxt);
+  enc.toCharArray(msg.msg, MAX_ENC_PAYLOAD_SIZE);
+
+  msg_q.push(&msg);
+}
+
+/*
+ * Function: sendActuatorControl
+ * ----------------------------
+ *   Send a downlink message to control a node's actuator
+ *   
+ *   nodeID: ID of the destination node
+ *   actID: ID of the actuator to control
+ *   actVal: Value to assign to the relevant actuator
+ *
+ *   returns: void
+ */
+void sendActuatorControl(byte nodeID, byte actID, byte actVal) {
+  Msg msg;
+  String enc;
+  char payload[MAX_PAYLOAD_SIZE];
+  msg.msgID = (byte) random(MAX_MSG_ID);
+  msg.actID = actID;
+  msg.actVal = actVal;
+  msg.flag = 'c';
+  byte l = (byte)MAX_PAYLOAD_SIZE;
+
+  sprintf(payload, "%c%c%c%c%c%c", (char)nodeID, (char)msg.msgID, (char)l, 'c', (char)actID, (char)actVal);
+
+  aes256_init(&ctxt, keys[(int)nodeID]);
+  enc = splitAndEncrypt(payload);
+  aes256_done(&ctxt);
+  enc.toCharArray(msg.msg, MAX_ENC_PAYLOAD_SIZE);
+
+  // Add msg to msg queue
+  msg_q.push(&msg);
+}
+
+/*
+ * Function: getMsgFromQueueAndSend
+ * ----------------------------
+ *   Get a message from the send queue and send it. Implements retransmission 
+ *   in case an acknowledge message is not received. Aware of a failed transmission.
+ *   
+ *   currentMillis: current time in millisenconds since boot
+ *
+ *   returns: void
+ */
+void getMsgFromQueueAndSend(unsigned long currentMillis) {
+  if (!msg_q.isEmpty()) {
+    Msg msg;
+    msg_q.peek(&msg);
+
+    if (currMsg == msg.msgID)
+      count ++;
+    else
+      count = 0;
+
+    currMsg = msg.msgID;
+    if (count < MAX_N_RETRY) {
+      LoRa_sendMessage(msg.msg, msg.nodeID);
+      prevMil = currentMillis;
+    } else {
+      if (msg.flag == 's' || msg.flag == 'c') {
+        Payload p;
+        p.flag = 'f';
+        p.nodeID = msg.nodeID;
+        constructJsonAndAddToQueue(p);
+      }
+      msg_q.drop();
+    }
+  }
+}
+
+/*
+ * Function: relayMsgFromQueueToServer
+ * ----------------------------
+ *   Get a message from the relay queue and send it to the server via serial communication. 
+ *   
+ *   currentMillis: current time in millisenconds since boot
+ *
+ *   returns: void
+ */
+ void relayMsgFromQueueToServer(unsigned long currentMillis) {
+  if (!relay_q.isEmpty()) {
+    char msg[MAX_JSON_PAYLOAD_SIZE];
+    relay_q.pop(&msg);
+
+    Serial.print("rm");
+    Serial.println(msg);
+  }
+  prevMilR = currentMillis;
+}
+
+/*
+ * Function: constructJsonAndAddToQueue
+ * ----------------------------
+ *   Builds a json string containg the message information and adds the string to the relay queue
+ *   
+ *   p: payload structure containing the message information along with RSSI, SNR and battery voltage
+ *
+ *   returns: void
+ */
+ void constructJsonAndAddToQueue(Payload p) {
+  char msg[MAX_JSON_PAYLOAD_SIZE];
+
+  switch (p.flag) {
+    case 'u':
+      sprintf(msg, "{\"f\":\"%c\",\"nID\":\"%d\",\"sID\":\"%d\",\"sVal\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
+      break;
+    case 's':
+      sprintf(msg, "{\"f\":\"%c\",\"nID\":\"%d\",\"state\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", p.flag, p.nodeID, 1, p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
+      break;
+    case 'a':
+      sprintf(msg, "{\"f\":\"%c\",\"nID\":\"%d\",\"actID\":\"%d\",\"actVal\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
+      break;
+    case 'f':
+      sprintf(msg, "{\"f\":\"%c\",\"nID\":\"%d\",\"state\":\"%d\"}", 's', p.nodeID, 0);
+      break;
+  }
+  relay_q.push(&msg);
+}
+
+/*
+ * Function: relayDownlinkMsg
+ * ----------------------------
+ *   Relays the downlink messages received from the server to the corresponding node. Formats the message 
+ *   into a compact form
+ *   
+ *   dlMsg: character array containing the downlink message to be relayed
+ *
+ *   returns: void
+ */
+void relayDownlinkMsg(char *dlMsg) {
+  char flag = dlMsg[0];
+  int nodeID;
+
+  switch (flag) {
+    case 's':
+      sscanf(dlMsg, "%*c,%d", &nodeID);
+      if(nodeID == -1)
+        sendStatusRequest((byte)BROADCAST_ID);
+      else
+        sendStatusRequest((byte)nodeID);
+      break;
+    case 'c':
+      int actID;
+      int actVal;
+      sscanf(dlMsg, "%*c,%d,%d,%d", &nodeID, &actID, &actVal);
+      sendActuatorControl((byte)nodeID, (byte)(actID + 1), (byte)(actVal + 1));
+      break;
+  }
+}
+
+/*
+ * Function: onReceive
+ * ----------------------------
+ *   Called every time a new message is received. Filters unwanted messages, decrypts the payload,
+ *   gets the relevant fields from the payload and sends back an acknowledge message if necessary.
+ *   Finally, calls constructJsonAndAddToQueue to build a json message destined for the server.
+ *   
+ *   packetSize: size of the incoming message in bytes
+ *
+ *   returns: void
+ */
 void onReceive(int packetSize) {
   byte rNetID = LoRa.read();
+  byte rnID = LoRa.read();
 
   String message = "";
   while (LoRa.available()) {
@@ -63,14 +327,15 @@ void onReceive(int packetSize) {
 
   if (rNetID = netID) {
     //Serial.println("Msg received");
+    //Serial.println(message);
 
     int j = message.length() / ENC_BLOCK_SIZE;
-    int h = message.length() / (2 * j);
+    int h = message.length() / (1 * j);
     char buffer1[h + 1];
     byte len;
     Payload p;
 
-    aes256_init(&ctxt, key);
+    aes256_init(&ctxt, keys[(int)rnID]);
     for (int i = 0; i < j; i++) {
       if (i == 0)
         strcpy(buffer1, decryptMsg(message.substring(i * ENC_BLOCK_SIZE, (i + 1)*ENC_BLOCK_SIZE)));
@@ -79,8 +344,12 @@ void onReceive(int packetSize) {
     }
     aes256_done(&ctxt);
 
-    if(sscanf(buffer1, "%c%c%c%c%c%c", &p.nodeID, &p.msgID, &len, &p.flag, &p.sensorID, &p.sensorVal) == 6){
-
+    //Serial.println(buffer1);
+    char a,b;
+    
+    if(sscanf(buffer1, "%c%c%c%c%c%c%c%c", &p.nodeID, &p.msgID, &len, &p.flag, &p.sensorID, &p.sensorVal, &a, &b) == 8){
+      p.VBAT = (int)(a-1) + (int)(b-1) * 0.1;
+      //Serial.println(p.VBAT);
       Msg msg;
       p.RSSI = LoRa.packetRssi();
       p.SNR = LoRa.packetSnr();
@@ -105,178 +374,4 @@ void onReceive(int packetSize) {
       constructJsonAndAddToQueue(p);
     }
   }
-}
-
-void onTxDone() {
-  //Serial.println("TxDone");
-  LoRa_rxMode();
-}
-
-String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]) {
-  // Split the msg into 16 byte chunks,
-  // Encrypt them
-  // Join them back together
-  String enc = "";
-  aes256_init(&ctxt, key);
-  const char * p = msg;
-
-  while (strlen (p) > 0) {
-    byte plain [BLOCK_SIZE];
-    memset (plain, 0, BLOCK_SIZE);  // ensure trailing zeros
-    // copy block into plain array
-    memcpy (plain, p, min (strlen (p), BLOCK_SIZE));
-    // encrypt it
-    //encrypt_it (plain, key);
-    aes256_encrypt_ecb(&ctxt, plain);
-
-    String hexstring = "";
-
-    for (int i = 0; i < BLOCK_SIZE; i++) {
-      if (plain[i] < 0x10)
-        hexstring += '0';
-      hexstring += String(plain[i], HEX);
-    }
-    //Serial.println(hexstring);
-    enc += hexstring;
-
-    // advance past this block
-    p += min (strlen (p), BLOCK_SIZE);
-  }
-  aes256_done(&ctxt);
-  return enc;
-}
-
-void sendAck(byte msgID, byte nodeID) {
-  String enc;
-  char payload[MAX_PAYLOAD_SIZE];
-  char encP[MAX_ENC_PAYLOAD_SIZE];
-  byte l = MAX_PAYLOAD_SIZE;
-
-  sprintf(payload, "%c%c%c%c%c%c", (char)nodeID, (char)msgID, (char)l, 'a', (char)48, (char)48);
-
-  enc = splitAndEncrypt(payload);
-  enc.toCharArray(encP, MAX_ENC_PAYLOAD_SIZE);
-
-  LoRa_sendMessage(encP);
-}
-
-// Get a message from the send queue and send it
-void relayMsgFromQueueToServer(unsigned long currentMillis) {
-  if (!relay_q.isEmpty()) {
-    char msg[MAX_JSON_PAYLOAD_SIZE];
-    relay_q.pop(&msg);
-
-    Serial.print("rm");
-    Serial.println(msg);
-  }
-  prevMilR = currentMillis;
-}
-
-// Construct json string and add to queue
-void constructJsonAndAddToQueue(Payload p) {
-  char msg[MAX_JSON_PAYLOAD_SIZE];
-
-  switch (p.flag) {
-    case 'u':
-      sprintf(msg, "{\"f\":\"%c\",\"nID\":\"%d\",\"sID\":\"%d\",\"sVal\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\"}", p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100);
-      break;
-    case 's':
-      sprintf(msg, "{\"f\":\"%c\",\"nID\":\"%d\",\"state\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\"}", p.flag, p.nodeID, 1, p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100);
-      break;
-    case 'a':
-      sprintf(msg, "{\"f\":\"%c\",\"nID\":\"%d\",\"actID\":\"%d\",\"actVal\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\"}", p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100);
-      break;
-    case 'f':
-      sprintf(msg, "{\"f\":\"%c\",\"nID\":\"%d\",\"state\":\"%d\"}", 's', p.nodeID, 0);
-      break;
-  }
-  relay_q.push(&msg);
-}
-
-void relayDownlinkMsg(char *dlMsg) {
-  char flag = dlMsg[0];
-  int nodeID;
-
-  switch (flag) {
-    case 's':
-      sscanf(dlMsg, "%*c,%d", &nodeID);
-      if(nodeID == -1)
-        sendStatusRequest((byte)BROADCAST_ID);
-      else
-        sendStatusRequest((byte)nodeID);
-      break;
-    case 'c':
-      int actID;
-      int actVal;
-      sscanf(dlMsg, "%*c,%d,%d,%d", &nodeID, &actID, &actVal);
-      sendActuatorControl((byte)nodeID, (byte)(actID + 1), (byte)(actVal + 1));
-      break;
-  }
-}
-
-void sendStatusRequest(byte nodeID) {
-  Msg msg;
-  String enc;
-  char payload[MAX_PAYLOAD_SIZE];
-  msg.msgID = (byte) random(MAX_MSG_ID);
-  msg.flag = 's';
-  msg.nodeID = nodeID;
-  byte l = (byte) MAX_PAYLOAD_SIZE;
-
-  sprintf(payload, "%c%c%c%c%c%c", (char)nodeID, (char)msg.msgID, (char)l, 's', (char)48, (char)48);
-
-  enc = splitAndEncrypt(payload);
-  enc.toCharArray(msg.msg, MAX_ENC_PAYLOAD_SIZE);
-
-  // Add msg to msg queue
-  msg_q.push(&msg);
-}
-
-// Get a message from the send queue and send it
-void getMsgFromQueueAndSend(unsigned long currentMillis) {
-  if (!msg_q.isEmpty()) {
-    Msg msg;
-    msg_q.peek(&msg);
-
-    if (currMsg == msg.msgID)
-      count ++;
-    else
-      count = 0;
-
-    currMsg = msg.msgID;
-    if (count < MAX_N_RETRY) {
-      LoRa_sendMessage(msg.msg);
-      prevMil = currentMillis;
-    } else {
-      //Serial.print("Failed to send msg with id: ");
-      //Serial.println(msg.msgID);
-      // Check flag and relay a msg to the server!!!
-      if (msg.flag == 's' || msg.flag == 'c') {
-        Payload p;
-        p.flag = 'f';
-        p.nodeID = msg.nodeID;
-        constructJsonAndAddToQueue(p);
-      }
-      msg_q.drop();
-    }
-  }
-}
-
-void sendActuatorControl(byte nodeID, byte actID, byte actVal) {
-  Msg msg;
-  String enc;
-  char payload[MAX_PAYLOAD_SIZE];
-  msg.msgID = (byte) random(MAX_MSG_ID);
-  msg.actID = actID;
-  msg.actVal = actVal;
-  msg.flag = 'c';
-  byte l = (byte)MAX_PAYLOAD_SIZE;
-
-  sprintf(payload, "%c%c%c%c%c%c", (char)nodeID, (char)msg.msgID, (char)l, 'c', (char)actID, (char)actVal);
-
-  enc = splitAndEncrypt(payload);
-  enc.toCharArray(msg.msg, MAX_ENC_PAYLOAD_SIZE);
-
-  // Add msg to msg queue
-  msg_q.push(&msg);
 }

@@ -4,63 +4,74 @@
 
 #include "comms_protocol.h"
 
-int buttonState;            
-int lastButtonState = LOW; 
-unsigned long lastDebounceTime = 0; 
-unsigned long debounceDelay = 50;  
-
+/*
+ * Function: setup
+ * ----------------------------
+ *   Runs once at boot. Configure the serial communication. Configure the LoRa radio.
+ *   Configure the sensors and actuators input mode
+ *
+ *   returns: void
+ */
 void setup() {
-  //pinMode(gLedPin, OUTPUT);
-  pinMode(btnPin, INPUT);
+  for(int i=0; i<sensN; i++){
+    pinMode(sensPin[i], INPUT); 
+  }
   for(int i=0; i<actN; i++){
     pinMode(actPin[i], OUTPUT); 
   }
-  Serial.begin(9600);
-  LoRa.setPins(csPin, resetPin, irqPin);
+  Serial.begin(BAUD_RATE);
+
+  #if defined(ESP32)
+    SPI.begin(SCK, MISO, MOSI, SS);
+  #endif
   //LoRa.setTxPower(txPower);
   //LoRa.setSpreadingFactor(spreadingFactor);
   //LoRa.setSignalBandwidth(signalBandwidth);
   //LoRa.setCodingRate4(codingRateDenominator);
-
-
+  LoRa.setPins(SS, RST, DIO0);
+  
   if (!LoRa.begin(frequency)) {
     Serial.println("LoRa init failed.");
     while (true);
   }
 
-  //LoRa.setSyncWord(0xF3);
+  LoRa.setSyncWord(netID);
   LoRa.enableCrc();
-
-
-  LoRa.onReceive(onReceive);
-  LoRa.onTxDone(onTxDone);
   LoRa_rxMode();
 
   prevMil = millis();
-  buttonState = digitalRead(btnPin);
+  prevMilSU = millis();
   
   Serial.println("Node startup complete");
 }
 
+/*
+ * Function: loop
+ * ----------------------------
+ *   Main loop function. checks for incoming uplink messages and downlink requests from the server.
+ *   calls getMsgFromQueueAndSend on fixed schedules to avoid congestion of the communication channel
+ *   and sends an uplink message with the node status periodically.
+ *
+ *   returns: void
+ */
 void loop() {
   unsigned long currentMillis = millis();
 
-  
-  // btn sensor
-  int reading = digitalRead(btnPin);
-  if (reading != lastButtonState)
-    lastDebounceTime = currentMillis;
-  if ((currentMillis - lastDebounceTime) > debounceDelay) {
-    if (reading != buttonState){
-      // Send sensor data
-      sendSensorData((byte) 0x00, (byte) buttonState);
-      buttonState = reading;
-    }
+  // Receive Downlink msg
+  int packetSize = LoRa.parsePacket();
+  if (packetSize) {
+    onReceive(packetSize);
   }
-  lastButtonState = reading;
 
-
+  // Send Uplink msg
   if((currentMillis-prevMil) > TIMEOUT_INTERVAL){
     getMsgFromQueueAndSend(currentMillis);
+  }
+
+  // Send node status
+  if((currentMillis-prevMilSU) > STATUS_UPDATE_INTERVAL){
+    byte msgID = random(MAX_MSG_ID);
+    sendStatus(msgID);
+    prevMilSU = currentMillis;
   }
 }
