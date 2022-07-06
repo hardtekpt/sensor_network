@@ -20,7 +20,6 @@ const uint8_t key[] = { //
 #define DIO0 2
 
 // Node Settings
-const byte netID = 0xF3;
 const byte nodeID = 0x01;
 
 // Node I/O Pinout

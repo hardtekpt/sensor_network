@@ -9,6 +9,9 @@
 // Baud rate for serial communication
 #define BAUD_RATE 115200
 
+// Node Settings
+const byte netID = 0xF3;
+
 #include "node_definitions/node_definitions_3.h"
 
 const int sensN = sizeof(sensPin)/sizeof(int);
