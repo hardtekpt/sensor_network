@@ -24,7 +24,7 @@ void setup() {
   LoRa.setPins(SS, RST, DIO0);
 
   if (!LoRa.begin(frequency)) {
-    Serial.println("LoRa init failed.");
+    Serial.write("LoRa init failed.\n");
     while (true);                       // if failed, do nothing
   }
 
@@ -34,7 +34,7 @@ void setup() {
 
   prevMil = millis();
 
-  Serial.println("Startup complete");
+  Serial.write("Startup complete\n");
 }
 
 /*

@@ -237,10 +237,15 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
  void relayMsgFromQueueToServer(unsigned long currentMillis) {
   if (!relay_q.isEmpty()) {
     char msg[MAX_JSON_PAYLOAD_SIZE];
+    int i;
+    for(i=0; i<MAX_JSON_PAYLOAD_SIZE; i++)
+      if (msg[i] == '\0')
+        break;
     relay_q.pop(&msg);
 
-    Serial.print("rm");
-    Serial.println(msg);
+    Serial.write("rm");
+    Serial.write(msg, i);
+    Serial.write("\n");
   }
   prevMilR = currentMillis;
 }
