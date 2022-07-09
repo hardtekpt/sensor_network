@@ -16,6 +16,9 @@ import yaml
 maxNum = 5
 gateway_status = "Offline"
 
+_VARS = {'rssi_canvas': None,
+         'snr_canvas': None}
+
 
 def draw_figure(canvas, figure):
 	figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
@@ -139,6 +142,18 @@ def gui():
 	global window;
 	window = sg.Window('Sensor Network Manager', layout, finalize=True)
 	
+	for i in range(len(nodes)):
+		plt.figure(num=0)
+		plt.plot([],[],'.k')
+		#nodes[i]['rssi_plot_canvas'] = FigureCanvasTkAgg(plt.figure(num=0), window.Element('rssi_canvas').TKCanvas)
+		_VARS['rssi_canvas'] = FigureCanvasTkAgg(plt.figure(num=0), window.Element('rssi_canvas').TKCanvas)
+		#nodes[i]['rssi_plot_canvas'].get_tk_widget().hide()
+		nodes[i]['rssi_list'] = list()
+		plt.figure(num=1)
+		plt.plot([],[],'.k')
+		#nodes[i]['snr_plot_canvas'] = FigureCanvasTkAgg(plt.figure(num=1), window.Element('snr_canvas').TKCanvas)
+		_VARS['snr_canvas'] = FigureCanvasTkAgg(plt.figure(num=1), window.Element('snr_canvas').TKCanvas)
+		nodes[i]['snr_list'] = list()
 
 	while True:
 		event, values = window.read(timeout = 200)
@@ -217,21 +232,25 @@ def updateTabs(idx):
 
 	# \\  -------- PYPLOT -------- //
 	if(len(nodes[idx]['rssi_list'])>0):
-		nodes[idx]['rssi_plot_canvas'].get_tk_widget().forget()
+		#nodes[idx]['rssi_plot_canvas'].get_tk_widget().forget()
+		_VARS['rssi_canvas'].get_tk_widget().forget()
 		plt.figure(num=0)
 		plt.clf()
 		plt.plot(range(1,len(nodes[idx]['rssi_list'])+1), nodes[idx]['rssi_list'], 'bo-', linewidth=0.5, markersize=3)
 		plt.xticks(np.arange(1, len(nodes[idx]['rssi_list'])+1))
 		plt.ylim(-120, 20)
-		nodes[idx]['rssi_plot_canvas'] = draw_figure(window.Element('rssi_canvas').TKCanvas, plt.figure(num=0))
+		#nodes[idx]['rssi_plot_canvas'] = draw_figure(window.Element('rssi_canvas').TKCanvas, plt.figure(num=0))
+		_VARS['rssi_canvas'] = draw_figure(window.Element('rssi_canvas').TKCanvas, plt.figure(num=0))
 
-		nodes[idx]['snr_plot_canvas'].get_tk_widget().forget()
+		#nodes[idx]['snr_plot_canvas'].get_tk_widget().forget()
+		_VARS['snr_canvas'].get_tk_widget().forget()
 		plt.figure(num=1)
 		plt.clf()
 		plt.plot(range(1,len(nodes[idx]['snr_list'])+1), nodes[idx]['snr_list'], 'bo-', linewidth=0.5, markersize=3)
 		plt.xticks(np.arange(1, len(nodes[idx]['snr_list'])+1))
 		plt.ylim(-15, 15)
-		nodes[idx]['snr_plot_canvas'] = draw_figure(window.Element('snr_canvas').TKCanvas, plt.figure(num=1))
+		#nodes[idx]['snr_plot_canvas'] = draw_figure(window.Element('snr_canvas').TKCanvas, plt.figure(num=1))
+		_VARS['snr_canvas'] = draw_figure(window.Element('snr_canvas').TKCanvas, plt.figure(num=1))
 	# \\  -------- PYPLOT -------- //
 
 	for i in range(maxNum):
@@ -397,15 +416,6 @@ def main():
 		for j in range(len(nodes[i]['actuators'])):
 			nodes[i]['actuators'][j] = {**nodes[i]['actuators'][j], **actuators_data}
 		nodes[i] = {**nodes[i], **node_data}
-		#nodes[i]['rssi_plot_figure'] = plt.figure(num=0)
-		plt.figure(num=0)
-		plt.plot([],[],'.k')
-		nodes[i]['rssi_plot_canvas'] = FigureCanvasTkAgg(plt.figure(num=0), nodes[i]['rssi_plot_canvas'])
-		nodes[i]['rssi_list'] = list()
-		plt.figure(num=1)
-		plt.plot([],[],'.k')
-		nodes[i]['snr_plot_canvas'] = FigureCanvasTkAgg(plt.figure(num=1), nodes[i]['snr_plot_canvas'])
-		nodes[i]['snr_list'] = list()
 
 	total_nodes = len(nodes)
 
