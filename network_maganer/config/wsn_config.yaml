@@ -2,7 +2,7 @@ wsn_config:
   gateways: 
     - {
         #'serial_port': '/dev/ttyUSB0'
-        'serial_port': '/dev/tty.wchusbserial1420'
+        'serial_port': '/dev/tty.wchusbserial1410'
       }
   nodes:
     - id: 0x01

@@ -117,8 +117,11 @@ def gui():
 					sg.Text( str(total_nodes), key='_TOTALNODES_')
 				],
 				[
-					sg.Text('Gateway Status: '),
-					sg.Text(gateway_status, key='_GATEWAYSTATUS_', text_color='red')
+					sg.Text('Gateway Status:'),
+					sg.Text(gateway_status, key='_GATEWAYSTATUS_', text_color='red'),
+					sg.Push(),
+					sg.Text('Boot time:'),
+					sg.Text('', key='_BOOTTIME_')
 				],
 				[sg.Text('Send Downlink Message'), sg.InputText(key='_DLMSG_'), sg.Button('Send')],
 				[sg.HorizontalSeparator()],
@@ -136,10 +139,15 @@ def gui():
 						title_color='white'					
 					)
 				],
-				[sg.Button('Rescan Network', key='_RSNET_'), sg.Button('Exit')] 
+				[
+					sg.Button('Rescan Network', key='_RSNET_'), 
+					sg.Button('Export data', key='_EXPORT_'), 
+					sg.Push(),
+					sg.Button('Exit')
+				] 
 			]
 
-	global window;
+	global window
 	window = sg.Window('Sensor Network Manager', layout, finalize=True)
 	
 	for i in range(len(nodes)):
@@ -159,6 +167,11 @@ def gui():
 		event, values = window.read(timeout = 200)
 		if event == sg.WIN_CLOSED or event == 'Exit': 
 			break
+		if event == '_EXPORT_':
+			print('export')
+			#timestamp, nodeID, rssi, snr, battery, DL/UL
+			#if DL we only care about timestamp
+			# set up custom commands for DLMSG: test1, test2 -> execute predetermined tests and save data
 		if event == 'Send' and len(values['_DLMSG_']):
 			#print(values['_DLMSG_'])
 			data = bytes(values['_DLMSG_'], encoding='utf-8')
@@ -217,7 +230,7 @@ firstTime = True
 
 def updateTabs(idx):
 	global nodes
-	global window;
+	global window
 
 	window.Element('_NSTATE_').update(value='Online' if int(nodes[idx]['state']) else 'Offline', text_color='green' if int(nodes[idx]['state']) else 'red')
 	window.Element('_NLASTACTIVITY_').update(value=str(nodes[idx]['last_activity']))
@@ -283,7 +296,7 @@ def serial_comm():
 		if stop_threads:
 			break
 		global nodes
-		global window;
+		global window
 
 		line = ser.readline()
 		line = line.decode('utf-8', "ignore")
@@ -291,6 +304,7 @@ def serial_comm():
 			line = line.strip('rm').strip('\n').rstrip()
 			if line == "Startup complete":
 				window.Element('_GATEWAYSTATUS_').update(value=line, text_color='#42cf68')
+				window.Element('_BOOTTIME_').update(value=datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 			else:
 				try:
 					print(line)
