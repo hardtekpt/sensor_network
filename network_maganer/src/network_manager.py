@@ -306,7 +306,7 @@ def serial_comm():
 					t_packets = nodes[int(msg['nID'])-1]['packets_sent'] + nodes[int(msg['nID'])-1]['packets_received']
 					avg_rssi = float(nodes[int(msg['nID'])-1]['avg_rssi']) * float(t_packets-1)/t_packets + float(msg['RSSI']) * float(1/t_packets)
 					avg_snr = nodes[int(msg['nID'])-1]['avg_snr'] * float(t_packets-1)/t_packets + float(msg['SNR']) * float(1/t_packets)
-					bat = nodes[int(msg['nID'])-1]['battery'] * float(t_packets-1)/t_packets + float(msg['VBAT']) * float(1/t_packets)
+					bat = float(msg['VBAT'])
 					
 					nodes[int(msg['nID'])-1]['avg_rssi'] = round(avg_rssi, 2)
 					nodes[int(msg['nID'])-1]['avg_snr'] = round(avg_snr, 2)
@@ -320,7 +320,7 @@ def serial_comm():
 							node['timestamps'] += [now.strftime("%d/%m/%Y %H:%M:%S")]
 
 
-					if((int(msg['nID']) is not 255) and (msg['f'] == 's')):
+					if((int(msg['nID']) != 255) and (msg['f'] == 's')):
 						nodes[int(msg['nID'])-1]['state'] = int(msg['state'])
 
 						active_nodes = sum(node["state"] == 1 for node in nodes)
@@ -329,7 +329,7 @@ def serial_comm():
 						if(nidx == window.Element('_LIST_').get_indexes()[0]):
 							updateTabs(nidx)
 
-					if((int(msg['nID']) is not 255) and (msg['f'] == 'u')):
+					if((int(msg['nID']) != 255) and (msg['f'] == 'u')):
 						nodes[nidx]['last_activity'] = str(nodes[nidx]['sensors'][int(msg['sID'])-1]['name']) + ' with value: ' + msg['sVal'] + ' at ' + dt_string
 						window.Element('_LIST_').update(set_to_index=nidx)
 						window.Element('_STATUSTAB_').update(title='Node ' + msg['nID'] + ' Status')
@@ -343,7 +343,7 @@ def serial_comm():
 						active_nodes = sum(node["state"] == 1 for node in nodes)
 						window.Element('_ACTIVENODES_').update(value=str(active_nodes))
 						updateTabs(nidx)
-					if((int(msg['nID']) is not 255) and (msg['f'] == 'a')):
+					if((int(msg['nID']) != 255) and (msg['f'] == 'a')):
 						nodes[nidx]['last_activity'] = str(nodes[nidx]['actuators'][int(msg['actID'])-1]['name']) + ' with value: ' + msg['actVal'] + ' at ' + dt_string
 						window.Element('_LIST_').update(set_to_index=nidx)
 						window.Element('_STATUSTAB_').update(title='Node ' + msg['nID'] + ' Status')
