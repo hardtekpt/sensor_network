@@ -11,13 +11,19 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 plt.rcParams.update({'font.size': 6})
 import yaml
+import csv
+
 
 # Global variables declaration.
 maxNum = 5
 gateway_status = "Offline"
 
 _VARS = {'rssi_canvas': None,
-         'snr_canvas': None}
+         'snr_canvas': None,
+		 'dl_msgs': {
+			'timestamps': list(),
+			'nodeID': list()
+		 }}
 
 
 def draw_figure(canvas, figure):
@@ -25,6 +31,37 @@ def draw_figure(canvas, figure):
 	figure_canvas_agg.draw_idle()
 	figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
 	return figure_canvas_agg
+
+def send_dl_msg(data):
+	nID = data.split(',')[1]
+	_VARS['dl_msgs']['nodeID'].append(nID)
+	_VARS['dl_msgs']['timestamps'].append(datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
+
+	data = bytes(data, encoding='utf-8')
+	ser.write(data)
+	ser.write(bytes("\n", encoding='utf-8'))
+	ser.flush()
+
+def export_data(path):
+	print(path)
+	with open(path, 'w', newline='') as csvfile:
+		writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+		for node in nodes:
+			print(node['id'])
+			print(node['timestamps'])
+			print(node['rssi_list'])
+			for i in range(len(node['timestamps'])):
+				#print(i)
+				#print(node['timestamps'][i])
+				#print(node['rssi_list'][i])
+				#print(node['snr_list'][i])
+				writer.writerow([node['timestamps'][i], node['id'], node['rssi_list'][i], node['snr_list'][i], node['battery_list'][i], 'UL'])
+		for i in range(len(_VARS['dl_msgs']['timestamps'])):
+			writer.writerow([_VARS['dl_msgs']['timestamps'][i], _VARS['dl_msgs']['nodeID'][i], 0, 0, 0, 'DL'])
+	#timestamp, nodeID, rssi, snr, battery, DL/UL
+	#if DL we only care about timestamp and nodeID
+	# set up custom commands for DLMSG: test1, test2 -> execute predetermined tests and save data
+
 
 def gui():
 	sg.theme('BrownBlue') 
@@ -141,7 +178,8 @@ def gui():
 				],
 				[
 					sg.Button('Rescan Network', key='_RSNET_'), 
-					sg.Button('Export data', key='_EXPORT_'), 
+					sg.InputText(visible=False, enable_events=True, key='export_data_path'),
+					sg.FileSaveAs('Export data', key='_EXPORT_', file_types=(('CSV', '.csv'),)),
 					sg.Push(),
 					sg.Button('Exit')
 				] 
@@ -163,21 +201,19 @@ def gui():
 		_VARS['snr_canvas'] = FigureCanvasTkAgg(plt.figure(num=1), window.Element('snr_canvas').TKCanvas)
 		nodes[i]['snr_list'] = list()
 
+		nodes[i]['timestamps'] = list()
+		nodes[i]['battery_list'] = list()
+
 	while True:
 		event, values = window.read(timeout = 200)
 		if event == sg.WIN_CLOSED or event == 'Exit': 
 			break
-		if event == '_EXPORT_':
-			print('export')
-			#timestamp, nodeID, rssi, snr, battery, DL/UL
-			#if DL we only care about timestamp
-			# set up custom commands for DLMSG: test1, test2 -> execute predetermined tests and save data
+		if event == 'export_data_path':
+			path = values['export_data_path']
+			export_data(path)
 		if event == 'Send' and len(values['_DLMSG_']):
-			#print(values['_DLMSG_'])
-			data = bytes(values['_DLMSG_'], encoding='utf-8')
-			ser.write(data)
-			ser.write(bytes("\n", encoding='utf-8'))
-			ser.flush()
+			data = values['_DLMSG_']
+			send_dl_msg(data)
 			window.Element('_DLMSG_').update(value="")
     		
 		if event == '_LIST_' and len(values['_LIST_']): 
@@ -194,10 +230,7 @@ def gui():
 			r = parse("[\'Node {}\']", str(values['_LIST_']))
 			idx = int(r[0])-1
 			#updateTabs(idx)
-
-			ser.write(bytes("s,-1", encoding='utf-8'))
-			ser.write(bytes("\n", encoding='utf-8'))
-			ser.flush()
+			send_dl_msg("s,-1\n")
 		if '_AON' in event:
 			r = parse("[\'Node {}\']", str(values['_LIST_']))
 			nID = int(r[0])
@@ -205,10 +238,8 @@ def gui():
 			actID = int(r[0])
 			actID = nodes[nID-1]['actuators'][actID]['id']
 
-			data = bytes('c,' + str(nID) + ',' + str(actID) + ',1', encoding='utf-8')
-			ser.write(data)
-			ser.write(bytes("\n", encoding='utf-8'))
-			ser.flush()
+			data = 'c,' + str(nID) + ',' + str(actID) + ',1'
+			send_dl_msg(data)
 
 		if '_AOFF' in event:
 			r = parse("[\'Node {}\']", str(values['_LIST_']))
@@ -217,10 +248,8 @@ def gui():
 			actID = int(r[0])
 			actID = nodes[nID-1]['actuators'][actID]['id']
 
-			data = bytes('c,' + str(nID) + ',' + str(actID) + ',0', encoding='utf-8')
-			ser.write(data)
-			ser.write(bytes("\n", encoding='utf-8'))
-			ser.flush()
+			data = 'c,' + str(nID) + ',' + str(actID) + ',0'
+			send_dl_msg(data)
 		
 		window.refresh()
 
@@ -332,7 +361,6 @@ def serial_comm():
 							node['snr_list'] += [float(msg['SNR'])]
 							node['battery_list'] += [float(msg['VBAT'])]
 							node['timestamps'] += [now.strftime("%d/%m/%Y %H:%M:%S")]
-
 
 					if((int(msg['nID']) != 255) and (msg['f'] == 's')):
 						nodes[int(msg['nID'])-1]['state'] = int(msg['state'])
