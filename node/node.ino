@@ -69,9 +69,9 @@ void loop() {
   }
 
   // Send node status
-  if((currentMillis-prevMilSU) > STATUS_UPDATE_INTERVAL){
+  /*if((currentMillis-prevMilSU) > STATUS_UPDATE_INTERVAL){
     byte msgID = random(MAX_MSG_ID);
     sendStatus(msgID);
     prevMilSU = currentMillis;
-  }
+  }*/
 }

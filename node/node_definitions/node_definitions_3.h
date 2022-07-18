@@ -30,7 +30,7 @@ const byte nodeID = 0x03;
 // Node I/O Pinout
 const int vbatPin = 35;
 
-const int sensPin[] = {};
+const int sensPin[] = {16};
 const int actPin[] = {LED_BUILTIN};
 
 #endif

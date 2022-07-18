@@ -176,6 +176,7 @@ void sendActuatorControl(byte nodeID, byte actID, byte actVal) {
   msg.actID = actID;
   msg.actVal = actVal;
   msg.flag = 'c';
+  msg.nodeID = nodeID;
   byte l = (byte)MAX_PAYLOAD_SIZE;
 
   sprintf(payload, "%c%c%c%c%c%c", (char)nodeID, (char)msg.msgID, (char)l, 'c', (char)actID, (char)actVal);
@@ -211,11 +212,17 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
 
     currMsg = msg.msgID;
     if (count < MAX_N_RETRY) {
+      Payload p;
+      p.msgID = msg.msgID;
+      p.flag = 'd';
+      p.nodeID = msg.nodeID;
+      constructJsonAndAddToQueue(p);
       LoRa_sendMessage(msg.msg, msg.nodeID);
       prevMil = currentMillis;
     } else {
       if (msg.flag == 's' || msg.flag == 'c') {
         Payload p;
+        p.msgID = msg.msgID;
         p.flag = 'f';
         p.nodeID = msg.nodeID;
         constructJsonAndAddToQueue(p);
@@ -236,12 +243,14 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
  */
  void relayMsgFromQueueToServer(unsigned long currentMillis) {
   if (!relay_q.isEmpty()) {
+    
     char msg[MAX_JSON_PAYLOAD_SIZE];
+    relay_q.pop(&msg);
     int i;
     for(i=0; i<MAX_JSON_PAYLOAD_SIZE; i++)
       if (msg[i] == '\0')
         break;
-    relay_q.pop(&msg);
+    
 
     Serial.write("rm");
     Serial.write(msg, i);
@@ -264,16 +273,19 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
 
   switch (p.flag) {
     case 'u':
-      sprintf(msg, "{\"f\":\"%c\",\"nID\":\"%d\",\"sID\":\"%d\",\"sVal\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
+      sprintf(msg, "{\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"sID\":\"%d\",\"sVal\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", p.msgID, p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
       break;
     case 's':
-      sprintf(msg, "{\"f\":\"%c\",\"nID\":\"%d\",\"state\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", p.flag, p.nodeID, 1, p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
+      sprintf(msg, "{\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"state\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", p.msgID, p.flag, p.nodeID, 1, p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
       break;
     case 'a':
-      sprintf(msg, "{\"f\":\"%c\",\"nID\":\"%d\",\"actID\":\"%d\",\"actVal\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
+      sprintf(msg, "{\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"actID\":\"%d\",\"actVal\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", p.msgID, p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
       break;
     case 'f':
-      sprintf(msg, "{\"f\":\"%c\",\"nID\":\"%d\",\"state\":\"%d\"}", 's', p.nodeID, 0);
+      sprintf(msg, "{\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"state\":\"%d\",\"RSSI\":\"0\",\"SNR\":\"0\",\"VBAT\":\"0\"}", p.msgID, 's', p.nodeID, 0);
+      break;
+    case 'd':
+      sprintf(msg, "{\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\"}\0", p.msgID, p.flag, p.nodeID);
       break;
   }
   relay_q.push(&msg);

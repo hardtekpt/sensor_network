@@ -1,0 +1,20 @@
+close all;
+
+Array=csvread('teste1.csv');
+
+t = Array(:, 1);
+msgID = Array(:, 2);
+nodeID = Array(:, 3);
+rssi = Array(:, 4);
+snr = Array(:, 5);
+battery = Array(:,6);
+dir = Array(:,7);
+
+% xplot
+figure();
+plot(t, rssi,'LineWidth',1);
+hold on
+grid on;
+legend('RSSI');
+xlabel("Time (s)");
+ylabel("Position in the x axis (m)");

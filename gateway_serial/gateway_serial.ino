@@ -69,6 +69,7 @@ void loop()
   }
 
   if((currentMillis-prevMil) > TIMEOUT_INTERVAL){
+    sendStatusRequest(1);
     getMsgFromQueueAndSend(currentMillis);
   }
 }

@@ -14,23 +14,17 @@ const uint8_t key[] = { //
   0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x1e, 0x1f
 };
 
-// SPI pinout for TTGO boards
-#define SCK 5
-#define MISO 19
-#define MOSI 27
-
-// LoRa Modem Pinout for TTGO boards
-#define SS 18
-#define RST 14
-#define DIO0 26
+// LoRa Modem Pinout for boards with the Dragino LoRa shield
+#define SS 10
+#define RST 9
+#define DIO0 2
 
 // Node Settings
 const byte nodeID = 0x01;
 
 // Node I/O Pinout
-const int vbatPin = 35;
 
-const int sensPin[] = {16};
-const int actPin[] = {LED_BUILTIN};
+const int sensPin[] = {};
+const int actPin[] = {4};
 
 #endif

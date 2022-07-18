@@ -290,6 +290,7 @@ void onReceive(int packetSize){
 
   if (rNetID = netID) {
     Serial.println("New msg received");
+    Serial.println(message.length());
 
     int j = message.length() / ENC_BLOCK_SIZE;
     int h = message.length() / (1 * j);

@@ -1,8 +1,8 @@
 wsn_config:
   gateways: 
     - {
-        #'serial_port': '/dev/ttyUSB0'
-        'serial_port': '/dev/tty.wchusbserial1410'
+        'serial_port': '/dev/ttyUSB0'
+        #'serial_port': '/dev/tty.wchusbserial1410'
       }
   nodes:
     - id: 0x01
@@ -10,22 +10,25 @@ wsn_config:
         - x: 3
           y: 1
       sensors: 
-        - id: 0x01
+        - id: 0x00
           name: 'motion sensor'
-          pinMap: [3]
+          pinMap: [16]
       actuators: 
         - id: 0x00
-          name: 'led'
-          pinMap: [4]
+          name: 'BUILTINLED'
+          pinMap: [5]
 
     - id: 0x02
       location: 
         - x: 4
           y: 2
-      sensors: []
+      sensors: 
+        - id: 0x00
+          name: 'motion sensor'
+          pinMap: [16]
       actuators: 
-        - id: 0x01
-          name: 'relay'
+        - id: 0x00
+          name: 'BUILTINLED'
           pinMap: [5]
 
     - id: 0x03
