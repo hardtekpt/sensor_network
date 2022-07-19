@@ -31,14 +31,14 @@ _VARS = {'rssi_canvas': None,
 
 def network_test():
 	time.sleep(5)
-	for i in range(10):
+	for i in range(20):
 		global stop_threads
 		for node in nodes:
 			if stop_threads:
 				return
 			data = 's,' + str(node['id'])
-			send_dl_msg(data)
-			time.sleep(5)
+			#send_dl_msg(data)
+			time.sleep(3)
 	
 
 

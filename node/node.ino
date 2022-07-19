@@ -43,6 +43,7 @@ void setup() {
   prevMilSU = millis();
   
   Serial.println("Node startup complete");
+  sendSensorData(0, 3);
 }
 
 /*
@@ -69,9 +70,9 @@ void loop() {
   }
 
   // Send node status
-  /*if((currentMillis-prevMilSU) > STATUS_UPDATE_INTERVAL){
+  if((currentMillis-prevMilSU) > STATUS_UPDATE_INTERVAL){
     byte msgID = random(MAX_MSG_ID);
-    sendStatus(msgID);
+    //sendStatus(msgID);
     prevMilSU = currentMillis;
-  }*/
+  }
 }

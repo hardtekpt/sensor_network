@@ -9,6 +9,7 @@ int count = 0;
 unsigned long prevMil;
 unsigned long prevMilSU;
 float VBAT = 1.0;
+int msgCount = 0;
 
 cppQueue  msg_q(sizeof(Msg), MAX_QUEUE_SIZE, IMPLEMENTATION);
 aes256_context ctxt;
@@ -49,12 +50,13 @@ void LoRa_txMode() {
  *
  *   returns: void
  */
-void LoRa_sendMessage(String message) {
+void LoRa_sendMessage(byte *message) {
   LoRa_txMode();                        // set tx mode
   LoRa.beginPacket();                   // start packet
   LoRa.write(netID);
   LoRa.write(nodeID);
-  LoRa.print(message);                  // add payload
+  //LoRa.print(message);                  // add payload
+  LoRa.write(message, MAX_ENC_PAYLOAD_SIZE);
   LoRa.endPacket(false);                 // finish packet and send it
   LoRa_rxMode();
 }
@@ -87,6 +89,24 @@ String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]) {
   return enc;
 }
 
+byte *splitAndEncrypt2(char msg[MAX_PAYLOAD_SIZE]) {
+  String enc = "";
+  aes256_init(&ctxt,(uint8_t *) key);
+  const char * p = msg;
+  static byte plain [BLOCK_SIZE];
+  while (strlen (p) > 0) {
+    
+    memset (plain, 0, BLOCK_SIZE);  // ensure trailing zeros
+    memcpy (plain, p, mymin (strlen (p), BLOCK_SIZE));
+
+    aes256_encrypt_ecb(&ctxt, plain);
+    return plain;
+    enc += String((char *)plain);
+    p += mymin (strlen (p), BLOCK_SIZE);
+  }
+  aes256_done(&ctxt);
+}
+
 /*
  * Function: decryptMsg
  * ----------------------------
@@ -102,6 +122,15 @@ char  *decryptMsg(String msg) {
   msg.toCharArray(m, MAX_PAYLOAD_SIZE+1);
   aes256_decrypt_ecb(&ctxt, (uint8_t *)m);
   return (char *)m;
+}
+
+char  *decryptMsg2(char msg[MAX_PAYLOAD_SIZE+1]) {
+  static uint8_t data[MAX_PAYLOAD_SIZE+1];
+  memcpy(data, msg, MAX_PAYLOAD_SIZE+1);
+  //static char m[MAX_PAYLOAD_SIZE+1];
+  //msg.toCharArray(m, MAX_PAYLOAD_SIZE+1);
+  aes256_decrypt_ecb(&ctxt, (uint8_t *)data);
+  return (char *)data;
 }
 
 /*
@@ -135,6 +164,7 @@ void sendAck(byte msgID) {
   char payload[MAX_PAYLOAD_SIZE];
   char encP[MAX_ENC_PAYLOAD_SIZE];
   byte l = (byte)MAX_PAYLOAD_SIZE;
+  Msg msg;
 
   #if defined(ESP32)
     VBAT = (float)(analogRead(vbatPin)) / 4095*2*3.3*1.1;
@@ -143,10 +173,20 @@ void sendAck(byte msgID) {
   int b = VBAT*10-a*10;
   sprintf(payload, "%c%c%c%c%c%c%c%c", (char)nodeID, (char)msgID, (char)l, 'a', (char)48, (char)48, (char)a+1, (char)b+1);
 
-  enc = splitAndEncrypt(payload);
-  enc.toCharArray(encP, MAX_ENC_PAYLOAD_SIZE);
+  //enc = splitAndEncrypt(payload);
+  //enc.toCharArray(msg.msg, MAX_ENC_PAYLOAD_SIZE);
+  byte *plain = splitAndEncrypt2(payload);
+  memcpy(msg.msg, plain, MAX_PAYLOAD_SIZE);
+  msg.msg[MAX_PAYLOAD_SIZE] = '\0';
 
-  LoRa_sendMessage(encP);
+  Serial.print("add ack to queue: ");
+  Serial.println(payload);
+  //Serial.print("enc msg: ");
+  //Serial.println(msg.msg);
+
+  msg.msgID = msgID;
+  msg.flag = 'a';  
+  msg_q.push(&msg);
 }
 
 /*
@@ -172,10 +212,19 @@ void sendStatus(byte msgID) {
   int b = VBAT*10-a*10;
   sprintf(payload, "%c%c%c%c%c%c%c%c", (char)nodeID, (char)msgID, (char)l, 's', (char)48, (char)48, (char)a+1, (char)b+1);
  
-  enc = splitAndEncrypt(payload);
-  enc.toCharArray(msg.msg, MAX_ENC_PAYLOAD_SIZE);
+  //enc = splitAndEncrypt(payload);
+  //enc.toCharArray(msg.msg, MAX_ENC_PAYLOAD_SIZE);
+  byte *plain = splitAndEncrypt2(payload);
+  memcpy(msg.msg, plain, MAX_PAYLOAD_SIZE);
+  msg.msg[MAX_PAYLOAD_SIZE] = '\0';
+  
+  Serial.print("add status to queue: ");
+  Serial.println(payload);
+  //Serial.print("enc msg: ");
+  //Serial.println(msg.msg);
 
   // Add msg to msg queue
+  msg.flag = 's';
   msg_q.push(&msg);
 }
 
@@ -216,7 +265,10 @@ void sendSensorData(byte sensorID, byte sensorVal) {
   Msg msg;
   String enc;
   char payload[MAX_PAYLOAD_SIZE];
-  msg.msgID = (byte) random(MAX_MSG_ID);
+  msgCount ++;
+  if (msgCount == 0)
+    msgCount ++;
+  msg.msgID = (byte) msgCount;
   byte l = MAX_PAYLOAD_SIZE;
 
   #if defined(ESP32)
@@ -227,10 +279,14 @@ void sendSensorData(byte sensorID, byte sensorVal) {
   int b = VBAT*10-a*10;
   sprintf(payload, "%c%c%c%c%c%c%c%c", (char)nodeID, (char)msg.msgID, (char)l, 'u', (char)(sensorID + 1), (char)(sensorVal + 1), (char)a+1, (char)b+1);
 
-  enc = splitAndEncrypt(payload);
-  enc.toCharArray(msg.msg, MAX_ENC_PAYLOAD_SIZE);
+  //enc = splitAndEncrypt(payload);
+  //enc.toCharArray(msg.msg, MAX_ENC_PAYLOAD_SIZE);
+  byte *plain = splitAndEncrypt2(payload);
+  memcpy(msg.msg, plain, MAX_PAYLOAD_SIZE);
+  msg.msg[MAX_PAYLOAD_SIZE] = '\0';
 
   // Add msg to msg queue
+  msg.flag = 'u';
   msg_q.push(&msg);
 }
 
@@ -257,12 +313,17 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
     currMsg = msg.msgID;
     if (count < MAX_N_RETRY) {
       Serial.print("send msg: ");
-      Serial.println(msg.msg);
+      //Serial.println(msg.msg);
       LoRa_sendMessage(msg.msg);
+      if ((msg.flag == 's') || (msg.flag == 'a')){
+        msg_q.drop();
+        currMsg = -1;
+      }
     } else {
       Serial.print("Failed to send msg with id: ");
       Serial.println(msg.msgID);
       msg_q.drop();
+      currMsg = -1;
     }
     prevMil = currentMillis;
   }
@@ -281,20 +342,28 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
 void onReceive(int packetSize){
   byte rNetID = LoRa.read();
   byte rnID = LoRa.read();
-  
+  char buffer1[MAX_ENC_PAYLOAD_SIZE];
+  char buffer2[MAX_ENC_PAYLOAD_SIZE];
   String message = "";
-
-  while (LoRa.available()) {
-    message += (char)LoRa.read();
+  int i=0;
+  while (LoRa.available() && i<MAX_ENC_PAYLOAD_SIZE) {
+    //Serial.println(LoRa.peek(), HEX);
+    buffer1[i] = (char)LoRa.read();
+    //message += (char)LoRa.read();
+    
+    i++;
   }
-
-  if (rNetID = netID) {
+  Serial.println("msg");
+  //Serial.println(message.length());
+  //Serial.println(MAX_ENC_PAYLOAD_SIZE);
+  //Serial.println(rNetID == netID);
+  if (rNetID == netID) {
     Serial.println("New msg received");
-    Serial.println(message.length());
+    
 
-    int j = message.length() / ENC_BLOCK_SIZE;
-    int h = message.length() / (1 * j);
-    char buffer1[h + 1];
+    //int j = message.length() / ENC_BLOCK_SIZE;
+    //int h = message.length() / (1 * j);
+    
     byte len;
     Payload p;
 
@@ -302,18 +371,20 @@ void onReceive(int packetSize){
       aes256_init(&ctxt,(uint8_t *) keyBroadcast);
     else
       aes256_init(&ctxt,(uint8_t *) key);
-    for (int i = 0; i < j; i++) {
-      if (i == 0)
-        strcpy(buffer1, decryptMsg(message.substring(i * ENC_BLOCK_SIZE, (i + 1) * ENC_BLOCK_SIZE)));
-      else
-        strcat(buffer1, decryptMsg(message.substring(i * ENC_BLOCK_SIZE, (i + 1) * ENC_BLOCK_SIZE)));
-    }
+    //for (int i = 0; i < j; i++) {
+    //  if (i == 0)
+    //    strcpy(buffer1, decryptMsg(message.substring(i * ENC_BLOCK_SIZE, (i + 1) * ENC_BLOCK_SIZE)));
+    //  else
+    //    strcat(buffer1, decryptMsg(message.substring(i * ENC_BLOCK_SIZE, (i + 1) * ENC_BLOCK_SIZE)));
+    //}
+    strcpy(buffer2, decryptMsg2(buffer1));
     aes256_done(&ctxt);
 
-    buffer1[h] = '\0';
+    buffer2[6] = '\0';
 
-
-    if(sscanf(buffer1, "%c%c%c%c%c%c", &p.nodeID, &p.msgID, &len, &p.flag, &p.sensorID, &p.sensorVal) == 6){
+    Serial.println(buffer2);
+    if(sscanf(buffer2, "%c%c%c%c%c%c", &p.nodeID, &p.msgID, &len, &p.flag, &p.sensorID, &p.sensorVal) == 6){
+      Serial.println(p.flag);
       Msg msg;
       msg_q.peek(&msg);
       if (p.nodeID == nodeID || p.nodeID == BROADCAST_ID) {
@@ -325,6 +396,7 @@ void onReceive(int packetSize){
             msg_q.drop();
           }
         } else if (p.flag == 's') {
+          Serial.print("received msg with id: ");
           Serial.println(p.msgID);
           sendStatus(p.msgID);
         } else if (p.flag == 'c') {
