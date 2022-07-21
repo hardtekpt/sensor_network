@@ -24,7 +24,8 @@ _VARS = {'rssi_canvas': None,
 		 'dl_msgs': {
 			'timestamps': list(),
 			'nodeID': list(),
-			'msgID': list()
+			'msgID': list(),
+			'delay': list(),
 		 }}
 
 
@@ -37,7 +38,7 @@ def network_test():
 			if stop_threads:
 				return
 			data = 's,' + str(node['id'])
-			#send_dl_msg(data)
+			send_dl_msg(data)
 			time.sleep(3)
 	
 
@@ -72,9 +73,9 @@ def export_data(path):
 				#print(node['timestamps'][i])
 				#print(node['rssi_list'][i])
 				#print(node['snr_list'][i])
-				writer.writerow([node['timestamps'][i], node['msgID_list'][i], node['id'], node['rssi_list'][i], node['snr_list'][i], node['battery_list'][i], '0'])
+				writer.writerow([node['timestamps'][i], node['delay_list'][i], node['msgID_list'][i], node['id'], node['rssi_list'][i], node['snr_list'][i], node['battery_list'][i], '0'])
 		for i in range(len(_VARS['dl_msgs']['timestamps'])):
-			writer.writerow([_VARS['dl_msgs']['timestamps'][i], _VARS['dl_msgs']['msgID'][i], _VARS['dl_msgs']['nodeID'][i], 0, 0, 0, '1'])
+			writer.writerow([_VARS['dl_msgs']['timestamps'][i], _VARS['dl_msgs']['delay'][i], _VARS['dl_msgs']['msgID'][i], _VARS['dl_msgs']['nodeID'][i], 0, 0, 0, '1'])
 	#timestamp, nodeID, rssi, snr, battery, DL/UL
 	#if DL we only care about timestamp and nodeID
 	# set up custom commands for DLMSG: test1, test2 -> execute predetermined tests and save data
@@ -221,6 +222,7 @@ def gui():
 		nodes[i]['timestamps'] = list()
 		nodes[i]['battery_list'] = list()
 		nodes[i]['msgID_list'] = list()
+		nodes[i]['delay_list'] = list()
 
 	while True:
 		event, values = window.read(timeout = 200)
@@ -361,6 +363,7 @@ def serial_comm():
 						_VARS['dl_msgs']['nodeID'].append(msg['nID'])
 						_VARS['dl_msgs']['timestamps'].append(datetime.now())
 						_VARS['dl_msgs']['msgID'].append(msg['msgID'])
+						_VARS['dl_msgs']['delay'].append(msg['t'])
 					else:
 
 						nidx = int(msg['nID'])-1
@@ -385,6 +388,7 @@ def serial_comm():
 									node['battery_list'] += [float(msg['VBAT'])]
 									node['timestamps'] += [datetime.now()]
 									node['msgID_list'] += [int(msg['msgID'])]
+									node['delay_list'] += [msg['t']]
 
 						if((int(msg['nID']) != 255) and (msg['f'] == 's')):
 							nodes[int(msg['nID'])-1]['state'] = int(msg['state'])
@@ -465,6 +469,7 @@ def main():
 		'snr_list': list(),
 		'battery_list': list(),
 		'msgID_list': list(),
+		'delay_list': list(),
 		'rssi_plot_canvas': None,
 		'snr_plot_canvas': None
 	}

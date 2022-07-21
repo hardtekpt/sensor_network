@@ -79,6 +79,7 @@ typedef struct strPayload {
   int RSSI;
   float SNR;
   float VBAT;
+  double milis;
 } Payload;
 
 typedef struct strMsg {

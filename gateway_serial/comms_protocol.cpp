@@ -374,19 +374,19 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
 
   switch (p.flag) {
     case 'u':
-      sprintf(msg, "{\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"sID\":\"%d\",\"sVal\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", p.msgID, p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
+      sprintf(msg, "{\"t\":\"%lu\",\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"sID\":\"%d\",\"sVal\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", millis(), p.msgID, p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
       break;
     case 's':
-      sprintf(msg, "{\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"state\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", p.msgID, p.flag, p.nodeID, 1, p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
+      sprintf(msg, "{\"t\":\"%lu\",\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"state\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", millis(), p.msgID, p.flag, p.nodeID, 1, p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
       break;
     case 'a':
-      sprintf(msg, "{\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"actID\":\"%d\",\"actVal\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", p.msgID, p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
+      sprintf(msg, "{\"t\":\"%lu\",\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"actID\":\"%d\",\"actVal\":\"%d\",\"RSSI\":\"%d\",\"SNR\":\"%d.%02d\",\"VBAT\":\"%d.%01d\"}", millis(), p.msgID, p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
       break;
     case 'f':
-      sprintf(msg, "{\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"state\":\"%d\",\"RSSI\":\"0\",\"SNR\":\"0\",\"VBAT\":\"0\"}", p.msgID, 's', p.nodeID, 0);
+      sprintf(msg, "{\"t\":\"%lu\",\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"state\":\"%d\",\"RSSI\":\"0\",\"SNR\":\"0\",\"VBAT\":\"0\"}", millis(), p.msgID, 's', p.nodeID, 0);
       break;
     case 'd':
-      sprintf(msg, "{\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\"}\0", p.msgID, p.flag, p.nodeID);
+      sprintf(msg, "{\"t\":\"%lu\",\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\"}\0", millis(), p.msgID, p.flag, p.nodeID);
       break;
   }
   relay_q.push(&msg);
