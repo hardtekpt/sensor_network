@@ -25,7 +25,7 @@ void setup() {
     SPI.begin(SCK, MISO, MOSI, SS);
   #endif
   //LoRa.setTxPower(txPower);
-  //LoRa.setSpreadingFactor(spreadingFactor);
+  
   //LoRa.setSignalBandwidth(signalBandwidth);
   //LoRa.setCodingRate4(codingRateDenominator);
   LoRa.setPins(SS, RST, DIO0);
@@ -34,6 +34,9 @@ void setup() {
     Serial.println("LoRa init failed.");
     while (true);
   }
+
+  LoRa.setSpreadingFactor(7);
+  LoRa.setCodingRate4(8);
 
   LoRa.setSyncWord(netID);
   LoRa.enableCrc();

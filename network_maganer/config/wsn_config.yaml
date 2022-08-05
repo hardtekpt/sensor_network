@@ -18,28 +18,28 @@ wsn_config:
           name: 'BUILTINLED'
           pinMap: [5]
 
-    - id: 0x02
-      location: 
-        - x: 4
-          y: 2
-      sensors: 
-        - id: 0x00
-          name: 'motion sensor'
-          pinMap: [16]
-      actuators: 
-        - id: 0x00
-          name: 'BUILTINLED'
-          pinMap: [5]
+    # - id: 0x02
+    #   location: 
+    #     - x: 4
+    #       y: 2
+    #   sensors: 
+    #     - id: 0x00
+    #       name: 'motion sensor'
+    #       pinMap: [16]
+    #   actuators: 
+    #     - id: 0x00
+    #       name: 'BUILTINLED'
+    #       pinMap: [5]
 
-    - id: 0x03
-      location: 
-        - x: 5
-          y: 3
-      sensors: 
-        - id: 0x00
-          name: 'motion sensor'
-          pinMap: [16]
-      actuators: 
-        - id: 0x00
-          name: 'BUILTINLED'
-          pinMap: [5]
+    # - id: 0x03
+    #   location: 
+    #     - x: 5
+    #       y: 3
+    #   sensors: 
+    #     - id: 0x00
+    #       name: 'motion sensor'
+    #       pinMap: [16]
+    #   actuators: 
+    #     - id: 0x00
+    #       name: 'BUILTINLED'
+    #       pinMap: [5]

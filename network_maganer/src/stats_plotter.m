@@ -1,6 +1,6 @@
 close all;
 
-Array=readtable('basic20.csv');
+Array=readtable('basic50.csv');
 
 t = datetime(table2array(Array(:,1)),'InputFormat','yyyy-MM-dd HH:mm:ss.SSSSSS');
 delay = table2array(Array(:, 2));
@@ -106,7 +106,7 @@ scatter(time(indxs(1:c,3)), rssi(indxs(1:c,3)),markerSize,'MarkerEdgeColor',[0.8
                                                           'LineWidth',1);
                                         
 grid on;
-ylim([-60 -20]);
+ylim([-90 -30]);
 xlim([time(1) time(a+b+c)]);
 xtickformat('mm:ss');
 legend('Node 1 Average', 'Node 2 Average', 'Node 3 Average', 'Node 1 Packets', 'Node 2 Packets', 'Node 3 Packets','Location','best');
@@ -135,7 +135,7 @@ scatter(time(indxs(1:c,3)), snr(indxs(1:c,3)),markerSize,'MarkerEdgeColor',[0.82
                                                          'LineWidth',1);
                                         
 grid on;
-ylim([7 10]);
+ylim([6 13]);
 xlim([time(1) time(a+b+c)]);
 xtickformat('mm:ss');
 legend('Node 1 Average', 'Node 2 Average', 'Node 3 Average', 'Node 1 Packets', 'Node 2 Packets', 'Node 3 Packets','Location','best');
@@ -167,7 +167,7 @@ scatter(time(indxs(1:c,3)), delay(indxs(1:c,3))-delay(indxs_dl(1:f,3)),markerSiz
                                                                                   'LineWidth',1);
                                         
 grid on;
-ylim([175 195]);
+ylim([195 210]);
 xlim([time(1) time(a+b+c)]);
 xtickformat('mm:ss');
 legend('Node 1 Average', 'Node 2 Average', 'Node 3 Average', 'Node 1', 'Node 2', 'Node 3','Location','best');

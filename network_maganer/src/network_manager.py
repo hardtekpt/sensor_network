@@ -32,7 +32,7 @@ _VARS = {'rssi_canvas': None,
 
 def network_test():
 	time.sleep(5)
-	for i in range(20):
+	for i in range(50):
 		global stop_threads
 		for node in nodes:
 			if stop_threads:
