@@ -1,7 +1,13 @@
-/*
- * Header file for the node program. Contains hardware pinouts, 
- * LoRa modem configs and node settings
-*/
+/**
+ * @file node_definitions_1.h
+ * @author Francisco Santos (francisco.velez@tecnico.ulisboa.pt)
+ * @brief Definitions for node with id 1
+ * @version 1.0
+ * @date 2022-08-10
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 
 #ifndef NODE_DEFINITIONS_1_H
 #define NODE_DEFINITIONS_1_H

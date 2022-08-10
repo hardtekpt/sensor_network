@@ -1,6 +1,13 @@
-/*
- * Header file for the communication protocol library. Contains the used data structures,
- * function declaration and general configuartion options for the library
+/**
+ * @file comms_protocol.h
+ * @author Francisco Santos (francisco.velez@tecnico.ulisboa.pt)
+ * @brief Header file for the communication protocol library. Contains the used data structures,
+ *        function declaration and general configuartion options for the library
+ * @version 1.0
+ * @date 2022-08-10
+ * 
+ * @copyright Copyright (c) 2022
+ * 
  */
  
 #ifndef COMMS_PROTOCOL_H

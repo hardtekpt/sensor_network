@@ -1,16 +1,27 @@
-/*
- * Node script - send sensor data to gateway and receive commands from gateway
-*/
+
+/**
+ * @file node.ino
+ * @author Francisco Santos (francisco.velez@tecnico.ulisboa.pt)
+ * @brief Node script - send sensor data to gateway and receive commands from gateway
+ * @version 1.0
+ * @date 2022-08-09
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 
 #include "comms_protocol.h"
 
-/*
+
+/**
  * Function: setup
  * ----------------------------
- *   Runs once at boot. Configure the serial communication. Configure the LoRa radio.
- *   Configure the sensors and actuators input mode
- *
- *   returns: void
+ * @brief Arduino setup function
+ * 
+ * Runs once at boot. Configure the serial communication. Configure the LoRa radio.
+ * Configure the sensors and actuators input mode
+ * 
+ * @return void
  */
 void setup() {
   for(int i=0; i<sensN; i++){
@@ -49,14 +60,17 @@ void setup() {
   sendSensorData(0, 3);
 }
 
-/*
+
+/**
  * Function: loop
  * ----------------------------
- *   Main loop function. checks for incoming uplink messages and downlink requests from the server.
- *   calls getMsgFromQueueAndSend on fixed schedules to avoid congestion of the communication channel
- *   and sends an uplink message with the node status periodically.
- *
- *   returns: void
+ * @brief Arduino loop function
+ * 
+ * Main loop function. checks for incoming uplink messages and downlink requests from the server.
+ * calls getMsgFromQueueAndSend on fixed schedules to avoid congestion of the communication channel
+ * and sends an uplink message with the node status periodically.
+ * 
+ * @return void
  */
 void loop() {
   unsigned long currentMillis = millis();

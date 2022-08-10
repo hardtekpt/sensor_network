@@ -1,5 +1,12 @@
-/*
- * Communication Protocol library - set of functions and data structures used to build a network using the LoRa modulation radios
+/**
+ * @file comms_protocol.cpp
+ * @author Francisco Santos (francisco.velez@tecnico.ulisboa.pt)
+ * @brief Communication Protocol library - set of functions and data structures used to build a network using the LoRa modulation radios
+ * @version 1.0
+ * @date 2022-08-10
+ * 
+ * @copyright Copyright (c) 2022
+ * 
  */
 
 #include "comms_protocol.h"
@@ -14,41 +21,32 @@ int msgCount = 0;
 cppQueue  msg_q(sizeof(Msg), MAX_QUEUE_SIZE, IMPLEMENTATION);
 aes256_context ctxt;
 
-
-/*
- * Function: LoRa_rxMode
- * ----------------------------
- *   Sets the LoRa radio to receive mode
- *
- *   returns: void
+/**
+ * @brief Sets the LoRa radio to receive mode
+ * 
+ * @return void
  */
 void LoRa_rxMode() {
   LoRa.enableInvertIQ();
   LoRa.receive();
 }
 
-/*
- * Function: LoRa_txMode
- * ----------------------------
- *   Sets the LoRa radio to transmit mode
- *
- *   returns: void
+/**
+ * @brief Sets the LoRa radio to transmit mode
+ * 
+ * @return void
  */
 void LoRa_txMode() {
   LoRa.idle();
   LoRa.disableInvertIQ();
 }
 
-/*
- * Function: LoRa_sendMessage
- * ----------------------------
- *   Sets the radio to transmit mode, sends a message string using the LoRa radio
- *   and sets the radio back to receive mode
- *   
- *   message: message to send
- *   nodeID: ID of the destination node
- *
- *   returns: void
+/**
+ * @brief Sets the radio to transmit mode, sends a message string using the LoRa radio
+ *        and sets the radio back to receive mode
+ * 
+ * @param message message to send
+ * @return void
  */
 void LoRa_sendMessage(byte *message) {
   LoRa_txMode();                        // set tx mode
@@ -61,17 +59,8 @@ void LoRa_sendMessage(byte *message) {
   LoRa_rxMode();
 }
 
-/*
- * Function: splitAndEncrypt
- * ----------------------------
- *   Encrypts a message (character array) using the AES256 algorythm with the corresponding node key
- *   The encryption is made by encrypting blocks of 16 bytes and joining them together
- *   
- *   msg: message array to be decrypted
- *
- *   returns: a string containing the encrypted message
- */
-String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]) {
+
+/*String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]) {
   String enc = "";
   aes256_init(&ctxt,(uint8_t *) key);
   const char * p = msg;
@@ -87,8 +76,15 @@ String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]) {
   }
   aes256_done(&ctxt);
   return enc;
-}
+}*/
 
+/**
+ * @brief Encrypts a message (character array) using the AES256 algorythm with the corresponding node key
+ *        The encryption is made by encrypting blocks of 16 bytes and joining them together
+ * 
+ * @param msg message array to be decrypted
+ * @return byte* a byte array containing the encrypted message
+ */
 byte *splitAndEncrypt2(char msg[MAX_PAYLOAD_SIZE]) {
   String enc = "";
   aes256_init(&ctxt,(uint8_t *) key);
@@ -115,15 +111,21 @@ byte *splitAndEncrypt2(char msg[MAX_PAYLOAD_SIZE]) {
  *   msg: message string to be decrypted
  *
  *   returns: an array of characters containing the decrypted message
- */
+ 
 char  *decryptMsg(String msg) {
   static uint8_t data[MAX_PAYLOAD_SIZE+1];
   static char m[MAX_PAYLOAD_SIZE+1];
   msg.toCharArray(m, MAX_PAYLOAD_SIZE+1);
   aes256_decrypt_ecb(&ctxt, (uint8_t *)m);
   return (char *)m;
-}
+}*/
 
+/**
+ * @brief Decrypts a message string using the AES256 algorythm with the corresponding node key
+ * 
+ * @param msg message string to be decrypted
+ * @return char* an array of characters containing the decrypted message
+ */
 char  *decryptMsg2(char msg[MAX_PAYLOAD_SIZE+1]) {
   static uint8_t data[MAX_PAYLOAD_SIZE+1];
   memcpy(data, msg, MAX_PAYLOAD_SIZE+1);
@@ -133,15 +135,13 @@ char  *decryptMsg2(char msg[MAX_PAYLOAD_SIZE+1]) {
   return (char *)data;
 }
 
-/*
- * Function: mymin
- * ----------------------------
- *   returns the minimum value between two integers
- *   
- *   a: first integer to compare
- *   b: second integer to compare
- *
- *   returns: the smaller between a and b
+
+/**
+ * @brief returns the minimum value between two integers
+ * 
+ * @param a first integer to compare
+ * @param b second integer to compare
+ * @return int the smaller between a and b
  */
 int mymin(int a, int b){
   if (a>b)
@@ -149,15 +149,13 @@ int mymin(int a, int b){
   return a;
 }
 
-/*
- * Function: sendAck
- * ----------------------------
- *   Send an acknowledge message confirming the reception of an uplink transmission
- *   
- *   msgID: ID of the message being acknowledged
- *   nodeID: ID of the destination node
- *
- *   returns: void
+
+
+/**
+ * @brief Send an acknowledge message confirming the reception of an uplink transmission
+ * 
+ * @param msgID ID of the message being acknowledged
+ * @return void
  */
 void sendAck(byte msgID) {
   String enc;
@@ -189,14 +187,12 @@ void sendAck(byte msgID) {
   msg_q.push(&msg);
 }
 
-/*
- * Function: sendStatus
- * ----------------------------
- *   Send an uplink message containing the node status
- *   
- *   msgID: ID of the status request message
- *
- *   returns: void
+
+/**
+ * @brief Send an uplink message containing the node status
+ * 
+ * @param msgID ID of the status request message
+ * @return void
  */
 void sendStatus(byte msgID) {
   Msg msg;
@@ -228,15 +224,12 @@ void sendStatus(byte msgID) {
   msg_q.push(&msg);
 }
 
-/*
- * Function: setActState
- * ----------------------------
- *   Sets the state of the relevant actuator with the relevant value
- *   
- *   ID: ID of the relevant actuator
- *   val: value to which the actuator is set to
- *
- *   returns: void
+/**
+ * @brief Sets the state of the relevant actuator with the relevant value
+ * 
+ * @param ID ID of the relevant actuator
+ * @param val value to which the actuator is set to
+ * @return void
  */
 void setActState(int ID, int val) {
   Serial.print("Set actuator: ");
@@ -246,20 +239,17 @@ void setActState(int ID, int val) {
   digitalWrite(actPin[ID], val);
 }
 
-/*
- * Function: sendSensorData
- * ----------------------------
- *   Adds to the message queue an uplink message containing sensor data.
- *   
- *   Note: The ADC value is a 12-bit number, so the maximum value is 4095 (counting from 0).
- *         To convert the ADC integer value to a real voltage you’ll need to divide it by the maximum value of 4095,
- *         then double it (note above that Adafruit halves the voltage), then multiply that by the reference voltage of the ESP32 which 
- *         is 3.3V and then vinally, multiply that again by the ADC Reference Voltage of 1100mV.
- *   
- *   sensorID: ID of the relevant sensor
- *   sensorVal: value read from the relevant sensor
- *
- *   returns: void
+/**
+ * @brief Adds to the message queue an uplink message containing sensor data.
+ * 
+ * Note: The ADC value is a 12-bit number, so the maximum value is 4095 (counting from 0).
+ *       To convert the ADC integer value to a real voltage you’ll need to divide it by the maximum value of 4095,
+ *       then double it (note above that Adafruit halves the voltage), then multiply that by the reference voltage of the ESP32 which 
+ *       is 3.3V and then vinally, multiply that again by the ADC Reference Voltage of 1100mV.
+ * 
+ * @param sensorID ID of the relevant sensor
+ * @param sensorVal value read from the relevant sensor
+ * @return void
  */
 void sendSensorData(byte sensorID, byte sensorVal) {
   Msg msg;
@@ -290,15 +280,12 @@ void sendSensorData(byte sensorID, byte sensorVal) {
   msg_q.push(&msg);
 }
 
-/*
- * Function: getMsgFromQueueAndSend
- * ----------------------------
- *   Get a message from the send queue and send it. Implements retransmission 
- *   in case an acknowledge message is not received. Aware of a failed transmission.
- *   
- *   currentMillis: current time in millisenconds since boot
- *
- *   returns: void
+/**
+ * @brief Get a message from the send queue and send it. Implements retransmission 
+ *        in case an acknowledge message is not received. Aware of a failed transmission.
+ * 
+ * @param currentMillis current time in millisenconds since boot
+ * @return void
  */
 void getMsgFromQueueAndSend(unsigned long currentMillis) {
   if (!msg_q.isEmpty()) {
@@ -329,15 +316,12 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
   }
 }
 
-/*
- * Function: onReceive
- * ----------------------------
- *   Called every time a new message is received. Filters unwanted messages, decrypts the payload,
- *   gets the relevant fields from the payload and sends back an acknowledge message if necessary.
- *   
- *   packetSize: size of the incoming message in bytes
- *
- *   returns: void
+/**
+ * @brief Called every time a new message is received. Filters unwanted messages, decrypts the payload,
+ *        gets the relevant fields from the payload and sends back an acknowledge message if necessary.
+ * 
+ * @param packetSize size of the incoming message in bytes
+ * @return void
  */
 void onReceive(int packetSize){
   byte rNetID = LoRa.read();
