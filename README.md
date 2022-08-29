@@ -10,4 +10,4 @@ Additionally a python application with a GUI to monitor and manage the network i
 
 ## Documentation
 
-https://hardtekpt.github.io/sensor_network_docs/
+https://hardtekpt.github.io/sensor_network/
