@@ -84,6 +84,7 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Data structure that holds the encrypted payload along with other important fields. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

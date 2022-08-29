@@ -1,7 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.17">
-  <compound refid="struct_data" kind="struct"><name>Data</name>
-  </compound>
   <compound refid="structstr_msg" kind="struct"><name>strMsg</name>
     <member refid="structstr_msg_1aa317c38597aa7c3a77cae48539b97148" kind="variable"><name>msg</name></member>
     <member refid="structstr_msg_1a400dc636a83c062cf829e45113b491ce" kind="variable"><name>msgID</name></member>

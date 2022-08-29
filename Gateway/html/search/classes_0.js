@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['data_71',['Data',['../struct_data.html',1,'']]]
+  ['strmsg_70',['strMsg',['../structstr_msg.html',1,'']]],
+  ['strpayload_71',['strPayload',['../structstr_payload.html',1,'']]]
 ];

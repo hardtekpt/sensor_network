@@ -123,6 +123,7 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
+<para>Data structure that holds the data for all the fields in the payload. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

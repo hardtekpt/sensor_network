@@ -230,6 +230,7 @@
         <argsstring></argsstring>
         <name>Payload</name>
         <briefdescription>
+<para>Data structure that holds the data for all the fields in the payload. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -243,6 +244,7 @@
         <argsstring></argsstring>
         <name>Msg</name>
         <briefdescription>
+<para>Data structure that holds the encrypted payload along with other important fields. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
@@ -644,7 +646,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="124" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="335" bodyend="386" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="124" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="124" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="336" bodyend="387" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="124" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1a219dcdade25952b91806066261a45539" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -715,6 +717,14 @@
 <para>ID of the message being acknowledged </para>
 </parameterdescription>
 </parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nodeID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the destination node </para>
+</parameterdescription>
+</parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>void </para>
 </simplesect>
@@ -722,7 +732,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="127" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="112" bodyend="132" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="127" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="127" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="113" bodyend="133" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="127" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1af05ee2950c64bf21cb7aa13a8280163f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -752,7 +762,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="128" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="254" bodyend="270" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="128" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="128" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="255" bodyend="271" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="128" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1afaa2caa37a55c9125471b5b6f1f6324b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -782,7 +792,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="129" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="278" bodyend="299" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="129" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="129" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="279" bodyend="300" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="129" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1a15c330bc3cd75ecf3800db120a1a22d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -810,7 +820,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="130" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="307" bodyend="326" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="130" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="130" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="308" bodyend="327" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="130" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1a091b9218e6ed5b060bc3d1104dde7109" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -840,7 +850,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="131" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="212" bodyend="246" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="131" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="131" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="213" bodyend="247" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="131" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1a8a00db8781effc6b141f2c4fd8646254" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -870,7 +880,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="132" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="140" bodyend="167" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="132" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="132" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="141" bodyend="168" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="132" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1afae50b92afd675e09293f2930472cb58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -924,7 +934,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="133" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="177" bodyend="203" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="133" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="133" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="178" bodyend="204" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="133" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
