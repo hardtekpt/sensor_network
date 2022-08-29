@@ -107,6 +107,7 @@ int mymin(int a, int b){
  * @brief Send an acknowledge message confirming the reception of an uplink transmission
  * 
  * @param msgID ID of the message being acknowledged
+ * @param nodeID ID of the destination node
  * @return void
  */
 void sendAck(byte msgID, byte nodeID) {

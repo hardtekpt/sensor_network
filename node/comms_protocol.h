@@ -56,7 +56,7 @@ const long signalBandwidth = 125E3;
 const int codingRateDenominator = 5;
 
 /**
- * @struct Data structure that holds the data for all the fields in the payload
+ * @brief Data structure that holds the data for all the fields in the payload
  * 
  */
 typedef struct strPayload {
@@ -70,7 +70,7 @@ typedef struct strPayload {
 } Payload;
 
 /**
- * @struct Data structure that holds the encrypted payload along with other important fields
+ * @brief Data structure that holds the encrypted payload along with other important fields
  * 
  */
 typedef struct strMsg {
