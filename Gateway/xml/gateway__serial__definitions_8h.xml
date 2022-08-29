@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="gateway__serial__definitions_8h" kind="file" language="C++">
+    <compoundname>gateway_serial_definitions.h</compoundname>
+    <includedby refid="comms__protocol_8h" local="yes">/sensor_network/gateway_serial/comms_protocol.h</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>/sensor_network/gateway_serial/gateway_serial_definitions.h</label>
+        <link refid="gateway__serial__definitions_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/sensor_network/gateway_serial/comms_protocol.cpp</label>
+        <link refid="comms__protocol_8cpp"/>
+      </node>
+      <node id="4">
+        <label>/sensor_network/gateway_serial/gateway_serial.ino</label>
+        <link refid="gateway__serial_8ino"/>
+      </node>
+      <node id="2">
+        <label>/sensor_network/gateway_serial/comms_protocol.h</label>
+        <link refid="comms__protocol_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="gateway__serial__definitions_8h_1ad4455691936f92fdd6c37566fc58ba1f" prot="public" static="no">
+        <name>BAUD_RATE</name>
+        <initializer>9600</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/gateway_serial/gateway_serial_definitions.h" line="10" column="9" bodyfile="/sensor_network/gateway_serial/gateway_serial_definitions.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gateway__serial__definitions_8h_1a88f7782e210e61586baf33b93240d905" prot="public" static="no">
+        <name>SS</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/gateway_serial/gateway_serial_definitions.h" line="18" column="9" bodyfile="/sensor_network/gateway_serial/gateway_serial_definitions.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gateway__serial__definitions_8h_1ac5d957e4fd3dc11cd97a54cf9ca057a4" prot="public" static="no">
+        <name>RST</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/gateway_serial/gateway_serial_definitions.h" line="19" column="9" bodyfile="/sensor_network/gateway_serial/gateway_serial_definitions.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="gateway__serial__definitions_8h_1a95c9efcc1a55a72bd5cca0bcfcd18a0c" prot="public" static="no">
+        <name>DIO0</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/gateway_serial/gateway_serial_definitions.h" line="20" column="9" bodyfile="/sensor_network/gateway_serial/gateway_serial_definitions.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="gateway__serial__definitions_8h_1a51fda759a286a431f9d36489bef76234" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int gatewayID</definition>
+        <argsstring></argsstring>
+        <name>gatewayID</name>
+        <initializer>= 0xFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/gateway_serial/gateway_serial_definitions.h" line="23" column="11" bodyfile="/sensor_network/gateway_serial/gateway_serial_definitions.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="gateway__serial__definitions_8h_1ade7b2a67f256bbe99e2fc48a80068ee8" prot="public" static="no" mutable="no">
+        <type>const byte</type>
+        <definition>const byte netID</definition>
+        <argsstring></argsstring>
+        <name>netID</name>
+        <initializer>= 0xF3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/gateway_serial/gateway_serial_definitions.h" line="24" column="12" bodyfile="/sensor_network/gateway_serial/gateway_serial_definitions.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Header<sp/>file<sp/>for<sp/>the<sp/>gateway<sp/>program.<sp/>Contains<sp/>hardware<sp/>pinouts,</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>LoRa<sp/>modem<sp/>configs<sp/>and<sp/>gateway<sp/>settings</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GATEWAY_SERIAL_DEFINITIONS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GATEWAY_SERIAL_DEFINITIONS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Baud<sp/>rate<sp/>for<sp/>serial<sp/>communication</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="gateway__serial__definitions_8h_1ad4455691936f92fdd6c37566fc58ba1f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BAUD_RATE<sp/>9600</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPI<sp/>pinout<sp/>for<sp/>TTGO<sp/>boards</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>SCK<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>MISO<sp/>19</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>MOSI<sp/>27</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LoRa<sp/>Modem<sp/>Pinout<sp/>for<sp/>boards<sp/>with<sp/>the<sp/>Dragino<sp/>LoRa<sp/>shield</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="gateway__serial__definitions_8h_1a88f7782e210e61586baf33b93240d905" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SS<sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="gateway__serial__definitions_8h_1ac5d957e4fd3dc11cd97a54cf9ca057a4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RST<sp/>9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="gateway__serial__definitions_8h_1a95c9efcc1a55a72bd5cca0bcfcd18a0c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DIO0<sp/>2<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Gateway<sp/>Settings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="gateway__serial__definitions_8h_1a51fda759a286a431f9d36489bef76234" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="gateway__serial__definitions_8h_1a51fda759a286a431f9d36489bef76234" kindref="member">gatewayID</ref><sp/>=<sp/>0xFF;</highlight></codeline>
+<codeline lineno="24" refid="gateway__serial__definitions_8h_1ade7b2a67f256bbe99e2fc48a80068ee8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/><ref refid="gateway__serial__definitions_8h_1ade7b2a67f256bbe99e2fc48a80068ee8" kindref="member">netID</ref><sp/>=<sp/>0xF3;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/sensor_network/gateway_serial/gateway_serial_definitions.h"/>
+  </compounddef>
+</doxygen>

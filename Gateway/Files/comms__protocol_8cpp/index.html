@@ -1,0 +1,1370 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Francisco Santos">
+      
+      
+        <link rel="canonical" href="https://hardtekpt.github.io/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>comms_protocol.cpp - Sensor Network Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#comms_protocolcpp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sensor Network Documentation" class="md-header__button md-logo" aria-label="Sensor Network Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sensor Network Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              comms_protocol.cpp
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hardtekpt/sensor_network_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sensor_network_docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sensor Network Documentation" class="md-nav__button md-logo" aria-label="Sensor Network Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sensor Network Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hardtekpt/sensor_network_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sensor_network_docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pages/repo_structure/" class="md-nav__link">
+        Repository Structure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pages/install_guide/" class="md-nav__link">
+        Install Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pages/example_usage/" class="md-nav__link">
+        Example Usage
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Packages Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Packages Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Packages Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Node
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Node" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Node
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Node/Files/" class="md-nav__link">
+        Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Node/Classes/" class="md-nav__link">
+        Classes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Gateway
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Gateway" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Gateway
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Classes/" class="md-nav__link">
+        Classes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-description" class="md-nav__link">
+    Detailed Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions-documentation" class="md-nav__link">
+    Functions Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-relay_q" class="md-nav__link">
+    function relay_q
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-msg_q" class="md-nav__link">
+    function msg_q
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-lora_rxmode" class="md-nav__link">
+    function LoRa_rxMode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-lora_txmode" class="md-nav__link">
+    function LoRa_txMode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-lora_sendmessage" class="md-nav__link">
+    function LoRa_sendMessage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-encrypt" class="md-nav__link">
+    function encrypt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-decryptmsg" class="md-nav__link">
+    function decryptMsg
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-mymin" class="md-nav__link">
+    function mymin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-sendack" class="md-nav__link">
+    function sendAck
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-sendstatusrequest" class="md-nav__link">
+    function sendStatusRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-sendactuatorcontrol" class="md-nav__link">
+    function sendActuatorControl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getmsgfromqueueandsend" class="md-nav__link">
+    function getMsgFromQueueAndSend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-relaymsgfromqueuetoserver" class="md-nav__link">
+    function relayMsgFromQueueToServer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-constructjsonandaddtoqueue" class="md-nav__link">
+    function constructJsonAndAddToQueue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-relaydownlinkmsg" class="md-nav__link">
+    function relayDownlinkMsg
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-onreceive" class="md-nav__link">
+    function onReceive
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes-documentation" class="md-nav__link">
+    Attributes Documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variable-currmsg" class="md-nav__link">
+    variable currMsg
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-count" class="md-nav__link">
+    variable count
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-prevmilr" class="md-nav__link">
+    variable prevMilR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-prevmil" class="md-nav__link">
+    variable prevMil
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-msgcount" class="md-nav__link">
+    variable msgCount
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-ctxt" class="md-nav__link">
+    variable ctxt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    Source code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/hardtekpt/sensor_network_docs/edit/master/gateway_serial/docs/Files/comms__protocol_8cpp.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="comms_protocolcpp">comms_protocol.cpp</h1>
+<p>Communication Protocol library - set of functions and data structures used to build a network using the LoRa modulation radios.  <a href="#detailed-description">More...</a></p>
+<h2 id="functions">Functions</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cppQueue</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-relay-q">relay_q</a></strong>(sizeof(char) * MAX_JSON_PAYLOAD_SIZE, <a href="/sensor_network_docs/Gateway/Files/comms__protocol_8h/#define-max-r-queue-size">MAX_R_QUEUE_SIZE</a> , <a href="/sensor_network_docs/Gateway/Files/comms__protocol_8h/#define-implementation">IMPLEMENTATION</a> )</td>
+</tr>
+<tr>
+<td>cppQueue</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-msg-q">msg_q</a></strong>(sizeof(<a href="/sensor_network_docs/Gateway/Files/comms__protocol_8h/#typedef-msg">Msg</a>) , <a href="/sensor_network_docs/Gateway/Files/comms__protocol_8h/#define-max-queue-size">MAX_QUEUE_SIZE</a> , <a href="/sensor_network_docs/Gateway/Files/comms__protocol_8h/#define-implementation">IMPLEMENTATION</a> )</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-lora-rxmode">LoRa_rxMode</a></strong>()<br>Sets the LoRa radio to receive mode.</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-lora-txmode">LoRa_txMode</a></strong>()<br>Sets the LoRa radio to transmit mode.</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-lora-sendmessage">LoRa_sendMessage</a></strong>(byte * message, byte nodeID)<br>Sets the radio to transmit mode, sends a message string using the LoRa radio and sets the radio back to receive mode.</td>
+</tr>
+<tr>
+<td>byte *</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-encrypt">encrypt</a></strong>(char msg[MAX_PAYLOAD_SIZE])<br>Encrypts a message (character array) using the AES256 algorythm with the corresponding node key The encryption is made by encrypting blocks of 16 bytes and joining them together.</td>
+</tr>
+<tr>
+<td>char *</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-decryptmsg">decryptMsg</a></strong>(char msg[MAX_PAYLOAD_SIZE+1])<br>Decrypts a message string using the AES256 algorythm with the corresponding node key.</td>
+</tr>
+<tr>
+<td>int</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-mymin">mymin</a></strong>(int a, int b)<br>returns the minimum value between two integers</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-sendack">sendAck</a></strong>(byte msgID, byte nodeID)<br>Send an acknowledge message confirming the reception of an uplink transmission.</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-sendstatusrequest">sendStatusRequest</a></strong>(byte nodeID)<br>Send a status request message asking for a specific node to respond with a status update.</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-sendactuatorcontrol">sendActuatorControl</a></strong>(byte nodeID, byte actID, byte actVal)<br>Send a control message to set a value for a node's actuator.</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-getmsgfromqueueandsend">getMsgFromQueueAndSend</a></strong>(unsigned long currentMillis)<br>Get a message from the send queue and send it. Implements retransmission in case an acknowledge message is not received. Aware of a failed transmission.</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-relaymsgfromqueuetoserver">relayMsgFromQueueToServer</a></strong>(unsigned long currentMillis)<br>Get a message from the relay queue and send it to the server via serial communication.</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-constructjsonandaddtoqueue">constructJsonAndAddToQueue</a></strong>(<a href="/sensor_network_docs/Gateway/Files/comms__protocol_8h/#typedef-payload">Payload</a> p)<br>Builds a json string containg the message information and adds the string to the relay queue.</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-relaydownlinkmsg">relayDownlinkMsg</a></strong>(char * dlMsg)<br>Relays the downlink messages received from the server to the corresponding node. Formats the message into a compact form.</td>
+</tr>
+<tr>
+<td>void</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#function-onreceive">onReceive</a></strong>(int packetSize)<br>Called every time a new message is received. Filters unwanted messages, decrypts the payload, gets the relevant fields from the payload and sends back an acknowledge message if necessary. Finally, calls constructJsonAndAddToQueue to build a json message destined for the server.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="attributes">Attributes</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#variable-currmsg">currMsg</a></strong></td>
+</tr>
+<tr>
+<td>int</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#variable-count">count</a></strong></td>
+</tr>
+<tr>
+<td>unsigned long</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#variable-prevmilr">prevMilR</a></strong></td>
+</tr>
+<tr>
+<td>unsigned long</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#variable-prevmil">prevMil</a></strong></td>
+</tr>
+<tr>
+<td>int</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#variable-msgcount">msgCount</a></strong></td>
+</tr>
+<tr>
+<td>aes256_context</td>
+<td><strong><a href="/sensor_network_docs/Gateway/Files/comms__protocol_8cpp/#variable-ctxt">ctxt</a></strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="detailed-description">Detailed Description</h2>
+<p>Communication Protocol library - set of functions and data structures used to build a network using the LoRa modulation radios. </p>
+<p><strong>Author</strong>: Francisco Santos (<a href="mailto:francisco.velez@tecnico.ulisboa.pt">francisco.velez@tecnico.ulisboa.pt</a>) </p>
+<p><strong>Version</strong>: 1.0 </p>
+<p><strong>Date</strong>: 2022-08-10</p>
+<p><strong>Copyright</strong>: Copyright (c) 2022 </p>
+<h2 id="functions-documentation">Functions Documentation</h2>
+<h3 id="function-relay_q">function relay_q</h3>
+<pre><code class="language-cpp">cppQueue relay_q(
+    sizeof(char) * MAX_JSON_PAYLOAD_SIZE,
+    MAX_R_QUEUE_SIZE ,
+    IMPLEMENTATION 
+)
+</code></pre>
+<h3 id="function-msg_q">function msg_q</h3>
+<pre><code class="language-cpp">cppQueue msg_q(
+    sizeof(Msg) ,
+    MAX_QUEUE_SIZE ,
+    IMPLEMENTATION 
+)
+</code></pre>
+<h3 id="function-lora_rxmode">function LoRa_rxMode</h3>
+<pre><code class="language-cpp">void LoRa_rxMode()
+</code></pre>
+<p>Sets the LoRa radio to receive mode. </p>
+<p><strong>Return</strong>: void </p>
+<h3 id="function-lora_txmode">function LoRa_txMode</h3>
+<pre><code class="language-cpp">void LoRa_txMode()
+</code></pre>
+<p>Sets the LoRa radio to transmit mode. </p>
+<p><strong>Return</strong>: void </p>
+<h3 id="function-lora_sendmessage">function LoRa_sendMessage</h3>
+<pre><code class="language-cpp">void LoRa_sendMessage(
+    byte * message,
+    byte nodeID
+)
+</code></pre>
+<p>Sets the radio to transmit mode, sends a message string using the LoRa radio and sets the radio back to receive mode. </p>
+<p><strong>Parameters</strong>: </p>
+<ul>
+<li><strong>message</strong> message to send </li>
+<li><strong>nodeID</strong> ID of the destination node </li>
+</ul>
+<p><strong>Return</strong>: void </p>
+<h3 id="function-encrypt">function encrypt</h3>
+<pre><code class="language-cpp">byte * encrypt(
+    char msg[MAX_PAYLOAD_SIZE]
+)
+</code></pre>
+<p>Encrypts a message (character array) using the AES256 algorythm with the corresponding node key The encryption is made by encrypting blocks of 16 bytes and joining them together. </p>
+<p><strong>Parameters</strong>: </p>
+<ul>
+<li><strong>msg</strong> message array to be decrypted </li>
+</ul>
+<p><strong>Return</strong>: byte* a byte array containing the encrypted message </p>
+<h3 id="function-decryptmsg">function decryptMsg</h3>
+<pre><code class="language-cpp">char * decryptMsg(
+    char msg[MAX_PAYLOAD_SIZE+1]
+)
+</code></pre>
+<p>Decrypts a message string using the AES256 algorythm with the corresponding node key. </p>
+<p><strong>Parameters</strong>: </p>
+<ul>
+<li><strong>msg</strong> message string to be decrypted </li>
+</ul>
+<p><strong>Return</strong>: char* an array of characters containing the decrypted message </p>
+<h3 id="function-mymin">function mymin</h3>
+<pre><code class="language-cpp">int mymin(
+    int a,
+    int b
+)
+</code></pre>
+<p>returns the minimum value between two integers </p>
+<p><strong>Parameters</strong>: </p>
+<ul>
+<li><strong>a</strong> first integer to compare </li>
+<li><strong>b</strong> second integer to compare </li>
+</ul>
+<p><strong>Return</strong>: int the smaller between a and b </p>
+<h3 id="function-sendack">function sendAck</h3>
+<pre><code class="language-cpp">void sendAck(
+    byte msgID,
+    byte nodeID
+)
+</code></pre>
+<p>Send an acknowledge message confirming the reception of an uplink transmission. </p>
+<p><strong>Parameters</strong>: </p>
+<ul>
+<li><strong>msgID</strong> ID of the message being acknowledged </li>
+</ul>
+<p><strong>Return</strong>: void </p>
+<h3 id="function-sendstatusrequest">function sendStatusRequest</h3>
+<pre><code class="language-cpp">void sendStatusRequest(
+    byte nodeID
+)
+</code></pre>
+<p>Send a status request message asking for a specific node to respond with a status update. </p>
+<p><strong>Parameters</strong>: </p>
+<ul>
+<li><strong>nodeID</strong> ID of the destination node </li>
+</ul>
+<p><strong>Return</strong>: void </p>
+<h3 id="function-sendactuatorcontrol">function sendActuatorControl</h3>
+<pre><code class="language-cpp">void sendActuatorControl(
+    byte nodeID,
+    byte actID,
+    byte actVal
+)
+</code></pre>
+<p>Send a control message to set a value for a node's actuator. </p>
+<p><strong>Parameters</strong>: </p>
+<ul>
+<li><strong>nodeID</strong> ID of the destination node </li>
+<li><strong>actID</strong> ID of the actuator to control </li>
+<li><strong>actVal</strong> Value to set the actuator to </li>
+</ul>
+<p><strong>Return</strong>: void </p>
+<h3 id="function-getmsgfromqueueandsend">function getMsgFromQueueAndSend</h3>
+<pre><code class="language-cpp">void getMsgFromQueueAndSend(
+    unsigned long currentMillis
+)
+</code></pre>
+<p>Get a message from the send queue and send it. Implements retransmission in case an acknowledge message is not received. Aware of a failed transmission. </p>
+<p><strong>Parameters</strong>: </p>
+<ul>
+<li><strong>currentMillis</strong> current time in millisenconds since boot </li>
+</ul>
+<p><strong>Return</strong>: void </p>
+<h3 id="function-relaymsgfromqueuetoserver">function relayMsgFromQueueToServer</h3>
+<pre><code class="language-cpp">void relayMsgFromQueueToServer(
+    unsigned long currentMillis
+)
+</code></pre>
+<p>Get a message from the relay queue and send it to the server via serial communication. </p>
+<p><strong>Parameters</strong>: </p>
+<ul>
+<li><strong>currentMillis</strong> current time in millisenconds since boot </li>
+</ul>
+<p><strong>Return</strong>: void </p>
+<h3 id="function-constructjsonandaddtoqueue">function constructJsonAndAddToQueue</h3>
+<pre><code class="language-cpp">void constructJsonAndAddToQueue(
+    Payload p
+)
+</code></pre>
+<p>Builds a json string containg the message information and adds the string to the relay queue. </p>
+<p><strong>Parameters</strong>: </p>
+<ul>
+<li><strong>p</strong> payload structure containing the message information along with RSSI, SNR and battery voltage </li>
+</ul>
+<p><strong>Return</strong>: void </p>
+<h3 id="function-relaydownlinkmsg">function relayDownlinkMsg</h3>
+<pre><code class="language-cpp">void relayDownlinkMsg(
+    char * dlMsg
+)
+</code></pre>
+<p>Relays the downlink messages received from the server to the corresponding node. Formats the message into a compact form. </p>
+<p><strong>Parameters</strong>: </p>
+<ul>
+<li><strong>dlMsg</strong> character array containing the downlink message to be relayed </li>
+</ul>
+<h3 id="function-onreceive">function onReceive</h3>
+<pre><code class="language-cpp">void onReceive(
+    int packetSize
+)
+</code></pre>
+<p>Called every time a new message is received. Filters unwanted messages, decrypts the payload, gets the relevant fields from the payload and sends back an acknowledge message if necessary. Finally, calls constructJsonAndAddToQueue to build a json message destined for the server. </p>
+<p><strong>Parameters</strong>: </p>
+<ul>
+<li><strong>packetSize</strong> size of the incoming message in bytes </li>
+</ul>
+<h2 id="attributes-documentation">Attributes Documentation</h2>
+<h3 id="variable-currmsg">variable currMsg</h3>
+<pre><code class="language-cpp">int currMsg = -1;
+</code></pre>
+<h3 id="variable-count">variable count</h3>
+<pre><code class="language-cpp">int count = 0;
+</code></pre>
+<h3 id="variable-prevmilr">variable prevMilR</h3>
+<pre><code class="language-cpp">unsigned long prevMilR;
+</code></pre>
+<h3 id="variable-prevmil">variable prevMil</h3>
+<pre><code class="language-cpp">unsigned long prevMil;
+</code></pre>
+<h3 id="variable-msgcount">variable msgCount</h3>
+<pre><code class="language-cpp">int msgCount = 0;
+</code></pre>
+<h3 id="variable-ctxt">variable ctxt</h3>
+<pre><code class="language-cpp">aes256_context ctxt;
+</code></pre>
+<h2 id="source-code">Source code</h2>
+<pre><code class="language-cpp">
+#include &quot;comms_protocol.h&quot;
+
+int currMsg = -1;
+int count = 0;
+unsigned long prevMilR;
+unsigned long prevMil;
+int msgCount = 0;
+
+cppQueue  relay_q(sizeof(char)*MAX_JSON_PAYLOAD_SIZE, MAX_R_QUEUE_SIZE, IMPLEMENTATION);
+cppQueue  msg_q(sizeof(Msg), MAX_QUEUE_SIZE, IMPLEMENTATION);
+aes256_context ctxt;
+
+
+void LoRa_rxMode() {
+  LoRa.disableInvertIQ();
+  LoRa.receive();
+}
+
+void LoRa_txMode() {
+  LoRa.idle();                          // set standby mode
+  LoRa.enableInvertIQ();                // active invert I and Q signals
+}
+
+void LoRa_sendMessage(byte *message, byte nodeID) {
+  LoRa_txMode();
+  LoRa.beginPacket();
+  LoRa.write(netID);
+  LoRa.write(nodeID);
+  LoRa.write(message, MAX_ENC_PAYLOAD_SIZE);
+  LoRa.endPacket(false);
+  LoRa_rxMode();
+}
+
+byte *encrypt(char msg[MAX_PAYLOAD_SIZE]) {
+  String enc = &quot;&quot;;
+  const char * p = msg;
+  static byte plain [BLOCK_SIZE];
+  memset (plain, 0, BLOCK_SIZE);  // ensure trailing zeros
+  memcpy (plain, p, mymin (strlen (p), BLOCK_SIZE));
+  aes256_encrypt_ecb(&amp;ctxt, plain);
+  return plain;
+}
+
+char  *decryptMsg(char msg[MAX_PAYLOAD_SIZE+1]) {
+  static char data[MAX_PAYLOAD_SIZE+1];
+  memcpy(data, msg, MAX_PAYLOAD_SIZE+1);
+  aes256_decrypt_ecb(&amp;ctxt, (uint8_t *)data);
+  return (char *)data;
+}
+
+int mymin(int a, int b){
+  if (a&gt;b)
+    return b;
+  return a;
+}
+
+void sendAck(byte msgID, byte nodeID) {
+  String enc;
+  char payload[MAX_PAYLOAD_SIZE];
+  byte l = MAX_PAYLOAD_SIZE;
+  Msg msg;
+
+  sprintf(payload, &quot;%c%c%c%c%c%c&quot;, (char)nodeID, (char)msgID, (char)l, 'a', (char)48, (char)48);
+
+  aes256_init(&amp;ctxt, keys[(int)nodeID]);
+
+  byte *plain = encrypt(payload);
+  memcpy(msg.msg, plain, MAX_PAYLOAD_SIZE);
+  msg.msg[MAX_PAYLOAD_SIZE] = '\0';
+
+  aes256_done(&amp;ctxt);
+
+  msg.msgID = msgID;
+  msg.flag = 'a';
+  msg.nodeID = nodeID;
+  msg_q.push(&amp;msg);
+}
+
+void sendStatusRequest(byte nodeID) {
+  Msg msg;
+  String enc;
+
+  char payload[MAX_PAYLOAD_SIZE];
+  msgCount ++;
+  if (msgCount == 0)
+    msgCount ++;
+  msg.msgID = (byte) msgCount;
+  msg.flag = 's';
+  msg.nodeID = nodeID;
+  byte l = (byte) MAX_PAYLOAD_SIZE;
+
+  sprintf(payload, &quot;%c%c%c%c%c%c&quot;, (char)nodeID, (char)msg.msgID, (char)l, 's', (char)48, (char)48);
+
+  if (nodeID == BROADCAST_ID)
+    aes256_init(&amp;ctxt, keys[0]);
+  else
+    aes256_init(&amp;ctxt, keys[(int)nodeID]);
+
+  byte *plain = encrypt(payload);
+  memcpy(msg.msg, plain, MAX_PAYLOAD_SIZE);
+  msg.msg[MAX_PAYLOAD_SIZE] = '\0';
+
+  aes256_done(&amp;ctxt);
+
+  msg_q.push(&amp;msg);
+}
+
+void sendActuatorControl(byte nodeID, byte actID, byte actVal) {
+  Msg msg;
+  String enc;
+  char payload[MAX_PAYLOAD_SIZE];
+  msgCount ++;
+  if (msgCount == 0)
+    msgCount ++;
+  msg.msgID = (byte) msgCount;
+  msg.actID = actID;
+  msg.actVal = actVal;
+  msg.flag = 'c';
+  msg.nodeID = nodeID;
+  byte l = (byte)MAX_PAYLOAD_SIZE;
+
+  sprintf(payload, &quot;%c%c%c%c%c%c&quot;, (char)nodeID, (char)msg.msgID, (char)l, 'c', (char)actID, (char)actVal);
+
+  aes256_init(&amp;ctxt, keys[(int)nodeID]);
+
+  byte *plain = encrypt(payload);
+  memcpy(msg.msg, plain, MAX_PAYLOAD_SIZE);
+  msg.msg[MAX_PAYLOAD_SIZE] = '\0';
+
+  aes256_done(&amp;ctxt);
+
+  // Add msg to msg queue
+  msg_q.push(&amp;msg);
+}
+
+void getMsgFromQueueAndSend(unsigned long currentMillis) {
+  if (!msg_q.isEmpty()) {
+    Msg msg;
+    msg_q.peek(&amp;msg);
+
+    if (currMsg == msg.msgID)
+      count ++;
+    else
+      count = 0;
+
+    currMsg = msg.msgID;
+    if (count &lt; MAX_N_RETRY) {
+      Payload p;
+      p.msgID = msg.msgID;
+      p.flag = 'd';
+      p.nodeID = msg.nodeID;
+      constructJsonAndAddToQueue(p);
+
+      LoRa_sendMessage(msg.msg, msg.nodeID);
+
+      if(msg.flag == 'a')
+        msg_q.drop();
+      prevMil = currentMillis;
+    } else {
+      if (msg.flag == 's' || msg.flag == 'c') {
+        Payload p;
+        p.msgID = msg.msgID;
+        p.flag = 'f';
+        p.nodeID = msg.nodeID;
+        constructJsonAndAddToQueue(p);
+      }
+      msg_q.drop();
+    }
+  }
+}
+
+ void relayMsgFromQueueToServer(unsigned long currentMillis) {
+  if (!relay_q.isEmpty()) {
+
+    char msg[MAX_JSON_PAYLOAD_SIZE];
+    relay_q.pop(&amp;msg);
+    int i;
+    for(i=0; i&lt;MAX_JSON_PAYLOAD_SIZE; i++)
+      if (msg[i] == '\0')
+        break;
+
+
+    Serial.write(&quot;rm&quot;);
+    Serial.write(msg, i);
+    Serial.write(&quot;\n&quot;);
+  }
+  prevMilR = currentMillis;
+}
+
+ void constructJsonAndAddToQueue(Payload p) {
+  char msg[MAX_JSON_PAYLOAD_SIZE];
+
+  switch (p.flag) {
+    case 'u':
+      sprintf(msg, &quot;{\&quot;t\&quot;:\&quot;%lu\&quot;,\&quot;msgID\&quot;:\&quot;%d\&quot;,\&quot;f\&quot;:\&quot;%c\&quot;,\&quot;nID\&quot;:\&quot;%d\&quot;,\&quot;sID\&quot;:\&quot;%d\&quot;,\&quot;sVal\&quot;:\&quot;%d\&quot;,\&quot;RSSI\&quot;:\&quot;%d\&quot;,\&quot;SNR\&quot;:\&quot;%d.%02d\&quot;,\&quot;VBAT\&quot;:\&quot;%d.%01d\&quot;}&quot;, millis(), p.msgID, p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
+      break;
+    case 's':
+      sprintf(msg, &quot;{\&quot;t\&quot;:\&quot;%lu\&quot;,\&quot;msgID\&quot;:\&quot;%d\&quot;,\&quot;f\&quot;:\&quot;%c\&quot;,\&quot;nID\&quot;:\&quot;%d\&quot;,\&quot;state\&quot;:\&quot;%d\&quot;,\&quot;RSSI\&quot;:\&quot;%d\&quot;,\&quot;SNR\&quot;:\&quot;%d.%02d\&quot;,\&quot;VBAT\&quot;:\&quot;%d.%01d\&quot;}&quot;, millis(), p.msgID, p.flag, p.nodeID, 1, p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
+      break;
+    case 'a':
+      sprintf(msg, &quot;{\&quot;t\&quot;:\&quot;%lu\&quot;,\&quot;msgID\&quot;:\&quot;%d\&quot;,\&quot;f\&quot;:\&quot;%c\&quot;,\&quot;nID\&quot;:\&quot;%d\&quot;,\&quot;actID\&quot;:\&quot;%d\&quot;,\&quot;actVal\&quot;:\&quot;%d\&quot;,\&quot;RSSI\&quot;:\&quot;%d\&quot;,\&quot;SNR\&quot;:\&quot;%d.%02d\&quot;,\&quot;VBAT\&quot;:\&quot;%d.%01d\&quot;}&quot;, millis(), p.msgID, p.flag, p.nodeID, (p.sensorID - 1), (p.sensorVal - 1), p.RSSI, (int)p.SNR, (int)(p.SNR * 100) % 100, (int)p.VBAT, (int)(p.VBAT * 10) % 10);
+      break;
+    case 'f':
+      sprintf(msg, &quot;{\&quot;t\&quot;:\&quot;%lu\&quot;,\&quot;msgID\&quot;:\&quot;%d\&quot;,\&quot;f\&quot;:\&quot;%c\&quot;,\&quot;nID\&quot;:\&quot;%d\&quot;,\&quot;state\&quot;:\&quot;%d\&quot;,\&quot;RSSI\&quot;:\&quot;0\&quot;,\&quot;SNR\&quot;:\&quot;0\&quot;,\&quot;VBAT\&quot;:\&quot;0\&quot;}&quot;, millis(), p.msgID, 's', p.nodeID, 0);
+      break;
+    case 'd':
+      sprintf(msg, &quot;{\&quot;t\&quot;:\&quot;%lu\&quot;,\&quot;msgID\&quot;:\&quot;%d\&quot;,\&quot;f\&quot;:\&quot;%c\&quot;,\&quot;nID\&quot;:\&quot;%d\&quot;}\0&quot;, millis(), p.msgID, p.flag, p.nodeID);
+      break;
+  }
+  relay_q.push(&amp;msg);
+}
+
+void relayDownlinkMsg(char *dlMsg) {
+  char flag = dlMsg[0];
+  int nodeID;
+
+  switch (flag) {
+    case 's':
+      sscanf(dlMsg, &quot;%*c,%d&quot;, &amp;nodeID);
+      if(nodeID == -1)
+        sendStatusRequest((byte)BROADCAST_ID);
+      else
+        sendStatusRequest((byte)nodeID);
+      break;
+    case 'c':
+      int actID;
+      int actVal;
+      sscanf(dlMsg, &quot;%*c,%d,%d,%d&quot;, &amp;nodeID, &amp;actID, &amp;actVal);
+      sendActuatorControl((byte)nodeID, (byte)(actID + 1), (byte)(actVal + 1));
+      break;
+  }
+}
+
+void onReceive(int packetSize) {
+  byte rNetID = LoRa.read();
+  byte rnID = LoRa.read();
+  char buffer1[MAX_ENC_PAYLOAD_SIZE];
+  String message = &quot;&quot;;
+  int i=0;
+  while (LoRa.available()) {
+    buffer1[i] = (char)LoRa.read();
+    i++;
+  }
+
+  if (rNetID = netID) {
+    byte len;
+    Payload p;
+
+    aes256_init(&amp;ctxt, keys[(int)rnID]);
+    strcpy(buffer1, decryptMsg(buffer1));
+    aes256_done(&amp;ctxt);
+
+    buffer1[8] = '\0';
+
+    //Serial.println(buffer1);
+    char a,b;
+    //Serial.println(buffer1);
+    if(sscanf(buffer1, &quot;%c%c%c%c%c%c%c%c&quot;, &amp;p.nodeID, &amp;p.msgID, &amp;len, &amp;p.flag, &amp;p.sensorID, &amp;p.sensorVal, &amp;a, &amp;b) == 8){
+      p.VBAT = (int)(a-1) + (int)(b-1) * 0.1;
+      //Serial.println(p.VBAT);
+      Msg msg;
+      p.RSSI = LoRa.packetRssi();
+      p.SNR = LoRa.packetSnr();
+      if (p.flag == 'u') {
+        sendAck(p.msgID, p.nodeID);
+        //p.sensorVal = buffer1[14];
+      }
+      if (p.flag == 's') {
+        //sendAck(p.msgID, p.nodeID);
+        msg_q.peek(&amp;msg);
+        if (p.msgID == msg.msgID) {
+          msg_q.drop();
+        }
+      } else if (p.flag == 'a') {
+        msg_q.peek(&amp;msg);
+        if (p.msgID == msg.msgID) {
+          p.sensorID = msg.actID;
+          p.sensorVal = msg.actVal;
+          msg_q.drop();
+        }
+      }
+      constructJsonAndAddToQueue(p);
+    }
+  }
+}
+</code></pre>
+<hr />
+<p>Updated on 2022-08-29 at 12:26:25 +0000</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>

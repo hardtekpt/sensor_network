@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structstr_msg" kind="struct" language="C++" prot="public">
+    <compoundname>strMsg</compoundname>
+    <includes refid="comms__protocol_8h" local="no">comms_protocol.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structstr_msg_1aa317c38597aa7c3a77cae48539b97148" prot="public" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte strMsg::msg[MAX_ENC_PAYLOAD_SIZE]</definition>
+        <argsstring>[MAX_ENC_PAYLOAD_SIZE]</argsstring>
+        <name>msg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="101" column="8" bodyfile="/sensor_network/gateway_serial/comms_protocol.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr_msg_1a400dc636a83c062cf829e45113b491ce" prot="public" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte strMsg::msgID</definition>
+        <argsstring></argsstring>
+        <name>msgID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="102" column="8" bodyfile="/sensor_network/gateway_serial/comms_protocol.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr_msg_1a47471bcac685d831ce94b264ca546382" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char strMsg::flag</definition>
+        <argsstring></argsstring>
+        <name>flag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="103" column="8" bodyfile="/sensor_network/gateway_serial/comms_protocol.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr_msg_1a8b1395060c53caed01701835bd6375f3" prot="public" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte strMsg::nodeID</definition>
+        <argsstring></argsstring>
+        <name>nodeID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="104" column="8" bodyfile="/sensor_network/gateway_serial/comms_protocol.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr_msg_1aab92ad6c5be82d968ad76c153af60106" prot="public" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte strMsg::actID</definition>
+        <argsstring></argsstring>
+        <name>actID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="105" column="8" bodyfile="/sensor_network/gateway_serial/comms_protocol.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr_msg_1a6e95896c44998e4d0c631eb4648a6396" prot="public" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte strMsg::actVal</definition>
+        <argsstring></argsstring>
+        <name>actVal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="106" column="8" bodyfile="/sensor_network/gateway_serial/comms_protocol.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/sensor_network/gateway_serial/comms_protocol.h" line="100" column="21" bodyfile="/sensor_network/gateway_serial/comms_protocol.h" bodystart="100" bodyend="107"/>
+    <listofallmembers>
+      <member refid="structstr_msg_1aab92ad6c5be82d968ad76c153af60106" prot="public" virt="non-virtual"><scope>strMsg</scope><name>actID</name></member>
+      <member refid="structstr_msg_1a6e95896c44998e4d0c631eb4648a6396" prot="public" virt="non-virtual"><scope>strMsg</scope><name>actVal</name></member>
+      <member refid="structstr_msg_1a47471bcac685d831ce94b264ca546382" prot="public" virt="non-virtual"><scope>strMsg</scope><name>flag</name></member>
+      <member refid="structstr_msg_1aa317c38597aa7c3a77cae48539b97148" prot="public" virt="non-virtual"><scope>strMsg</scope><name>msg</name></member>
+      <member refid="structstr_msg_1a400dc636a83c062cf829e45113b491ce" prot="public" virt="non-virtual"><scope>strMsg</scope><name>msgID</name></member>
+      <member refid="structstr_msg_1a8b1395060c53caed01701835bd6375f3" prot="public" virt="non-virtual"><scope>strMsg</scope><name>nodeID</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structstr_payload" kind="struct" language="C++" prot="public">
+    <compoundname>strPayload</compoundname>
+    <includes refid="comms__protocol_8h" local="no">comms_protocol.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structstr_payload_1a0db71f6fd950a7bb85b5e7188bd40297" prot="public" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte strPayload::nodeID</definition>
+        <argsstring></argsstring>
+        <name>nodeID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.h" line="63" column="8" bodyfile="/sensor_network/node/comms_protocol.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr_payload_1a7882d27fc12112a627451a4a13eab65a" prot="public" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte strPayload::sensorID</definition>
+        <argsstring></argsstring>
+        <name>sensorID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.h" line="64" column="8" bodyfile="/sensor_network/node/comms_protocol.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr_payload_1a3d454073f20da85f732a59f9074ca59b" prot="public" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte strPayload::msgID</definition>
+        <argsstring></argsstring>
+        <name>msgID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.h" line="65" column="8" bodyfile="/sensor_network/node/comms_protocol.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr_payload_1af62a2714d6172638d34b9dad4ef97c99" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char strPayload::flag</definition>
+        <argsstring></argsstring>
+        <name>flag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.h" line="66" column="8" bodyfile="/sensor_network/node/comms_protocol.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr_payload_1a31b398065408aab6dc2d243df91e2944" prot="public" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte strPayload::sensorVal</definition>
+        <argsstring></argsstring>
+        <name>sensorVal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.h" line="67" column="8" bodyfile="/sensor_network/node/comms_protocol.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr_payload_1a04dac68afca9a6290674e59fe7cac617" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int strPayload::RSSI</definition>
+        <argsstring></argsstring>
+        <name>RSSI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.h" line="68" column="7" bodyfile="/sensor_network/node/comms_protocol.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structstr_payload_1afc4b498b987652cead802e2aaf8f1d60" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float strPayload::SNR</definition>
+        <argsstring></argsstring>
+        <name>SNR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.h" line="69" column="9" bodyfile="/sensor_network/node/comms_protocol.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/sensor_network/node/comms_protocol.h" line="62" column="25" bodyfile="/sensor_network/node/comms_protocol.h" bodystart="62" bodyend="70"/>
+    <listofallmembers>
+      <member refid="structstr_payload_1af62a2714d6172638d34b9dad4ef97c99" prot="public" virt="non-virtual"><scope>strPayload</scope><name>flag</name></member>
+      <member refid="structstr_payload_1a3d454073f20da85f732a59f9074ca59b" prot="public" virt="non-virtual"><scope>strPayload</scope><name>msgID</name></member>
+      <member refid="structstr_payload_1a0db71f6fd950a7bb85b5e7188bd40297" prot="public" virt="non-virtual"><scope>strPayload</scope><name>nodeID</name></member>
+      <member refid="structstr_payload_1a04dac68afca9a6290674e59fe7cac617" prot="public" virt="non-virtual"><scope>strPayload</scope><name>RSSI</name></member>
+      <member refid="structstr_payload_1a7882d27fc12112a627451a4a13eab65a" prot="public" virt="non-virtual"><scope>strPayload</scope><name>sensorID</name></member>
+      <member refid="structstr_payload_1a31b398065408aab6dc2d243df91e2944" prot="public" virt="non-virtual"><scope>strPayload</scope><name>sensorVal</name></member>
+      <member refid="structstr_payload_1afc4b498b987652cead802e2aaf8f1d60" prot="public" virt="non-virtual"><scope>strPayload</scope><name>SNR</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,828 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="comms__protocol_8cpp" kind="file" language="C++">
+    <compoundname>comms_protocol.cpp</compoundname>
+    <includes refid="comms__protocol_8h" local="yes">comms_protocol.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/sensor_network/node/comms_protocol.cpp</label>
+        <link refid="comms__protocol_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>node_definitions.h</label>
+        <link refid="node__definitions_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SPI.h</label>
+      </node>
+      <node id="7">
+        <label>aes256.h</label>
+      </node>
+      <node id="9">
+        <label>node_definitions/node_definitions_3.h</label>
+        <link refid="node__definitions__3_8h"/>
+      </node>
+      <node id="2">
+        <label>comms_protocol.h</label>
+        <link refid="comms__protocol_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Arduino.h</label>
+      </node>
+      <node id="6">
+        <label>cppQueue.h</label>
+      </node>
+      <node id="5">
+        <label>LoRa.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="comms__protocol_8cpp_1a0a46edecb372aedab666bb0b845ba6b8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int currMsg</definition>
+        <argsstring></argsstring>
+        <name>currMsg</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="14" column="5" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="comms__protocol_8cpp_1ad43c3812e6d13e0518d9f8b8f463ffcf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="15" column="5" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="comms__protocol_8cpp_1afad07369259cd493d556473fa3ba8433" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long prevMil</definition>
+        <argsstring></argsstring>
+        <name>prevMil</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="16" column="15" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="comms__protocol_8cpp_1a903ae438e3a8c1bd9edb5aecb54d25d3" prot="public" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long prevMilSU</definition>
+        <argsstring></argsstring>
+        <name>prevMilSU</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="17" column="15" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="comms__protocol_8cpp_1abf58c4ea1cc64b2a020319e64031c008" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float VBAT</definition>
+        <argsstring></argsstring>
+        <name>VBAT</name>
+        <initializer>= 1.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="18" column="7" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="comms__protocol_8cpp_1acba68ade9b1d4ddf6d4289092bd9f21d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int msgCount</definition>
+        <argsstring></argsstring>
+        <name>msgCount</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="19" column="5" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="comms__protocol_8cpp_1a38ebab104a77fc87f092da8bc068a58f" prot="public" static="no" mutable="no">
+        <type>aes256_context</type>
+        <definition>aes256_context ctxt</definition>
+        <argsstring></argsstring>
+        <name>ctxt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="22" column="16" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cppQueue</type>
+        <definition>cppQueue msg_q</definition>
+        <argsstring>(sizeof(Msg), MAX_QUEUE_SIZE, IMPLEMENTATION)</argsstring>
+        <name>msg_q</name>
+        <param>
+          <type>sizeof(<ref refid="comms__protocol_8h_1ad014e4a11d57536042f2c321a8bbbb05" kindref="member">Msg</ref>)</type>
+        </param>
+        <param>
+          <type><ref refid="comms__protocol_8h_1a623ec78b7909090dbedac4af1d52abb4" kindref="member">MAX_QUEUE_SIZE</ref></type>
+        </param>
+        <param>
+          <type><ref refid="comms__protocol_8h_1aafd24a334088de3d7fef309914d49101" kindref="member">IMPLEMENTATION</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="21" column="11" declfile="/sensor_network/node/comms_protocol.cpp" declline="21" declcolumn="11"/>
+      </memberdef>
+      <memberdef kind="function" id="comms__protocol_8cpp_1af107f16dd1552bb658c1936141d9ae7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LoRa_rxMode</definition>
+        <argsstring>()</argsstring>
+        <name>LoRa_rxMode</name>
+        <briefdescription>
+<para>Sets the LoRa radio to receive mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="29" column="6" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="29" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="comms__protocol_8cpp_1af2b412b05e4e8c055d44f3eaab81a3ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LoRa_txMode</definition>
+        <argsstring>()</argsstring>
+        <name>LoRa_txMode</name>
+        <briefdescription>
+<para>Sets the LoRa radio to transmit mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="39" column="6" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="comms__protocol_8cpp_1af16159d027d3309f71766d777aa5c83c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void LoRa_sendMessage</definition>
+        <argsstring>(byte *message)</argsstring>
+        <name>LoRa_sendMessage</name>
+        <param>
+          <type>byte *</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Sets the radio to transmit mode, sends a message string using the LoRa radio and sets the radio back to receive mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>message to send </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="51" column="6" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="51" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="comms__protocol_8cpp_1a43b76b5cd582329628593a29c236dfd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>byte *</type>
+        <definition>byte* encrypt</definition>
+        <argsstring>(char msg[MAX_PAYLOAD_SIZE])</argsstring>
+        <name>encrypt</name>
+        <param>
+          <type>char</type>
+          <declname>msg</declname>
+          <array>[MAX_PAYLOAD_SIZE]</array>
+        </param>
+        <briefdescription>
+<para>Encrypts a message (character array) using the AES256 algorythm with the corresponding node key The encryption is made by encrypting blocks of 16 bytes and joining them together. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>message array to be decrypted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>byte* a byte array containing the encrypted message </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="69" column="6" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="69" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="comms__protocol_8cpp_1a0c9867df000c907e29c02fbd4e1349c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* decryptMsg</definition>
+        <argsstring>(char msg[MAX_PAYLOAD_SIZE+1])</argsstring>
+        <name>decryptMsg</name>
+        <param>
+          <type>char</type>
+          <declname>msg</declname>
+          <array>[MAX_PAYLOAD_SIZE+1]</array>
+        </param>
+        <briefdescription>
+<para>Decrypts a message string using the AES256 algorythm with the corresponding node key. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>message string to be decrypted </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>char* an array of characters containing the decrypted message </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="88" column="7" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="88" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="comms__protocol_8cpp_1ac8271805926e924f56b4d0f889c8bec1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int mymin</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>mymin</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>returns the minimum value between two integers </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>first integer to compare </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>second integer to compare </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int the smaller between a and b </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="105" column="5" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="105" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="comms__protocol_8cpp_1a4cb3b91f794c0555e3adbe5fce614074" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sendAck</definition>
+        <argsstring>(byte msgID)</argsstring>
+        <name>sendAck</name>
+        <param>
+          <type>byte</type>
+          <declname>msgID</declname>
+        </param>
+        <briefdescription>
+<para>Send an acknowledge message confirming the reception of an uplink transmission. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msgID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the message being acknowledged </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="119" column="6" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="119" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="comms__protocol_8cpp_1a3ac3eeb5847878d4d438bfa7622eb428" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sendStatus</definition>
+        <argsstring>(byte msgID)</argsstring>
+        <name>sendStatus</name>
+        <param>
+          <type>byte</type>
+          <declname>msgID</declname>
+        </param>
+        <briefdescription>
+<para>Send an uplink message containing the node status. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msgID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the status request message </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="156" column="6" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="156" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="comms__protocol_8cpp_1a422ca7dc35be9c6885ef6a17191d2d5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setActState</definition>
+        <argsstring>(int ID, int val)</argsstring>
+        <name>setActState</name>
+        <param>
+          <type>int</type>
+          <declname>ID</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+<para>Sets the state of the relevant actuator with the relevant value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the relevant actuator </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value to which the actuator is set to </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="193" column="6" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="193" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="comms__protocol_8cpp_1ae084789be1260b3603c726abedbf8631" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sendSensorData</definition>
+        <argsstring>(byte sensorID, byte sensorVal)</argsstring>
+        <name>sendSensorData</name>
+        <param>
+          <type>byte</type>
+          <declname>sensorID</declname>
+        </param>
+        <param>
+          <type>byte</type>
+          <declname>sensorVal</declname>
+        </param>
+        <briefdescription>
+<para>Adds to the message queue an uplink message containing sensor data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note: The ADC value is a 12-bit number, so the maximum value is 4095 (counting from 0). To convert the ADC integer value to a real voltage you’ll need to divide it by the maximum value of 4095, then double it (note above that Adafruit halves the voltage), then multiply that by the reference voltage of the ESP32 which is 3.3V and then vinally, multiply that again by the ADC Reference Voltage of 1100mV.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sensorID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ID of the relevant sensor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sensorVal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value read from the relevant sensor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="213" column="6" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="213" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="comms__protocol_8cpp_1a091b9218e6ed5b060bc3d1104dde7109" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void getMsgFromQueueAndSend</definition>
+        <argsstring>(unsigned long currentMillis)</argsstring>
+        <name>getMsgFromQueueAndSend</name>
+        <param>
+          <type>unsigned long</type>
+          <declname>currentMillis</declname>
+        </param>
+        <briefdescription>
+<para>Get a message from the send queue and send it. Implements retransmission in case an acknowledge message is not received. Aware of a failed transmission. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>currentMillis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>current time in millisenconds since boot </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="249" column="6" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="249" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="comms__protocol_8cpp_1a54817002e33761dc61558b1138749dfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void onReceive</definition>
+        <argsstring>(int packetSize)</argsstring>
+        <name>onReceive</name>
+        <param>
+          <type>int</type>
+          <declname>packetSize</declname>
+        </param>
+        <briefdescription>
+<para>Called every time a new message is received. Filters unwanted messages, decrypts the payload, gets the relevant fields from the payload and sends back an acknowledge message if necessary. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>packetSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of the incoming message in bytes </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/comms_protocol.cpp" line="285" column="6" bodyfile="/sensor_network/node/comms_protocol.cpp" bodystart="285" bodyend="353"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Communication Protocol library - set of functions and data structures used to build a network using the LoRa modulation radios. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Francisco Santos (<ulink url="mailto:francisco.velez@tecnico.ulisboa.pt">francisco.velez@tecnico.ulisboa.pt</ulink>) </para>
+</simplesect>
+<simplesect kind="version"><para>1.0 </para>
+</simplesect>
+<simplesect kind="date"><para>2022-08-10</para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2022 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="12"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="comms__protocol_8h" kindref="compound">comms_protocol.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1a0a46edecb372aedab666bb0b845ba6b8" kindref="member">currMsg</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1ad43c3812e6d13e0518d9f8b8f463ffcf" kindref="member">count</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1afad07369259cd493d556473fa3ba8433" kindref="member">prevMil</ref>;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1a903ae438e3a8c1bd9edb5aecb54d25d3" kindref="member">prevMilSU</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1abf58c4ea1cc64b2a020319e64031c008" kindref="member">VBAT</ref><sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1acba68ade9b1d4ddf6d4289092bd9f21d" kindref="member">msgCount</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">cppQueue<sp/><sp/><ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structstr_msg" kindref="compound">Msg</ref>),<sp/><ref refid="comms__protocol_8h_1a623ec78b7909090dbedac4af1d52abb4" kindref="member">MAX_QUEUE_SIZE</ref>,<sp/><ref refid="comms__protocol_8h_1aafd24a334088de3d7fef309914d49101" kindref="member">IMPLEMENTATION</ref>);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">aes256_context<sp/><ref refid="comms__protocol_8cpp_1a38ebab104a77fc87f092da8bc068a58f" kindref="member">ctxt</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1af107f16dd1552bb658c1936141d9ae7a" kindref="member">LoRa_rxMode</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>LoRa.enableInvertIQ();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>LoRa.receive();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1af2b412b05e4e8c055d44f3eaab81a3ec" kindref="member">LoRa_txMode</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>LoRa.idle();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>LoRa.disableInvertIQ();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1af16159d027d3309f71766d777aa5c83c" kindref="member">LoRa_sendMessage</ref>(</highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>*message)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1af2b412b05e4e8c055d44f3eaab81a3ec" kindref="member">LoRa_txMode</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>tx<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>LoRa.beginPacket();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>start<sp/>packet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>LoRa.write(<ref refid="node__definitions_8h_1ade7b2a67f256bbe99e2fc48a80068ee8" kindref="member">netID</ref>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>LoRa.write(<ref refid="node__definitions__1_8h_1a16636cae661b5c1ee5fc4de9401865e2" kindref="member">nodeID</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//LoRa.print(message);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>add<sp/>payload</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>LoRa.write(message,<sp/><ref refid="comms__protocol_8h_1acf744f77bd35653cd140f056c5945650" kindref="member">MAX_ENC_PAYLOAD_SIZE</ref>);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>LoRa.endPacket(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>finish<sp/>packet<sp/>and<sp/>send<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1af107f16dd1552bb658c1936141d9ae7a" kindref="member">LoRa_rxMode</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>*<ref refid="comms__protocol_8cpp_1a43b76b5cd582329628593a29c236dfd8" kindref="member">encrypt</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>msg[<ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>])<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>String<sp/>enc<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>aes256_init(&amp;<ref refid="comms__protocol_8cpp_1a38ebab104a77fc87f092da8bc068a58f" kindref="member">ctxt</ref>,(uint8_t<sp/>*)<sp/><ref refid="node__definitions__1_8h_1aa22cd6468e95b86aa191926692b846a0" kindref="member">key</ref>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>p<sp/>=<sp/>msg;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>plain<sp/>[<ref refid="comms__protocol_8h_1ad51ded0bbd705f02f73fc60c0b721ced" kindref="member">BLOCK_SIZE</ref>];</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>memset<sp/>(plain,<sp/>0,<sp/><ref refid="comms__protocol_8h_1ad51ded0bbd705f02f73fc60c0b721ced" kindref="member">BLOCK_SIZE</ref>);<sp/><sp/></highlight><highlight class="comment">//<sp/>ensure<sp/>trailing<sp/>zeros</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>memcpy<sp/>(plain,<sp/>p,<sp/><ref refid="comms__protocol_8cpp_1ac8271805926e924f56b4d0f889c8bec1" kindref="member">mymin</ref><sp/>(strlen<sp/>(p),<sp/><ref refid="comms__protocol_8h_1ad51ded0bbd705f02f73fc60c0b721ced" kindref="member">BLOCK_SIZE</ref>));</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>aes256_encrypt_ecb(&amp;<ref refid="comms__protocol_8cpp_1a38ebab104a77fc87f092da8bc068a58f" kindref="member">ctxt</ref>,<sp/>plain);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>plain;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>aes256_done(&amp;<ref refid="comms__protocol_8cpp_1a38ebab104a77fc87f092da8bc068a58f" kindref="member">ctxt</ref>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/>*<ref refid="comms__protocol_8cpp_1a0c9867df000c907e29c02fbd4e1349c8" kindref="member">decryptMsg</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>msg[<ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>+1])<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>uint8_t<sp/>data[<ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>+1];</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>memcpy(data,<sp/>msg,<sp/><ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>+1);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//static<sp/>char<sp/>m[MAX_PAYLOAD_SIZE+1];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//msg.toCharArray(m,<sp/>MAX_PAYLOAD_SIZE+1);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>aes256_decrypt_ecb(&amp;<ref refid="comms__protocol_8cpp_1a38ebab104a77fc87f092da8bc068a58f" kindref="member">ctxt</ref>,<sp/>(uint8_t<sp/>*)data);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)data;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1ac8271805926e924f56b4d0f889c8bec1" kindref="member">mymin</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b){</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(a&gt;b)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>b;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1a4cb3b91f794c0555e3adbe5fce614074" kindref="member">sendAck</ref>(</highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>msgID)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>String<sp/>enc;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>payload[<ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>];</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>encP[<ref refid="comms__protocol_8h_1acf744f77bd35653cd140f056c5945650" kindref="member">MAX_ENC_PAYLOAD_SIZE</ref>];</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>l<sp/>=<sp/>(byte)<ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><ref refid="structstr_msg" kindref="compound">Msg</ref><sp/>msg;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#if<sp/>defined(ESP32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1abf58c4ea1cc64b2a020319e64031c008" kindref="member">VBAT</ref><sp/>=<sp/>(float)(analogRead(<ref refid="node__definitions__1_8h_1a5e38207a63e9201a67206ae2918be68c" kindref="member">vbatPin</ref>))<sp/>/<sp/>4095*2*3.3*1.1;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a<sp/>=<sp/><ref refid="comms__protocol_8cpp_1abf58c4ea1cc64b2a020319e64031c008" kindref="member">VBAT</ref>;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b<sp/>=<sp/><ref refid="comms__protocol_8cpp_1abf58c4ea1cc64b2a020319e64031c008" kindref="member">VBAT</ref>*10-a*10;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>sprintf(payload,<sp/></highlight><highlight class="stringliteral">&quot;%c%c%c%c%c%c%c%c&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)<ref refid="node__definitions__1_8h_1a16636cae661b5c1ee5fc4de9401865e2" kindref="member">nodeID</ref>,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)msgID,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)l,<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)48,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)48,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)a+1,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)b+1);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//enc<sp/>=<sp/>splitAndEncrypt(payload);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//enc.toCharArray(msg.msg,<sp/>MAX_ENC_PAYLOAD_SIZE);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>*plain<sp/>=<sp/><ref refid="comms__protocol_8cpp_1a43b76b5cd582329628593a29c236dfd8" kindref="member">encrypt</ref>(payload);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>memcpy(msg.<ref refid="structstr_msg_1aa317c38597aa7c3a77cae48539b97148" kindref="member">msg</ref>,<sp/>plain,<sp/><ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>msg.<ref refid="structstr_msg_1aa317c38597aa7c3a77cae48539b97148" kindref="member">msg</ref>[<ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>Serial.print(</highlight><highlight class="stringliteral">&quot;add<sp/>ack<sp/>to<sp/>queue:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>Serial.println(payload);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Serial.print(&quot;enc<sp/>msg:<sp/>&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Serial.println(msg.msg);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>msg.<ref refid="structstr_msg_1a400dc636a83c062cf829e45113b491ce" kindref="member">msgID</ref><sp/>=<sp/>msgID;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>msg.<ref refid="structstr_msg_1a47471bcac685d831ce94b264ca546382" kindref="member">flag</ref><sp/>=<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">;<sp/><sp/></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>.push(&amp;msg);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1a3ac3eeb5847878d4d438bfa7622eb428" kindref="member">sendStatus</ref>(</highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>msgID)<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><ref refid="structstr_msg" kindref="compound">Msg</ref><sp/>msg;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>String<sp/>enc;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>payload[<ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>];</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/>msg.<ref refid="structstr_msg_1a400dc636a83c062cf829e45113b491ce" kindref="member">msgID</ref><sp/>=<sp/>msgID;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>l<sp/>=<sp/>(byte)<sp/><ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#if<sp/>defined(ESP32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1abf58c4ea1cc64b2a020319e64031c008" kindref="member">VBAT</ref><sp/>=<sp/>(float)(analogRead(<ref refid="node__definitions__1_8h_1a5e38207a63e9201a67206ae2918be68c" kindref="member">vbatPin</ref>))<sp/>/<sp/>4095*2*3.3*1.1;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a<sp/>=<sp/><ref refid="comms__protocol_8cpp_1abf58c4ea1cc64b2a020319e64031c008" kindref="member">VBAT</ref>;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b<sp/>=<sp/><ref refid="comms__protocol_8cpp_1abf58c4ea1cc64b2a020319e64031c008" kindref="member">VBAT</ref>*10-a*10;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>sprintf(payload,<sp/></highlight><highlight class="stringliteral">&quot;%c%c%c%c%c%c%c%c&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)<ref refid="node__definitions__1_8h_1a16636cae661b5c1ee5fc4de9401865e2" kindref="member">nodeID</ref>,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)msgID,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)l,<sp/></highlight><highlight class="charliteral">&apos;s&apos;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)48,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)48,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)a+1,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)b+1);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//enc<sp/>=<sp/>splitAndEncrypt(payload);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//enc.toCharArray(msg.msg,<sp/>MAX_ENC_PAYLOAD_SIZE);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>*plain<sp/>=<sp/><ref refid="comms__protocol_8cpp_1a43b76b5cd582329628593a29c236dfd8" kindref="member">encrypt</ref>(payload);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>memcpy(msg.<ref refid="structstr_msg_1aa317c38597aa7c3a77cae48539b97148" kindref="member">msg</ref>,<sp/>plain,<sp/><ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/>msg.<ref refid="structstr_msg_1aa317c38597aa7c3a77cae48539b97148" kindref="member">msg</ref>[<ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>Serial.print(</highlight><highlight class="stringliteral">&quot;add<sp/>status<sp/>to<sp/>queue:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>Serial.println(payload);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Serial.print(&quot;enc<sp/>msg:<sp/>&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Serial.println(msg.msg);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>msg<sp/>to<sp/>msg<sp/>queue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>msg.<ref refid="structstr_msg_1a47471bcac685d831ce94b264ca546382" kindref="member">flag</ref><sp/>=<sp/></highlight><highlight class="charliteral">&apos;s&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>.push(&amp;msg);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1a422ca7dc35be9c6885ef6a17191d2d5b" kindref="member">setActState</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ID,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val)<sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>Serial.print(</highlight><highlight class="stringliteral">&quot;Set<sp/>actuator:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/>Serial.print(ID);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>Serial.print(</highlight><highlight class="stringliteral">&quot;<sp/>with<sp/>value:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/>Serial.println(val);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/>digitalWrite(<ref refid="node__definitions__1_8h_1aea057e12a9529500529f6d9161964fd3" kindref="member">actPin</ref>[ID],<sp/>val);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1ae084789be1260b3603c726abedbf8631" kindref="member">sendSensorData</ref>(</highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>sensorID,<sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>sensorVal)<sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><ref refid="structstr_msg" kindref="compound">Msg</ref><sp/>msg;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/>String<sp/>enc;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>payload[<ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>];</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1acba68ade9b1d4ddf6d4289092bd9f21d" kindref="member">msgCount</ref><sp/>++;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="comms__protocol_8cpp_1acba68ade9b1d4ddf6d4289092bd9f21d" kindref="member">msgCount</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1acba68ade9b1d4ddf6d4289092bd9f21d" kindref="member">msgCount</ref><sp/>++;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/>msg.<ref refid="structstr_msg_1a400dc636a83c062cf829e45113b491ce" kindref="member">msgID</ref><sp/>=<sp/>(byte)<sp/><ref refid="comms__protocol_8cpp_1acba68ade9b1d4ddf6d4289092bd9f21d" kindref="member">msgCount</ref>;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>l<sp/>=<sp/><ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#if<sp/>defined(ESP32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1abf58c4ea1cc64b2a020319e64031c008" kindref="member">VBAT</ref><sp/>=<sp/>(float)(analogRead(<ref refid="node__definitions__1_8h_1a5e38207a63e9201a67206ae2918be68c" kindref="member">vbatPin</ref>))<sp/>/<sp/>4095*2*3.3*1.1;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/>Serial.println(<ref refid="comms__protocol_8cpp_1abf58c4ea1cc64b2a020319e64031c008" kindref="member">VBAT</ref>);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>a<sp/>=<sp/><ref refid="comms__protocol_8cpp_1abf58c4ea1cc64b2a020319e64031c008" kindref="member">VBAT</ref>;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>b<sp/>=<sp/><ref refid="comms__protocol_8cpp_1abf58c4ea1cc64b2a020319e64031c008" kindref="member">VBAT</ref>*10-a*10;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/>sprintf(payload,<sp/></highlight><highlight class="stringliteral">&quot;%c%c%c%c%c%c%c%c&quot;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)<ref refid="node__definitions__1_8h_1a16636cae661b5c1ee5fc4de9401865e2" kindref="member">nodeID</ref>,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)msg.<ref refid="structstr_msg_1a400dc636a83c062cf829e45113b491ce" kindref="member">msgID</ref>,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)l,<sp/></highlight><highlight class="charliteral">&apos;u&apos;</highlight><highlight class="normal">,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)(sensorID<sp/>+<sp/>1),<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)(sensorVal<sp/>+<sp/>1),<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)a+1,<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)b+1);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//enc<sp/>=<sp/>splitAndEncrypt(payload);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//enc.toCharArray(msg.msg,<sp/>MAX_ENC_PAYLOAD_SIZE);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>*plain<sp/>=<sp/><ref refid="comms__protocol_8cpp_1a43b76b5cd582329628593a29c236dfd8" kindref="member">encrypt</ref>(payload);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/>memcpy(msg.<ref refid="structstr_msg_1aa317c38597aa7c3a77cae48539b97148" kindref="member">msg</ref>,<sp/>plain,<sp/><ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/>msg.<ref refid="structstr_msg_1aa317c38597aa7c3a77cae48539b97148" kindref="member">msg</ref>[<ref refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" kindref="member">MAX_PAYLOAD_SIZE</ref>]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>msg<sp/>to<sp/>msg<sp/>queue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/>msg.<ref refid="structstr_msg_1a47471bcac685d831ce94b264ca546382" kindref="member">flag</ref><sp/>=<sp/></highlight><highlight class="charliteral">&apos;u&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>.push(&amp;msg);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1a091b9218e6ed5b060bc3d1104dde7109" kindref="member">getMsgFromQueueAndSend</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>currentMillis)<sp/>{</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>.isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstr_msg" kindref="compound">Msg</ref><sp/>msg;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>.peek(&amp;msg);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="comms__protocol_8cpp_1a0a46edecb372aedab666bb0b845ba6b8" kindref="member">currMsg</ref><sp/>==<sp/>msg.<ref refid="structstr_msg_1a400dc636a83c062cf829e45113b491ce" kindref="member">msgID</ref>)</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1ad43c3812e6d13e0518d9f8b8f463ffcf" kindref="member">count</ref><sp/>++;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1ad43c3812e6d13e0518d9f8b8f463ffcf" kindref="member">count</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a0a46edecb372aedab666bb0b845ba6b8" kindref="member">currMsg</ref><sp/>=<sp/>msg.<ref refid="structstr_msg_1a400dc636a83c062cf829e45113b491ce" kindref="member">msgID</ref>;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="comms__protocol_8cpp_1ad43c3812e6d13e0518d9f8b8f463ffcf" kindref="member">count</ref><sp/>&lt;<sp/><ref refid="comms__protocol_8h_1addaaa188262c960b2aa51012d684d084" kindref="member">MAX_N_RETRY</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Serial.print(</highlight><highlight class="stringliteral">&quot;send<sp/>msg:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Serial.println(msg.msg);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1af16159d027d3309f71766d777aa5c83c" kindref="member">LoRa_sendMessage</ref>(msg.<ref refid="structstr_msg_1aa317c38597aa7c3a77cae48539b97148" kindref="member">msg</ref>);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((msg.<ref refid="structstr_msg_1a47471bcac685d831ce94b264ca546382" kindref="member">flag</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;s&apos;</highlight><highlight class="normal">)<sp/>||<sp/>(msg.<ref refid="structstr_msg_1a47471bcac685d831ce94b264ca546382" kindref="member">flag</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">)){</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>.drop();</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a0a46edecb372aedab666bb0b845ba6b8" kindref="member">currMsg</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Serial.print(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>send<sp/>msg<sp/>with<sp/>id:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Serial.println(msg.<ref refid="structstr_msg_1a400dc636a83c062cf829e45113b491ce" kindref="member">msgID</ref>);</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>.drop();</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a0a46edecb372aedab666bb0b845ba6b8" kindref="member">currMsg</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1afad07369259cd493d556473fa3ba8433" kindref="member">prevMil</ref><sp/>=<sp/>currentMillis;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="276"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comms__protocol_8cpp_1a54817002e33761dc61558b1138749dfb" kindref="member">onReceive</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>packetSize){</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>rNetID<sp/>=<sp/>LoRa.read();</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>rnID<sp/>=<sp/>LoRa.read();</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer1[<ref refid="comms__protocol_8h_1acf744f77bd35653cd140f056c5945650" kindref="member">MAX_ENC_PAYLOAD_SIZE</ref>];</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>buffer2[<ref refid="comms__protocol_8h_1acf744f77bd35653cd140f056c5945650" kindref="member">MAX_ENC_PAYLOAD_SIZE</ref>];</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/>String<sp/>message<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(LoRa.available()<sp/>&amp;&amp;<sp/>i&lt;<ref refid="comms__protocol_8h_1acf744f77bd35653cd140f056c5945650" kindref="member">MAX_ENC_PAYLOAD_SIZE</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Serial.println(LoRa.peek(),<sp/>HEX);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>buffer1[i]<sp/>=<sp/>(char)LoRa.read();</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//message<sp/>+=<sp/>(char)LoRa.read();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;msg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Serial.println(message.length());</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Serial.println(MAX_ENC_PAYLOAD_SIZE);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Serial.println(rNetID<sp/>==<sp/>netID);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rNetID<sp/>==<sp/><ref refid="node__definitions_8h_1ade7b2a67f256bbe99e2fc48a80068ee8" kindref="member">netID</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;New<sp/>msg<sp/>received&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//int<sp/>j<sp/>=<sp/>message.length()<sp/>/<sp/>ENC_BLOCK_SIZE;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//int<sp/>h<sp/>=<sp/>message.length()<sp/>/<sp/>(1<sp/>*<sp/>j);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>len;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstr_payload" kindref="compound">Payload</ref><sp/>p;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(rnID<sp/>==<sp/><ref refid="comms__protocol_8h_1ab9fe47395310b34fa1ceb112c9ca10e2" kindref="member">BROADCAST_ID</ref>)</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>aes256_init(&amp;<ref refid="comms__protocol_8cpp_1a38ebab104a77fc87f092da8bc068a58f" kindref="member">ctxt</ref>,(uint8_t<sp/>*)<sp/><ref refid="comms__protocol_8h_1a86fa18c6c3f1a8443ef16c590f5b04f0" kindref="member">keyBroadcast</ref>);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>aes256_init(&amp;<ref refid="comms__protocol_8cpp_1a38ebab104a77fc87f092da8bc068a58f" kindref="member">ctxt</ref>,(uint8_t<sp/>*)<sp/><ref refid="node__definitions__1_8h_1aa22cd6468e95b86aa191926692b846a0" kindref="member">key</ref>);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>j;<sp/>i++)<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>if<sp/>(i<sp/>==<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>strcpy(buffer1,<sp/>decryptMsg(message.substring(i<sp/>*<sp/>ENC_BLOCK_SIZE,<sp/>(i<sp/>+<sp/>1)<sp/>*<sp/>ENC_BLOCK_SIZE)));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>strcat(buffer1,<sp/>decryptMsg(message.substring(i<sp/>*<sp/>ENC_BLOCK_SIZE,<sp/>(i<sp/>+<sp/>1)<sp/>*<sp/>ENC_BLOCK_SIZE)));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>strcpy(buffer2,<sp/><ref refid="comms__protocol_8cpp_1a0c9867df000c907e29c02fbd4e1349c8" kindref="member">decryptMsg</ref>(buffer1));</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/>aes256_done(&amp;<ref refid="comms__protocol_8cpp_1a38ebab104a77fc87f092da8bc068a58f" kindref="member">ctxt</ref>);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>buffer2[6]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(buffer2);</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(sscanf(buffer2,<sp/></highlight><highlight class="stringliteral">&quot;%c%c%c%c%c%c&quot;</highlight><highlight class="normal">,<sp/>&amp;p.<ref refid="structstr_payload_1a0db71f6fd950a7bb85b5e7188bd40297" kindref="member">nodeID</ref>,<sp/>&amp;p.<ref refid="structstr_payload_1a3d454073f20da85f732a59f9074ca59b" kindref="member">msgID</ref>,<sp/>&amp;len,<sp/>&amp;p.<ref refid="structstr_payload_1af62a2714d6172638d34b9dad4ef97c99" kindref="member">flag</ref>,<sp/>&amp;p.<ref refid="structstr_payload_1a7882d27fc12112a627451a4a13eab65a" kindref="member">sensorID</ref>,<sp/>&amp;p.<ref refid="structstr_payload_1a31b398065408aab6dc2d243df91e2944" kindref="member">sensorVal</ref>)<sp/>==<sp/>6){</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Serial.println(p.<ref refid="structstr_payload_1af62a2714d6172638d34b9dad4ef97c99" kindref="member">flag</ref>);</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structstr_msg" kindref="compound">Msg</ref><sp/>msg;</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>.peek(&amp;msg);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p.<ref refid="structstr_payload_1a0db71f6fd950a7bb85b5e7188bd40297" kindref="member">nodeID</ref><sp/>==<sp/><ref refid="node__definitions__1_8h_1a16636cae661b5c1ee5fc4de9401865e2" kindref="member">nodeID</ref><sp/>||<sp/>p.<ref refid="structstr_payload_1a0db71f6fd950a7bb85b5e7188bd40297" kindref="member">nodeID</ref><sp/>==<sp/><ref refid="comms__protocol_8h_1ab9fe47395310b34fa1ceb112c9ca10e2" kindref="member">BROADCAST_ID</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p.<ref refid="structstr_payload_1af62a2714d6172638d34b9dad4ef97c99" kindref="member">flag</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;a&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p.<ref refid="structstr_payload_1a3d454073f20da85f732a59f9074ca59b" kindref="member">msgID</ref><sp/>==<sp/>msg.<ref refid="structstr_msg_1a400dc636a83c062cf829e45113b491ce" kindref="member">msgID</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Serial.print(</highlight><highlight class="stringliteral">&quot;Message<sp/>with<sp/>ID:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Serial.print(p.<ref refid="structstr_payload_1a3d454073f20da85f732a59f9074ca59b" kindref="member">msgID</ref>);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;<sp/>delivered!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>.drop();</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p.<ref refid="structstr_payload_1af62a2714d6172638d34b9dad4ef97c99" kindref="member">flag</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;s&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Serial.print(</highlight><highlight class="stringliteral">&quot;received<sp/>msg<sp/>with<sp/>id:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Serial.println(p.<ref refid="structstr_payload_1a3d454073f20da85f732a59f9074ca59b" kindref="member">msgID</ref>);</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a3ac3eeb5847878d4d438bfa7622eb428" kindref="member">sendStatus</ref>(p.<ref refid="structstr_payload_1a3d454073f20da85f732a59f9074ca59b" kindref="member">msgID</ref>);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p.<ref refid="structstr_payload_1af62a2714d6172638d34b9dad4ef97c99" kindref="member">flag</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;c&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>actuator<sp/>value<sp/>and<sp/>send<sp/>ack</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a422ca7dc35be9c6885ef6a17191d2d5b" kindref="member">setActState</ref>((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)(p.<ref refid="structstr_payload_1a7882d27fc12112a627451a4a13eab65a" kindref="member">sensorID</ref><sp/>-<sp/>1),<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)(p.<ref refid="structstr_payload_1a31b398065408aab6dc2d243df91e2944" kindref="member">sensorVal</ref><sp/>-<sp/>1));</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a4cb3b91f794c0555e3adbe5fce614074" kindref="member">sendAck</ref>(p.<ref refid="structstr_payload_1a3d454073f20da85f732a59f9074ca59b" kindref="member">msgID</ref>);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><sp/></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="353"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/sensor_network/node/comms_protocol.cpp"/>
+  </compounddef>
+</doxygen>

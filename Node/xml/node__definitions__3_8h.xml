@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="node__definitions__3_8h" kind="file" language="C++">
+    <compoundname>node_definitions_3.h</compoundname>
+    <includedby refid="node__definitions_8h" local="yes">/sensor_network/node/node_definitions.h</includedby>
+    <invincdepgraph>
+      <node id="4">
+        <label>/sensor_network/node/comms_protocol.cpp</label>
+        <link refid="comms__protocol_8cpp"/>
+      </node>
+      <node id="2">
+        <label>/sensor_network/node/node_definitions.h</label>
+        <link refid="node__definitions_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>/sensor_network/node/node.ino</label>
+        <link refid="node_8ino"/>
+      </node>
+      <node id="1">
+        <label>/sensor_network/node/node_definitions/node_definitions_3.h</label>
+        <link refid="node__definitions__3_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/sensor_network/node/comms_protocol.h</label>
+        <link refid="comms__protocol_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="node__definitions__3_8h_1a2dd443a4430713d325ab86895a4a45eb" prot="public" static="no">
+        <name>SCK</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/node_definitions/node_definitions_3.h" line="24" column="9" bodyfile="/sensor_network/node/node_definitions/node_definitions_3.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="node__definitions__3_8h_1a7334c540878c8c4d801fd75ed9fd8063" prot="public" static="no">
+        <name>MISO</name>
+        <initializer>19</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/node_definitions/node_definitions_3.h" line="25" column="9" bodyfile="/sensor_network/node/node_definitions/node_definitions_3.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="node__definitions__3_8h_1a5d3f11f2fdf8a7e27b975291e0c2c8cc" prot="public" static="no">
+        <name>MOSI</name>
+        <initializer>27</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/node_definitions/node_definitions_3.h" line="26" column="9" bodyfile="/sensor_network/node/node_definitions/node_definitions_3.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="node__definitions__3_8h_1a88f7782e210e61586baf33b93240d905" prot="public" static="no">
+        <name>SS</name>
+        <initializer>18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/node_definitions/node_definitions_3.h" line="29" column="9" bodyfile="/sensor_network/node/node_definitions/node_definitions_3.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="node__definitions__3_8h_1ac5d957e4fd3dc11cd97a54cf9ca057a4" prot="public" static="no">
+        <name>RST</name>
+        <initializer>14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/node_definitions/node_definitions_3.h" line="30" column="9" bodyfile="/sensor_network/node/node_definitions/node_definitions_3.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="node__definitions__3_8h_1a95c9efcc1a55a72bd5cca0bcfcd18a0c" prot="public" static="no">
+        <name>DIO0</name>
+        <initializer>26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/node_definitions/node_definitions_3.h" line="31" column="9" bodyfile="/sensor_network/node/node_definitions/node_definitions_3.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="node__definitions__3_8h_1aa22cd6468e95b86aa191926692b846a0" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t key[]</definition>
+        <argsstring>[]</argsstring>
+        <name>key</name>
+        <initializer>= { 
+  0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+  0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0d, 0x0e, 0x0f,
+  0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17,
+  0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x1e, 0x3f
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/node_definitions/node_definitions_3.h" line="16" column="15" bodyfile="/sensor_network/node/node_definitions/node_definitions_3.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="node__definitions__3_8h_1a16636cae661b5c1ee5fc4de9401865e2" prot="public" static="no" mutable="no">
+        <type>const byte</type>
+        <definition>const byte nodeID</definition>
+        <argsstring></argsstring>
+        <name>nodeID</name>
+        <initializer>= 0x03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/node_definitions/node_definitions_3.h" line="34" column="12" bodyfile="/sensor_network/node/node_definitions/node_definitions_3.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="node__definitions__3_8h_1a5e38207a63e9201a67206ae2918be68c" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int vbatPin</definition>
+        <argsstring></argsstring>
+        <name>vbatPin</name>
+        <initializer>= 35</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/node_definitions/node_definitions_3.h" line="37" column="11" bodyfile="/sensor_network/node/node_definitions/node_definitions_3.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="node__definitions__3_8h_1ad7367c7a990bf9f0f68bfe7bd3994c4d" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int sensPin[]</definition>
+        <argsstring>[]</argsstring>
+        <name>sensPin</name>
+        <initializer>= {16}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/node_definitions/node_definitions_3.h" line="39" column="11" bodyfile="/sensor_network/node/node_definitions/node_definitions_3.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="node__definitions__3_8h_1aea057e12a9529500529f6d9161964fd3" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int actPin[]</definition>
+        <argsstring>[]</argsstring>
+        <name>actPin</name>
+        <initializer>= {LED_BUILTIN}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/node_definitions/node_definitions_3.h" line="40" column="11" bodyfile="/sensor_network/node/node_definitions/node_definitions_3.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Definitions for node with id 3. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Francisco Santos (<ulink url="mailto:francisco.velez@tecnico.ulisboa.pt">francisco.velez@tecnico.ulisboa.pt</ulink>) </para>
+</simplesect>
+<simplesect kind="version"><para>1.0 </para>
+</simplesect>
+<simplesect kind="date"><para>2022-08-10</para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2022 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="12"><highlight class="preprocessor">#ifndef<sp/>NODE_DEFINITIONS_3_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NODE_DEFINITIONS_3_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Node<sp/>Encryption<sp/>key</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="node__definitions__3_8h_1aa22cd6468e95b86aa191926692b846a0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="node__definitions__3_8h_1aa22cd6468e95b86aa191926692b846a0" kindref="member">key</ref>[]<sp/>=<sp/>{<sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>0x00,<sp/>0x01,<sp/>0x02,<sp/>0x03,<sp/>0x04,<sp/>0x05,<sp/>0x06,<sp/>0x07,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/>0x08,<sp/>0x09,<sp/>0x0a,<sp/>0x0b,<sp/>0x0c,<sp/>0x0d,<sp/>0x0e,<sp/>0x0f,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>0x10,<sp/>0x11,<sp/>0x12,<sp/>0x13,<sp/>0x14,<sp/>0x15,<sp/>0x16,<sp/>0x17,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>0x18,<sp/>0x19,<sp/>0x1a,<sp/>0x1b,<sp/>0x1c,<sp/>0x1d,<sp/>0x1e,<sp/>0x3f</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPI<sp/>pinout<sp/>for<sp/>TTGO<sp/>boards</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="node__definitions__3_8h_1a2dd443a4430713d325ab86895a4a45eb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SCK<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="node__definitions__3_8h_1a7334c540878c8c4d801fd75ed9fd8063" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MISO<sp/>19</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="node__definitions__3_8h_1a5d3f11f2fdf8a7e27b975291e0c2c8cc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MOSI<sp/>27</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LoRa<sp/>Modem<sp/>Pinout<sp/>for<sp/>TTGO<sp/>boards</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="node__definitions__3_8h_1a88f7782e210e61586baf33b93240d905" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SS<sp/>18</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="node__definitions__3_8h_1ac5d957e4fd3dc11cd97a54cf9ca057a4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RST<sp/>14</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="node__definitions__3_8h_1a95c9efcc1a55a72bd5cca0bcfcd18a0c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DIO0<sp/>26</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Node<sp/>Settings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="node__definitions__3_8h_1a16636cae661b5c1ee5fc4de9401865e2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/><ref refid="node__definitions__3_8h_1a16636cae661b5c1ee5fc4de9401865e2" kindref="member">nodeID</ref><sp/>=<sp/>0x03;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Node<sp/>I/O<sp/>Pinout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="node__definitions__3_8h_1a5e38207a63e9201a67206ae2918be68c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="node__definitions__3_8h_1a5e38207a63e9201a67206ae2918be68c" kindref="member">vbatPin</ref><sp/>=<sp/>35;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="node__definitions__3_8h_1ad7367c7a990bf9f0f68bfe7bd3994c4d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="node__definitions__3_8h_1ad7367c7a990bf9f0f68bfe7bd3994c4d" kindref="member">sensPin</ref>[]<sp/>=<sp/>{16};</highlight></codeline>
+<codeline lineno="40" refid="node__definitions__3_8h_1aea057e12a9529500529f6d9161964fd3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="node__definitions__3_8h_1aea057e12a9529500529f6d9161964fd3" kindref="member">actPin</ref>[]<sp/>=<sp/>{LED_BUILTIN};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/sensor_network/node/node_definitions/node_definitions_3.h"/>
+  </compounddef>
+</doxygen>

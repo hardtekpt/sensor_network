@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="node_8ino" kind="file" language="C++">
+    <compoundname>node.ino</compoundname>
+    <includes refid="comms__protocol_8h" local="yes">comms_protocol.h</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>node_definitions.h</label>
+        <link refid="node__definitions_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>SPI.h</label>
+      </node>
+      <node id="7">
+        <label>aes256.h</label>
+      </node>
+      <node id="1">
+        <label>/sensor_network/node/node.ino</label>
+        <link refid="node_8ino"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>node_definitions/node_definitions_3.h</label>
+        <link refid="node__definitions__3_8h"/>
+      </node>
+      <node id="2">
+        <label>comms_protocol.h</label>
+        <link refid="comms__protocol_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Arduino.h</label>
+      </node>
+      <node id="6">
+        <label>cppQueue.h</label>
+      </node>
+      <node id="5">
+        <label>LoRa.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="node_8ino_1a4fc01d736fe50cf5b977f755b675f11d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setup</definition>
+        <argsstring>()</argsstring>
+        <name>setup</name>
+        <briefdescription>
+<para>Arduino setup function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Runs once at boot. Configure the serial communication. Configure the LoRa radio. Configure the sensors and actuators input mode</para>
+<para><simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/node.ino" line="24" column="6" bodyfile="/sensor_network/node/node.ino" bodystart="24" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="node_8ino_1afe461d27b9c48d5921c00d521181f12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>Arduino loop function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Main loop function. checks for incoming uplink messages and downlink requests from the server. calls getMsgFromQueueAndSend on fixed schedules to avoid congestion of the communication channel and sends an uplink message with the node status periodically.</para>
+<para><simplesect kind="return"><para>void </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/node/node.ino" line="71" column="6" bodyfile="/sensor_network/node/node.ino" bodystart="71" bodyend="91"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Node script - send sensor data to gateway and receive commands from gateway. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Francisco Santos (<ulink url="mailto:francisco.velez@tecnico.ulisboa.pt">francisco.velez@tecnico.ulisboa.pt</ulink>) </para>
+</simplesect>
+<simplesect kind="version"><para>1.0 </para>
+</simplesect>
+<simplesect kind="date"><para>2022-08-09</para>
+</simplesect>
+<simplesect kind="copyright"><para>Copyright (c) 2022 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="13"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="comms__protocol_8h" kindref="compound">comms_protocol.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="node_8ino_1a4fc01d736fe50cf5b977f755b675f11d" kindref="member">setup</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;<ref refid="node__definitions_8h_1a809320f7b367f3ab858a2e3766887075" kindref="member">sensN</ref>;<sp/>i++){</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>pinMode(<ref refid="node__definitions__1_8h_1ad7367c7a990bf9f0f68bfe7bd3994c4d" kindref="member">sensPin</ref>[i],<sp/>INPUT);<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;<ref refid="node__definitions_8h_1a68d2aaad41a4fee4b247f7cd5b8e2a08" kindref="member">actN</ref>;<sp/>i++){</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>pinMode(<ref refid="node__definitions__1_8h_1aea057e12a9529500529f6d9161964fd3" kindref="member">actPin</ref>[i],<sp/>OUTPUT);<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>Serial.begin(<ref refid="node__definitions_8h_1ad4455691936f92fdd6c37566fc58ba1f" kindref="member">BAUD_RATE</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#if<sp/>defined(ESP32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>SPI.begin(<ref refid="node__definitions__1_8h_1a2dd443a4430713d325ab86895a4a45eb" kindref="member">SCK</ref>,<sp/><ref refid="node__definitions__1_8h_1a7334c540878c8c4d801fd75ed9fd8063" kindref="member">MISO</ref>,<sp/><ref refid="node__definitions__1_8h_1a5d3f11f2fdf8a7e27b975291e0c2c8cc" kindref="member">MOSI</ref>,<sp/><ref refid="node__definitions__1_8h_1a88f7782e210e61586baf33b93240d905" kindref="member">SS</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//LoRa.setTxPower(txPower);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//LoRa.setSignalBandwidth(signalBandwidth);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//LoRa.setCodingRate4(codingRateDenominator);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>LoRa.setPins(<ref refid="node__definitions__1_8h_1a88f7782e210e61586baf33b93240d905" kindref="member">SS</ref>,<sp/><ref refid="node__definitions__1_8h_1ac5d957e4fd3dc11cd97a54cf9ca057a4" kindref="member">RST</ref>,<sp/><ref refid="node__definitions__1_8h_1a95c9efcc1a55a72bd5cca0bcfcd18a0c" kindref="member">DIO0</ref>);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!LoRa.begin(<ref refid="comms__protocol_8h_1a3e2e72fc88af24173ffb387f913af46a" kindref="member">frequency</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;LoRa<sp/>init<sp/>failed.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>LoRa.setSpreadingFactor(7);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>LoRa.setCodingRate4(8);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>LoRa.setSyncWord(<ref refid="node__definitions_8h_1ade7b2a67f256bbe99e2fc48a80068ee8" kindref="member">netID</ref>);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>LoRa.enableCrc();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1af107f16dd1552bb658c1936141d9ae7a" kindref="member">LoRa_rxMode</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1afad07369259cd493d556473fa3ba8433" kindref="member">prevMil</ref><sp/>=<sp/>millis();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1a903ae438e3a8c1bd9edb5aecb54d25d3" kindref="member">prevMilSU</ref><sp/>=<sp/>millis();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>Serial.println(</highlight><highlight class="stringliteral">&quot;Node<sp/>startup<sp/>complete&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1ae084789be1260b3603c726abedbf8631" kindref="member">sendSensorData</ref>(0,<sp/>3);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="node_8ino_1afe461d27b9c48d5921c00d521181f12f" kindref="member">loop</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>currentMillis<sp/>=<sp/>millis();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Receive<sp/>Downlink<sp/>msg</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>packetSize<sp/>=<sp/>LoRa.parsePacket();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(packetSize)<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a54817002e33761dc61558b1138749dfb" kindref="member">onReceive</ref>(packetSize);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Send<sp/>Uplink<sp/>msg</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((currentMillis-<ref refid="comms__protocol_8cpp_1afad07369259cd493d556473fa3ba8433" kindref="member">prevMil</ref>)<sp/>&gt;<sp/><ref refid="comms__protocol_8h_1a13f06f86104b4525a9429ff04d1c852d" kindref="member">TIMEOUT_INTERVAL</ref>){</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a091b9218e6ed5b060bc3d1104dde7109" kindref="member">getMsgFromQueueAndSend</ref>(currentMillis);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Send<sp/>node<sp/>status</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((currentMillis-<ref refid="comms__protocol_8cpp_1a903ae438e3a8c1bd9edb5aecb54d25d3" kindref="member">prevMilSU</ref>)<sp/>&gt;<sp/><ref refid="comms__protocol_8h_1af78f78086b32d7a92d4ee591e3d0345a" kindref="member">STATUS_UPDATE_INTERVAL</ref>){</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>msgID<sp/>=<sp/>random(<ref refid="comms__protocol_8h_1a44f75a932d96b59ace67a29d83376492" kindref="member">MAX_MSG_ID</ref>);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//sendStatus(msgID);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a903ae438e3a8c1bd9edb5aecb54d25d3" kindref="member">prevMilSU</ref><sp/>=<sp/>currentMillis;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/sensor_network/node/node.ino"/>
+  </compounddef>
+</doxygen>
