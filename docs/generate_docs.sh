@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 PROJECT=sensor_network
-REPO_NAME=sensor_network_docs
+REPO_NAME=sensor_network
 
 PACKETS=( node gateway_serial)
 PACKETS_NAME=( Node Gateway )
@@ -41,7 +41,7 @@ done
 
 cd /$PROJECT
 git remote rm origin
-git remote add origin https://hardtekpt:$token@github.com/hardtekpt/sensor_network_docs.git
+git remote add origin https://hardtekpt:$token@github.com/hardtekpt/sensor_network.git
 mkdocs gh-deploy
 
 echo "Done !!"

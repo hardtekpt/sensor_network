@@ -1,8 +1,8 @@
 # Site metadata
 site_name: Sensor Network Documentation
-site_url: https://hardtekpt.github.io/sensor_network_docs/
-repo_url: https://github.com/hardtekpt/sensor_network_docs
-repo_name: sensor_network_docs
+site_url: https://hardtekpt.github.io/sensor_network/
+repo_url: https://github.com/hardtekpt/sensor_network
+repo_name: sensor_network
 #edit_uri: edit/main/docs/
 site_author: Francisco Santos
 theme: 
