@@ -55,6 +55,10 @@ const int spreadingFactor = 7;
 const long signalBandwidth = 125E3;
 const int codingRateDenominator = 5;
 
+/**
+ * @struct Data structure that holds the data for all the fields in the payload
+ * 
+ */
 typedef struct strPayload {
   byte nodeID;
   byte sensorID;
@@ -65,6 +69,10 @@ typedef struct strPayload {
   float SNR;
 } Payload;
 
+/**
+ * @struct Data structure that holds the encrypted payload along with other important fields
+ * 
+ */
 typedef struct strMsg {
   byte msg[MAX_ENC_PAYLOAD_SIZE];
   byte msgID;
@@ -83,12 +91,10 @@ extern aes256_context ctxt;
 void LoRa_rxMode();
 void LoRa_txMode();
 void LoRa_sendMessage(byte *message);
-char  *decryptMsg(String msg);
-char  *decryptMsg2(char msg[MAX_PAYLOAD_SIZE+1]);
-
+char  *decryptMsg(char msg[MAX_PAYLOAD_SIZE+1]);
 void onReceive(int packetSize);
 void onTxDone();
-String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]);
+byte *encrypt(char msg[MAX_PAYLOAD_SIZE]);
 void sendSensorData(byte sensorID, byte sensorVal);
 void getMsgFromQueueAndSend(unsigned long currentMillis);
 void sendStatus(byte msgID);

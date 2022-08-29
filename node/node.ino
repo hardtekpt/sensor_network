@@ -14,8 +14,6 @@
 
 
 /**
- * Function: setup
- * ----------------------------
  * @brief Arduino setup function
  * 
  * Runs once at boot. Configure the serial communication. Configure the LoRa radio.
@@ -62,8 +60,6 @@ void setup() {
 
 
 /**
- * Function: loop
- * ----------------------------
  * @brief Arduino loop function
  * 
  * Main loop function. checks for incoming uplink messages and downlink requests from the server.

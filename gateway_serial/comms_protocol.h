@@ -1,6 +1,13 @@
-/*
- * Header file for the communication protocol library. Contains the used data structures,
- * function declaration and general configuartion options for the library
+/**
+ * @file comms_protocol.h
+ * @author Francisco Santos (francisco.velez@tecnico.ulisboa.pt)
+ * @brief Header file for the communication protocol library. Contains the used data structures,
+ *        function declaration and general configuartion options for the library
+ * @version 1.0
+ * @date 2022-08-10
+ * 
+ * @copyright Copyright (c) 2022
+ * 
  */
 
 #ifndef COMMS_PROTOCOL_H
@@ -70,6 +77,10 @@ const int spreadingFactor = 7;
 const long signalBandwidth = 125E3;
 const int codingRateDenominator = 5;
 
+/**
+ * @struct Data structure that holds the data for all the fields in the payload
+ * 
+ */
 typedef struct strPayload {
   byte nodeID;
   byte sensorID;
@@ -82,6 +93,10 @@ typedef struct strPayload {
   double milis;
 } Payload;
 
+/**
+ * @struct Data structure that holds the encrypted payload along with other important fields
+ * 
+ */
 typedef struct strMsg {
   byte msg[MAX_ENC_PAYLOAD_SIZE];
   byte msgID;
@@ -104,12 +119,11 @@ extern aes256_context ctxt;
 void LoRa_rxMode();
 void LoRa_txMode();
 void LoRa_sendMessage(byte *message, byte nodeID);
-char  *decryptMsg(String msg);
-char  *decryptMsg2(char msg[MAX_PAYLOAD_SIZE+1]);
+int mymin(int a, int b);
+char  *decryptMsg(char msg[MAX_PAYLOAD_SIZE+1]);
 void onReceive(int packetSize);
 void onTxDone();
-String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]);
-byte *splitAndEncrypt2(char msg[MAX_PAYLOAD_SIZE]);
+byte *encrypt(char msg[MAX_PAYLOAD_SIZE]);
 void sendAck(byte msgID, byte nodeID);
 void relayMsgFromQueueToServer(unsigned long currentMillis);
 void constructJsonAndAddToQueue(Payload p);

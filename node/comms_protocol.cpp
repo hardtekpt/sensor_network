@@ -59,25 +59,6 @@ void LoRa_sendMessage(byte *message) {
   LoRa_rxMode();
 }
 
-
-/*String splitAndEncrypt(char msg[MAX_PAYLOAD_SIZE]) {
-  String enc = "";
-  aes256_init(&ctxt,(uint8_t *) key);
-  const char * p = msg;
-
-  while (strlen (p) > 0) {
-    byte plain [BLOCK_SIZE];
-    memset (plain, 0, BLOCK_SIZE);  // ensure trailing zeros
-    memcpy (plain, p, mymin (strlen (p), BLOCK_SIZE));
-
-    aes256_encrypt_ecb(&ctxt, plain);
-    enc += String((char *)plain);
-    p += mymin (strlen (p), BLOCK_SIZE);
-  }
-  aes256_done(&ctxt);
-  return enc;
-}*/
-
 /**
  * @brief Encrypts a message (character array) using the AES256 algorythm with the corresponding node key
  *        The encryption is made by encrypting blocks of 16 bytes and joining them together
@@ -85,40 +66,18 @@ void LoRa_sendMessage(byte *message) {
  * @param msg message array to be decrypted
  * @return byte* a byte array containing the encrypted message
  */
-byte *splitAndEncrypt2(char msg[MAX_PAYLOAD_SIZE]) {
+byte *encrypt(char msg[MAX_PAYLOAD_SIZE]) {
   String enc = "";
   aes256_init(&ctxt,(uint8_t *) key);
   const char * p = msg;
   static byte plain [BLOCK_SIZE];
-  while (strlen (p) > 0) {
-    
-    memset (plain, 0, BLOCK_SIZE);  // ensure trailing zeros
-    memcpy (plain, p, mymin (strlen (p), BLOCK_SIZE));
+  memset (plain, 0, BLOCK_SIZE);  // ensure trailing zeros
+  memcpy (plain, p, mymin (strlen (p), BLOCK_SIZE));
 
-    aes256_encrypt_ecb(&ctxt, plain);
-    return plain;
-    enc += String((char *)plain);
-    p += mymin (strlen (p), BLOCK_SIZE);
-  }
+  aes256_encrypt_ecb(&ctxt, plain);
+  return plain;
   aes256_done(&ctxt);
 }
-
-/*
- * Function: decryptMsg
- * ----------------------------
- *   Decrypts a message string using the AES256 algorythm with the corresponding node key
- *   
- *   msg: message string to be decrypted
- *
- *   returns: an array of characters containing the decrypted message
- 
-char  *decryptMsg(String msg) {
-  static uint8_t data[MAX_PAYLOAD_SIZE+1];
-  static char m[MAX_PAYLOAD_SIZE+1];
-  msg.toCharArray(m, MAX_PAYLOAD_SIZE+1);
-  aes256_decrypt_ecb(&ctxt, (uint8_t *)m);
-  return (char *)m;
-}*/
 
 /**
  * @brief Decrypts a message string using the AES256 algorythm with the corresponding node key
@@ -126,7 +85,7 @@ char  *decryptMsg(String msg) {
  * @param msg message string to be decrypted
  * @return char* an array of characters containing the decrypted message
  */
-char  *decryptMsg2(char msg[MAX_PAYLOAD_SIZE+1]) {
+char  *decryptMsg(char msg[MAX_PAYLOAD_SIZE+1]) {
   static uint8_t data[MAX_PAYLOAD_SIZE+1];
   memcpy(data, msg, MAX_PAYLOAD_SIZE+1);
   //static char m[MAX_PAYLOAD_SIZE+1];
@@ -173,7 +132,7 @@ void sendAck(byte msgID) {
 
   //enc = splitAndEncrypt(payload);
   //enc.toCharArray(msg.msg, MAX_ENC_PAYLOAD_SIZE);
-  byte *plain = splitAndEncrypt2(payload);
+  byte *plain = encrypt(payload);
   memcpy(msg.msg, plain, MAX_PAYLOAD_SIZE);
   msg.msg[MAX_PAYLOAD_SIZE] = '\0';
 
@@ -210,7 +169,7 @@ void sendStatus(byte msgID) {
  
   //enc = splitAndEncrypt(payload);
   //enc.toCharArray(msg.msg, MAX_ENC_PAYLOAD_SIZE);
-  byte *plain = splitAndEncrypt2(payload);
+  byte *plain = encrypt(payload);
   memcpy(msg.msg, plain, MAX_PAYLOAD_SIZE);
   msg.msg[MAX_PAYLOAD_SIZE] = '\0';
   
@@ -271,7 +230,7 @@ void sendSensorData(byte sensorID, byte sensorVal) {
 
   //enc = splitAndEncrypt(payload);
   //enc.toCharArray(msg.msg, MAX_ENC_PAYLOAD_SIZE);
-  byte *plain = splitAndEncrypt2(payload);
+  byte *plain = encrypt(payload);
   memcpy(msg.msg, plain, MAX_PAYLOAD_SIZE);
   msg.msg[MAX_PAYLOAD_SIZE] = '\0';
 
@@ -361,7 +320,7 @@ void onReceive(int packetSize){
     //  else
     //    strcat(buffer1, decryptMsg(message.substring(i * ENC_BLOCK_SIZE, (i + 1) * ENC_BLOCK_SIZE)));
     //}
-    strcpy(buffer2, decryptMsg2(buffer1));
+    strcpy(buffer2, decryptMsg(buffer1));
     aes256_done(&ctxt);
 
     buffer2[6] = '\0';
