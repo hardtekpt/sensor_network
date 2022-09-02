@@ -3,8 +3,8 @@
 PROJECT=sensor_network
 REPO_NAME=sensor_network
 
-PACKETS=( node gateway_serial)
-PACKETS_NAME=( Node Gateway )
+PACKETS=( node gateway_serial network_manager)
+PACKETS_NAME=( Node Gateway Network_Manager)
 length=${#PACKETS[@]}
 
 

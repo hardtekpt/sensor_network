@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://hardtekpt.github.io/sensor_network/Gateway/Files/comms__protocol_8h/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
     
     
       
@@ -1431,7 +1431,7 @@
 <pre><code class="language-cpp">#define IMPLEMENTATION FIFO
 </code></pre>
 <h3 id="define-relay_interval">define RELAY_INTERVAL</h3>
-<pre><code class="language-cpp">#define RELAY_INTERVAL 500
+<pre><code class="language-cpp">#define RELAY_INTERVAL 100
 </code></pre>
 <h3 id="define-max_json_payload_size">define MAX_JSON_PAYLOAD_SIZE</h3>
 <pre><code class="language-cpp">#define MAX_JSON_PAYLOAD_SIZE 120
@@ -1446,7 +1446,7 @@
 <pre><code class="language-cpp">#define MAX_N_RETRY 5
 </code></pre>
 <h3 id="define-timeout_interval">define TIMEOUT_INTERVAL</h3>
-<pre><code class="language-cpp">#define TIMEOUT_INTERVAL 2500
+<pre><code class="language-cpp">#define TIMEOUT_INTERVAL 1400
 </code></pre>
 <h3 id="define-block_size">define BLOCK_SIZE</h3>
 <pre><code class="language-cpp">#define BLOCK_SIZE 16
@@ -1484,12 +1484,12 @@
 #define  IMPLEMENTATION  FIFO
 
 // LoRa msg payload settings
-#define RELAY_INTERVAL 500
+#define RELAY_INTERVAL 100
 #define MAX_JSON_PAYLOAD_SIZE 120
 #define MAX_R_QUEUE_SIZE 2
 #define MAX_QUEUE_SIZE 5
 #define MAX_N_RETRY 5
-#define TIMEOUT_INTERVAL 2500
+#define TIMEOUT_INTERVAL 1400
 
 #define BLOCK_SIZE 16
 #define MAX_PAYLOAD_SIZE 16
@@ -1588,7 +1588,7 @@ void sendActuatorControl(byte nodeID, byte actID, byte actVal);
 #endif
 </code></pre>
 <hr />
-<p>Updated on 2022-08-29 at 12:54:10 +0000</p>
+<p>Updated on 2022-09-02 at 19:01:36 +0000</p>
 
 
 

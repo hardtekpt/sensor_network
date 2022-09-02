@@ -81,7 +81,7 @@
       </memberdef>
       <memberdef kind="define" id="comms__protocol_8h_1ade67653366207335f3e1ec53c4d762b1" prot="public" static="no">
         <name>RELAY_INTERVAL</name>
-        <initializer>500</initializer>
+        <initializer>100</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -136,7 +136,7 @@
       </memberdef>
       <memberdef kind="define" id="comms__protocol_8h_1a13f06f86104b4525a9429ff04d1c852d" prot="public" static="no">
         <name>TIMEOUT_INTERVAL</name>
-        <initializer>2500</initializer>
+        <initializer>1400</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -646,7 +646,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="124" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="336" bodyend="387" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="124" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="124" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="355" bodyend="406" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="124" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1a219dcdade25952b91806066261a45539" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -762,7 +762,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="128" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="255" bodyend="271" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="128" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="128" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="274" bodyend="290" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="128" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1afaa2caa37a55c9125471b5b6f1f6324b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -792,7 +792,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="129" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="279" bodyend="300" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="129" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="129" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="298" bodyend="319" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="129" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1a15c330bc3cd75ecf3800db120a1a22d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -820,7 +820,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="130" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="308" bodyend="327" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="130" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="130" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="327" bodyend="346" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="130" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1a091b9218e6ed5b060bc3d1104dde7109" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -850,7 +850,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="131" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="213" bodyend="247" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="131" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="131" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="217" bodyend="266" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="131" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1a8a00db8781effc6b141f2c4fd8646254" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -880,7 +880,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="132" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="141" bodyend="168" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="132" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="132" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="141" bodyend="172" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="132" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1afae50b92afd675e09293f2930472cb58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -934,7 +934,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="133" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="178" bodyend="204" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="133" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="133" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="182" bodyend="208" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="133" declcolumn="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -966,12 +966,12 @@
 <codeline lineno="23" refid="comms__protocol_8h_1aafd24a334088de3d7fef309914d49101" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/><sp/>IMPLEMENTATION<sp/><sp/>FIFO</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LoRa<sp/>msg<sp/>payload<sp/>settings</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="comms__protocol_8h_1ade67653366207335f3e1ec53c4d762b1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RELAY_INTERVAL<sp/>500</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="comms__protocol_8h_1ade67653366207335f3e1ec53c4d762b1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RELAY_INTERVAL<sp/>100</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27" refid="comms__protocol_8h_1a3ea85ebbdc9c6fece31540aeff4887da" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_JSON_PAYLOAD_SIZE<sp/>120</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28" refid="comms__protocol_8h_1ae2132d5b9e92cbf586fc556351235b75" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_R_QUEUE_SIZE<sp/>2</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="29" refid="comms__protocol_8h_1a623ec78b7909090dbedac4af1d52abb4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_QUEUE_SIZE<sp/>5</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="30" refid="comms__protocol_8h_1addaaa188262c960b2aa51012d684d084" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_N_RETRY<sp/>5</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31" refid="comms__protocol_8h_1a13f06f86104b4525a9429ff04d1c852d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TIMEOUT_INTERVAL<sp/>2500</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="comms__protocol_8h_1a13f06f86104b4525a9429ff04d1c852d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TIMEOUT_INTERVAL<sp/>1400</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33" refid="comms__protocol_8h_1ad51ded0bbd705f02f73fc60c0b721ced" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_SIZE<sp/>16</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="34" refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_PAYLOAD_SIZE<sp/>16</highlight><highlight class="normal"></highlight></codeline>
