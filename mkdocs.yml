@@ -69,3 +69,4 @@ nav:
   - Packages Documentation:
     - Node: '!include ./node/mkdocs.yml'
     - Gateway: '!include ./gateway_serial/mkdocs.yml'
+    - Network_Manager: '!include ./network_manager/mkdocs.yml'

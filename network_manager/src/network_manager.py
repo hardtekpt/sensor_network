@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 
+## @package network_manager
+#  Allows communication with the gateway to monitor and control the network
+#
+#  This is a python application with a gui designed to interface with the wireless sensor network through
+#  the serial port connected to the gateway. It allows for downlink messages to be sent, uplink messages to
+#  be received and monitoring of the network. Additionally, network tests can be run and the data monitored
+#  can be exported for further analysis
+
 import serial
 from parse import parse
 import threading
@@ -29,50 +37,41 @@ _VARS = {'rssi_canvas': None,
 		 }}
 
 
-
+## Function that runs a test on the network
 def network_test():
 	time.sleep(5)
-	for i in range(50):
+	for i in range(3):
 		global stop_threads
 		for node in nodes:
 			if stop_threads:
 				return
 			data = 's,' + str(node['id'])
 			send_dl_msg(data)
+			print(datetime.now(), data)
 			time.sleep(3)
 	
 
-
+## Function that draws a plot onto a figure
 def draw_figure(canvas, figure):
 	figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
 	figure_canvas_agg.draw_idle()
 	figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
 	return figure_canvas_agg
 
+## Function that sends a downlink message to the gateway through the serial connection
 def send_dl_msg(data):
-	#nID = data.split(',')[1]
-	#_VARS['dl_msgs']['nodeID'].append(nID)
-	#_VARS['dl_msgs']['timestamps'].append(datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
-
 	data = bytes(data, encoding='utf-8')
 	ser.write(data)
 	ser.write(bytes("\n", encoding='utf-8'))
 	ser.flush()
 
-
+## Function to export the gathered data onto a .csv file
 def export_data(path):
 	print(path)
 	with open(path, 'w', newline='') as csvfile:
 		writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
 		for node in nodes:
-			#print(node['id'])
-			#print(node['timestamps'])
-			#print(node['rssi_list'])
 			for i in range(len(node['timestamps'])):
-				#print(i)
-				#print(node['timestamps'][i])
-				#print(node['rssi_list'][i])
-				#print(node['snr_list'][i])
 				writer.writerow([node['timestamps'][i], node['delay_list'][i], node['msgID_list'][i], node['id'], node['rssi_list'][i], node['snr_list'][i], node['battery_list'][i], '0'])
 		for i in range(len(_VARS['dl_msgs']['timestamps'])):
 			writer.writerow([_VARS['dl_msgs']['timestamps'][i], _VARS['dl_msgs']['delay'][i], _VARS['dl_msgs']['msgID'][i], _VARS['dl_msgs']['nodeID'][i], 0, 0, 0, '1'])
@@ -80,7 +79,7 @@ def export_data(path):
 	#if DL we only care about timestamp and nodeID
 	# set up custom commands for DLMSG: test1, test2 -> execute predetermined tests and save data
 
-
+## Function responsible for all the GUI initialization and layout
 def gui():
 	sg.theme('BrownBlue') 
 	global active_nodes
@@ -277,6 +276,7 @@ def gui():
 
 firstTime = True
 
+## Function that updates the GUI
 def updateTabs(idx):
 	global nodes
 	global window
@@ -339,6 +339,8 @@ def updateTabs(idx):
 	window.Element('_SENSORSPANE_').contents_changed()
 	window.Element('_ACTUATORSPANE_').contents_changed()
 
+
+## Function that handles the received messages from the gateway through the serial communication
 def serial_comm():
 	while  True:
 		global stop_threads
@@ -356,7 +358,7 @@ def serial_comm():
 				window.Element('_BOOTTIME_').update(value=datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 			else:
 				try:
-					print(line)
+					print(datetime.now(), line)
 					msg = json.loads(line)
 
 					if(msg['f'] == 'd'):
@@ -370,7 +372,7 @@ def serial_comm():
 						now = datetime.now()
 						dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
-						if(int(msg['RSSI']) is not 0):
+						if(int(msg['RSSI']) != 0):
 							nodes[int(msg['nID'])-1]['packets_sent'] += 1	
 							t_packets = nodes[int(msg['nID'])-1]['packets_sent'] + nodes[int(msg['nID'])-1]['packets_received']
 							avg_rssi = float(nodes[int(msg['nID'])-1]['avg_rssi']) * float(t_packets-1)/t_packets + float(msg['RSSI']) * float(1/t_packets)
@@ -427,11 +429,12 @@ def serial_comm():
 								updateTabs(nidx)
 					
 				except:
-					print("ERROR reading from serial!!")
+					continue
+					#print("ERROR reading from serial!!")
 
 sc_thread = threading.Thread(target=serial_comm)
 
-
+## Main function
 def main():
 	global active_nodes
 	active_nodes = 0

@@ -23,12 +23,12 @@
 #define  IMPLEMENTATION  FIFO
 
 // LoRa msg payload settings
-#define RELAY_INTERVAL 500
+#define RELAY_INTERVAL 100
 #define MAX_JSON_PAYLOAD_SIZE 120
 #define MAX_R_QUEUE_SIZE 2
 #define MAX_QUEUE_SIZE 5
 #define MAX_N_RETRY 5
-#define TIMEOUT_INTERVAL 2500
+#define TIMEOUT_INTERVAL 1400
 
 #define BLOCK_SIZE 16
 #define MAX_PAYLOAD_SIZE 16

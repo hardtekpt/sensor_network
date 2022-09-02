@@ -164,7 +164,11 @@ void sendStatusRequest(byte nodeID) {
 
   aes256_done(&ctxt);
 
-  msg_q.push(&msg);
+  if (!msg_q.push(&msg)){
+    char msgText[MAX_JSON_PAYLOAD_SIZE];
+    sprintf(msgText, "{\"t\":\"%lu\",\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"status\":\"%d\"}", millis(), msg.msgID, 'd', msg.nodeID, 0);
+    relay_q.push(&msgText);
+  }
 }
 
 /**
@@ -212,6 +216,18 @@ void sendActuatorControl(byte nodeID, byte actID, byte actVal) {
  */
 void getMsgFromQueueAndSend(unsigned long currentMillis) {
   if (!msg_q.isEmpty()) {
+
+    // START print msg queue
+    Msg test;
+    for(int i=0; i<msg_q.getCount(); i++){
+      msg_q.peekIdx(&test, i);
+      Serial.print(test.msgID);
+      Serial.print(", ");
+    }
+    Serial.println(msg_q.getCount());
+    // END print msg queue
+
+    
     Msg msg;
     msg_q.peek(&msg);
 
@@ -226,6 +242,7 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
       p.msgID = msg.msgID;
       p.flag = 'd';
       p.nodeID = msg.nodeID;
+      p.sensorID = 1; // Using sensorID as status
       constructJsonAndAddToQueue(p);
       
       LoRa_sendMessage(msg.msg, msg.nodeID);
@@ -243,6 +260,8 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
       }
       msg_q.drop();
     }
+  } else {
+    prevMil = currentMillis;
   }
 }
 
@@ -293,7 +312,7 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
       sprintf(msg, "{\"t\":\"%lu\",\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"state\":\"%d\",\"RSSI\":\"0\",\"SNR\":\"0\",\"VBAT\":\"0\"}", millis(), p.msgID, 's', p.nodeID, 0);
       break;
     case 'd':
-      sprintf(msg, "{\"t\":\"%lu\",\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\"}\0", millis(), p.msgID, p.flag, p.nodeID);
+      sprintf(msg, "{\"t\":\"%lu\",\"msgID\":\"%d\",\"f\":\"%c\",\"nID\":\"%d\",\"status\":\"%d\"}", millis(), p.msgID, p.flag, p.nodeID, p.sensorID);
       break;
   }
   relay_q.push(&msg);
