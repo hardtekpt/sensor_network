@@ -1,0 +1,1182 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Francisco Santos">
+      
+      
+        <link rel="canonical" href="https://hardtekpt.github.io/sensor_network/Network_Manager/Files/network__manager_8py/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>/sensor_network/network_manager/src/network_manager.py - Sensor Network Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sensor_networknetwork_managersrcnetwork_managerpy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Sensor Network Documentation" class="md-header__button md-logo" aria-label="Sensor Network Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sensor Network Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              /sensor_network/network_manager/src/network_manager.py
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hardtekpt/sensor_network" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sensor_network
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Sensor Network Documentation" class="md-nav__button md-logo" aria-label="Sensor Network Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sensor Network Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hardtekpt/sensor_network" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sensor_network
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pages/repo_structure/" class="md-nav__link">
+        Repository Structure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pages/install_guide/" class="md-nav__link">
+        Install Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pages/example_usage/" class="md-nav__link">
+        Example Usage
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Packages Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Packages Documentation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Packages Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          Node
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Node" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Node
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Node/Files/" class="md-nav__link">
+        Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Node/Classes/" class="md-nav__link">
+        Classes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Gateway
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Gateway" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Gateway
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Gateway/Files/" class="md-nav__link">
+        Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Gateway/Classes/" class="md-nav__link">
+        Classes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Network_Manager
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Network_Manager" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Network_Manager
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Classes/" class="md-nav__link">
+        Classes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#namespaces" class="md-nav__link">
+    Namespaces
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    Source code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/hardtekpt/sensor_network/edit/master/network_manager/docs/Files/network__manager_8py.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="sensor_networknetwork_managersrcnetwork_managerpy">/sensor_network/network_manager/src/network_manager.py</h1>
+<h2 id="namespaces">Namespaces</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="/sensor_network/Network_Manager/Namespaces/namespacenetwork__manager/">network_manager</a></strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="source-code">Source code</h2>
+<pre><code class="language-python">#!/usr/bin/env python3
+
+
+
+import serial
+from parse import parse
+import threading
+import PySimpleGUI as sg
+import json 
+from datetime import datetime
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+plt.rcParams.update({'font.size': 6})
+import yaml
+import csv
+import time
+
+
+# Global variables declaration.
+maxNum = 5
+gateway_status = &quot;Offline&quot;
+
+_VARS = {'rssi_canvas': None,
+         'snr_canvas': None,
+         'dl_msgs': {
+            'timestamps': list(),
+            'nodeID': list(),
+            'msgID': list(),
+            'delay': list(),
+         }}
+
+
+
+def network_test():
+    time.sleep(5)
+    for i in range(3):
+        global stop_threads
+        for node in nodes:
+            if stop_threads:
+                return
+            data = 's,' + str(node['id'])
+            send_dl_msg(data)
+            print(datetime.now(), data)
+            time.sleep(3)
+
+
+
+def draw_figure(canvas, figure):
+    figure_canvas_agg = FigureCanvasTkAgg(figure, canvas)
+    figure_canvas_agg.draw_idle()
+    figure_canvas_agg.get_tk_widget().pack(side='top', fill='both', expand=1)
+    return figure_canvas_agg
+
+
+def send_dl_msg(data):
+    data = bytes(data, encoding='utf-8')
+    ser.write(data)
+    ser.write(bytes(&quot;\n&quot;, encoding='utf-8'))
+    ser.flush()
+
+
+def export_data(path):
+    print(path)
+    with open(path, 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        for node in nodes:
+            for i in range(len(node['timestamps'])):
+                writer.writerow([node['timestamps'][i], node['delay_list'][i], node['msgID_list'][i], node['id'], node['rssi_list'][i], node['snr_list'][i], node['battery_list'][i], '0'])
+        for i in range(len(_VARS['dl_msgs']['timestamps'])):
+            writer.writerow([_VARS['dl_msgs']['timestamps'][i], _VARS['dl_msgs']['delay'][i], _VARS['dl_msgs']['msgID'][i], _VARS['dl_msgs']['nodeID'][i], 0, 0, 0, '1'])
+    #timestamp, nodeID, rssi, snr, battery, DL/UL
+    #if DL we only care about timestamp and nodeID
+    # set up custom commands for DLMSG: test1, test2 -&gt; execute predetermined tests and save data
+
+
+def gui():
+    sg.theme('BrownBlue') 
+    global active_nodes
+    global nodes
+    global total_nodes
+
+    node_keys = {'Node ' + str(node['id']): node for node in nodes}
+
+    sensor_pane_layout = [ sg.Column([
+        [sg.Text('Sensor ID:', background_color='white', text_color='black'), sg.Text('id', background_color='white', text_color='black', key='_SID'+str(i)+'_')],
+        [sg.Text('Sensor Name:', background_color='white', text_color='black'), sg.Text('name', background_color='white', text_color='black', key='_SNAME'+str(i)+'_')],
+        [sg.Text('Last Activity:', background_color='white', text_color='black'), sg.Text('never', background_color='white', text_color='black', key='_SLA'+str(i)+'_')],
+        [sg.Text('State:', background_color='white', text_color='black'), sg.Text('unknown', background_color='white', text_color='black', key='_SSTATE'+str(i)+'_')],
+                        ], expand_y = True, background_color='white', key='_SCOL'+str(i)+'_', visible=False) for i in range(maxNum)]
+
+    actuator_pane_layout = [ sg.Column([
+        [sg.Text('Actuator ID:', background_color='white', text_color='black'), sg.Text('id', background_color='white', text_color='black', key='_AID'+str(i)+'_')],
+        [sg.Text('Actuator Name:', background_color='white', text_color='black'), sg.Text('name', background_color='white', text_color='black', key='_ANAME'+str(i)+'_')],
+        [sg.Text('Last Activity:', background_color='white', text_color='black'), sg.Text('never', background_color='white', text_color='black', key='_ALA'+str(i)+'_')],
+        [sg.Text('State:', background_color='white', text_color='black'), sg.Text('unknown', background_color='white', text_color='black', key='_ASTATE'+str(i)+'_')],
+        [sg.Button('ON', key='_AON'+str(i)+'_'),sg.Button('OFF', key='_AOFF'+str(i)+'_')],
+                        ], expand_y = True, background_color='white', key='_ACOL'+str(i)+'_', visible=False) for i in range(maxNum)]
+
+    status_tab_layout = [
+        [
+            sg.Text('Node State:', background_color='white', text_color='black'),
+            sg.Text('Offline', key='_NSTATE_', background_color='white', text_color='red')
+        ],
+        [
+            sg.Text('Node Location:', background_color='white', text_color='black'),
+            sg.Text('', key='_NLOCATION_', background_color='white', text_color='black')
+        ],
+        [
+            sg.Text('Last Activity:', background_color='white', text_color='black'),
+            sg.Text('None', key='_NLASTACTIVITY_', background_color='white', text_color='black')
+        ],
+        [
+            sg.Text('Sensors:', background_color='white', text_color='black'),
+        ],
+        [
+            sg.Column( layout=[sensor_pane_layout], key='_SENSORSPANE_', scrollable = True, size = (None, 110), expand_x=True)
+        ],
+        [
+            sg.Text('Actuators:', background_color='white', text_color='black'),
+        ],
+        [
+            sg.Column( layout=[actuator_pane_layout], key='_ACTUATORSPANE_', scrollable = True, size = (None, 145), expand_x=True)
+        ]
+    ]
+    info_tab_layout = [
+        [
+            sg.Text('Packets sent:', background_color='white', text_color='black'),
+            sg.Text('0', key='_PACKETSSENT_', background_color='white', text_color='black')
+        ],
+        #[
+        #   sg.Text('Packets received:', background_color='white', text_color='black'),
+        #   sg.Text('0', key='_PACKETSRECEIVED_', background_color='white', text_color='black')
+        #],
+        [
+            sg.Text('Average RSSI:', background_color='white', text_color='black'),
+            sg.Text('', key='_AVGRSSI_', background_color='white', text_color='black')
+        ],
+        [
+            sg.Text('Average SNR:', background_color='white', text_color='black'),
+            sg.Text('', key='_AVGSNR_', background_color='white', text_color='black')
+        ],
+        [
+            sg.Text('Battery Level (V):', background_color='white', text_color='black'),
+            sg.Text('', key='_BAT_', background_color='white', text_color='black')
+        ],
+        [
+            sg.Column(layout = [
+                [
+                    sg.Frame(layout = [[sg.Canvas(key='rssi_canvas', background_color=sg.theme_background_color())]], title = &quot;RSSI vs Packet&quot;, size=(250,250)),
+                    sg.Frame(layout = [[sg.Canvas(key='snr_canvas', background_color=sg.theme_background_color())]], title = &quot;SNR vs Packet&quot;, size=(250,250))
+                ],
+                [
+                    sg.Frame(layout = [[]], title = &quot;Battery vs Time&quot;, size=(250,250)),
+                    sg.Frame(layout = [[]], title = &quot;Packet Delay&quot;, size=(250,250))
+                ]
+            ], scrollable=True, expand_x = True, expand_y = True)
+        ]
+    ]
+
+    layout = [  [
+                    sg.Text('Active Nodes:'),
+                    sg.Text(str(active_nodes), key='_ACTIVENODES_'),
+                    sg.Text('/'),
+                    sg.Text( str(total_nodes), key='_TOTALNODES_')
+                ],
+                [
+                    sg.Text('Gateway Status:'),
+                    sg.Text(gateway_status, key='_GATEWAYSTATUS_', text_color='red'),
+                    sg.Push(),
+                    sg.Text('Boot time:'),
+                    sg.Text('', key='_BOOTTIME_')
+                ],
+                [sg.Text('Send Downlink Message'), sg.InputText(key='_DLMSG_'), sg.Button('Send')],
+                [sg.HorizontalSeparator()],
+                [
+                    sg.Listbox(values=list(node_keys.keys()), size=(15, 27), key='_LIST_', enable_events=True, select_mode='LISTBOX_SELECT_MODE_SINGLE', default_values=['Node 1']),
+                    sg.VerticalSeparator(),
+                    sg.TabGroup([
+                        [sg.Tab(title='Node 1 Status', key='_STATUSTAB_', background_color='white', layout = status_tab_layout)],
+                        [sg.Tab(title='Node 1 Stats', key='_STATSTAB_', background_color='white', layout = info_tab_layout)]
+                    ],  tab_location='topleft', 
+                        size=(600,None),
+                        selected_background_color='white', 
+                        tab_background_color=sg.theme_background_color(), 
+                        selected_title_color=sg.theme_background_color(), 
+                        title_color='white'                 
+                    )
+                ],
+                [
+                    sg.Button('Rescan Network', key='_RSNET_'), 
+                    sg.InputText(visible=False, enable_events=True, key='export_data_path'),
+                    sg.FileSaveAs('Export data', key='_EXPORT_', file_types=(('CSV', '.csv'),)),
+                    sg.Push(),
+                    sg.Button('Exit')
+                ] 
+            ]
+
+    global window
+    window = sg.Window('Sensor Network Manager', layout, finalize=True)
+
+    for i in range(len(nodes)):
+        plt.figure(num=0)
+        plt.plot([],[],'.k')
+        #nodes[i]['rssi_plot_canvas'] = FigureCanvasTkAgg(plt.figure(num=0), window.Element('rssi_canvas').TKCanvas)
+        _VARS['rssi_canvas'] = FigureCanvasTkAgg(plt.figure(num=0), window.Element('rssi_canvas').TKCanvas)
+        #nodes[i]['rssi_plot_canvas'].get_tk_widget().hide()
+        nodes[i]['rssi_list'] = list()
+        plt.figure(num=1)
+        plt.plot([],[],'.k')
+        #nodes[i]['snr_plot_canvas'] = FigureCanvasTkAgg(plt.figure(num=1), window.Element('snr_canvas').TKCanvas)
+        _VARS['snr_canvas'] = FigureCanvasTkAgg(plt.figure(num=1), window.Element('snr_canvas').TKCanvas)
+        nodes[i]['snr_list'] = list()
+
+        nodes[i]['timestamps'] = list()
+        nodes[i]['battery_list'] = list()
+        nodes[i]['msgID_list'] = list()
+        nodes[i]['delay_list'] = list()
+
+    while True:
+        event, values = window.read(timeout = 200)
+        if event == sg.WIN_CLOSED or event == 'Exit': 
+            break
+        if event == 'export_data_path':
+            path = values['export_data_path']
+            export_data(path)
+        if event == 'Send' and len(values['_DLMSG_']):
+            data = values['_DLMSG_']
+            send_dl_msg(data)
+            window.Element('_DLMSG_').update(value=&quot;&quot;)
+
+        if event == '_LIST_' and len(values['_LIST_']): 
+            r = parse(&quot;[\'Node {}\']&quot;, str(values['_LIST_']))
+            idx = int(r[0])-1
+            window.Element('_STATUSTAB_').update(title='Node ' + str(idx+1) + ' Status')
+            window.Element('_STATSTAB_').update(title='Node ' + str(idx+1) + ' Stats')
+            updateTabs(idx)
+        if event == '_RSNET_':
+            active_nodes = 0
+            window.Element('_ACTIVENODES_').update(value=str(active_nodes))
+            for i in range(len(nodes)):
+                nodes[i][&quot;state&quot;] = 0 
+            r = parse(&quot;[\'Node {}\']&quot;, str(values['_LIST_']))
+            idx = int(r[0])-1
+            #updateTabs(idx)
+            send_dl_msg(&quot;s,-1\n&quot;)
+        if '_AON' in event:
+            r = parse(&quot;[\'Node {}\']&quot;, str(values['_LIST_']))
+            nID = int(r[0])
+            r = parse(&quot;_AON{}_&quot;, str(event))
+            actID = int(r[0])
+            actID = nodes[nID-1]['actuators'][actID]['id']
+
+            data = 'c,' + str(nID) + ',' + str(actID) + ',1'
+            send_dl_msg(data)
+
+        if '_AOFF' in event:
+            r = parse(&quot;[\'Node {}\']&quot;, str(values['_LIST_']))
+            nID = int(r[0])
+            r = parse(&quot;_AOFF{}_&quot;, str(event))
+            actID = int(r[0])
+            actID = nodes[nID-1]['actuators'][actID]['id']
+
+            data = 'c,' + str(nID) + ',' + str(actID) + ',0'
+            send_dl_msg(data)
+
+        window.refresh()
+
+    window.close()
+
+firstTime = True
+
+
+def updateTabs(idx):
+    global nodes
+    global window
+
+    window.Element('_NSTATE_').update(value='Online' if int(nodes[idx]['state']) else 'Offline', text_color='green' if int(nodes[idx]['state']) else 'red')
+    window.Element('_NLASTACTIVITY_').update(value=str(nodes[idx]['last_activity']))
+    window.Element('_NLOCATION_').update(value=str(nodes[idx]['location']))
+
+    window.Element('_PACKETSSENT_').update(value=str(nodes[idx]['packets_sent']))
+    #window.Element('_PACKETSRECEIVED_').update(value=str(nodes[idx]['packets_received']))
+    window.Element('_PACKETSSENT_').update(value=str(nodes[idx]['packets_sent']))
+    window.Element('_AVGRSSI_').update(value=str(nodes[idx]['avg_rssi']))
+    window.Element('_AVGSNR_').update(value=str(nodes[idx]['avg_snr']))
+    window.Element('_BAT_').update(value=str(nodes[idx]['battery']))
+
+    # \\  -------- PYPLOT -------- //
+    if(len(nodes[idx]['rssi_list'])&gt;0):
+        #nodes[idx]['rssi_plot_canvas'].get_tk_widget().forget()
+        _VARS['rssi_canvas'].get_tk_widget().forget()
+        plt.figure(num=0)
+        plt.clf()
+        plt.plot(range(1,len(nodes[idx]['rssi_list'])+1), nodes[idx]['rssi_list'], 'bo-', linewidth=0.5, markersize=3)
+        plt.xticks(np.arange(1, len(nodes[idx]['rssi_list'])+1))
+        plt.ylim(-120, 20)
+        #nodes[idx]['rssi_plot_canvas'] = draw_figure(window.Element('rssi_canvas').TKCanvas, plt.figure(num=0))
+        _VARS['rssi_canvas'] = draw_figure(window.Element('rssi_canvas').TKCanvas, plt.figure(num=0))
+
+        #nodes[idx]['snr_plot_canvas'].get_tk_widget().forget()
+        _VARS['snr_canvas'].get_tk_widget().forget()
+        plt.figure(num=1)
+        plt.clf()
+        plt.plot(range(1,len(nodes[idx]['snr_list'])+1), nodes[idx]['snr_list'], 'bo-', linewidth=0.5, markersize=3)
+        plt.xticks(np.arange(1, len(nodes[idx]['snr_list'])+1))
+        plt.ylim(-15, 15)
+        #nodes[idx]['snr_plot_canvas'] = draw_figure(window.Element('snr_canvas').TKCanvas, plt.figure(num=1))
+        _VARS['snr_canvas'] = draw_figure(window.Element('snr_canvas').TKCanvas, plt.figure(num=1))
+    # \\  -------- PYPLOT -------- //
+
+    for i in range(maxNum):
+        if i &lt; len(nodes[idx]['sensors']):
+            window.Element('_SCOL'+str(i)+'_').update(visible=True)
+            window.Element('_SID'+str(i)+'_').update(value=str(nodes[idx]['sensors'][i]['id']))
+            window.Element('_SNAME'+str(i)+'_').update(value=str(nodes[idx]['sensors'][i]['name']))
+            window.Element('_SLA'+str(i)+'_').update(value=str(nodes[idx]['sensors'][i]['last_activity']))
+            window.Element('_SSTATE'+str(i)+'_').update(value=str(nodes[idx]['sensors'][i]['state']))
+        else:
+            window.Element('_SCOL'+str(i)+'_').update(visible=False)
+
+
+    for i in range(maxNum):
+        if i &lt; len(nodes[idx]['actuators']):
+            window.Element('_ACOL'+str(i)+'_').update(visible=True)
+            window.Element('_AID'+str(i)+'_').update(value=str(nodes[idx]['actuators'][i]['id']))
+            window.Element('_ANAME'+str(i)+'_').update(value=str(nodes[idx]['actuators'][i]['name']))
+            window.Element('_ALA'+str(i)+'_').update(value=str(nodes[idx]['actuators'][i]['last_activity']))
+            window.Element('_ASTATE'+str(i)+'_').update(value=str(nodes[idx]['actuators'][i]['state']))
+        else:
+            window.Element('_ACOL'+str(i)+'_').update(visible=False)
+
+    window.Element('_SENSORSPANE_').contents_changed()
+    window.Element('_ACTUATORSPANE_').contents_changed()
+
+
+
+def serial_comm():
+    while  True:
+        global stop_threads
+        if stop_threads:
+            break
+        global nodes
+        global window
+
+        line = ser.readline()
+        line = line.decode('utf-8', &quot;ignore&quot;)
+        if(len(line) &gt; 4):
+            line = line.strip('rm').strip('\n').rstrip()
+            if line == &quot;Startup complete&quot;:
+                window.Element('_GATEWAYSTATUS_').update(value=line, text_color='#42cf68')
+                window.Element('_BOOTTIME_').update(value=datetime.now().strftime(&quot;%d/%m/%Y %H:%M:%S&quot;))
+            else:
+                try:
+                    print(datetime.now(), line)
+                    msg = json.loads(line)
+
+                    if(msg['f'] == 'd'):
+                        _VARS['dl_msgs']['nodeID'].append(msg['nID'])
+                        _VARS['dl_msgs']['timestamps'].append(datetime.now())
+                        _VARS['dl_msgs']['msgID'].append(msg['msgID'])
+                        _VARS['dl_msgs']['delay'].append(msg['t'])
+                    else:
+
+                        nidx = int(msg['nID'])-1
+                        now = datetime.now()
+                        dt_string = now.strftime(&quot;%d/%m/%Y %H:%M:%S&quot;)
+
+                        if(int(msg['RSSI']) != 0):
+                            nodes[int(msg['nID'])-1]['packets_sent'] += 1   
+                            t_packets = nodes[int(msg['nID'])-1]['packets_sent'] + nodes[int(msg['nID'])-1]['packets_received']
+                            avg_rssi = float(nodes[int(msg['nID'])-1]['avg_rssi']) * float(t_packets-1)/t_packets + float(msg['RSSI']) * float(1/t_packets)
+                            avg_snr = nodes[int(msg['nID'])-1]['avg_snr'] * float(t_packets-1)/t_packets + float(msg['SNR']) * float(1/t_packets)
+                            bat = float(msg['VBAT'])
+
+                            nodes[int(msg['nID'])-1]['avg_rssi'] = round(avg_rssi, 2)
+                            nodes[int(msg['nID'])-1]['avg_snr'] = round(avg_snr, 2)
+                            nodes[int(msg['nID'])-1]['battery'] = round(bat, 1)
+
+                            for node in nodes:
+                                if int(node['id']) == int(msg['nID']):
+                                    node['rssi_list'] += [float(msg['RSSI'])]
+                                    node['snr_list'] += [float(msg['SNR'])]
+                                    node['battery_list'] += [float(msg['VBAT'])]
+                                    node['timestamps'] += [datetime.now()]
+                                    node['msgID_list'] += [int(msg['msgID'])]
+                                    node['delay_list'] += [msg['t']]
+
+                        if((int(msg['nID']) != 255) and (msg['f'] == 's')):
+                            nodes[int(msg['nID'])-1]['state'] = int(msg['state'])
+
+                            active_nodes = sum(node[&quot;state&quot;] == 1 for node in nodes)
+                            window.Element('_ACTIVENODES_').update(value=str(active_nodes))
+                            nodes[nidx]['last_activity'] = 'state update' + ' at ' + dt_string
+                            if(nidx == window.Element('_LIST_').get_indexes()[0]):
+                                updateTabs(nidx)
+
+                        if((int(msg['nID']) != 255) and (msg['f'] == 'u')):
+                            nodes[nidx]['last_activity'] = str(nodes[nidx]['sensors'][int(msg['sID'])-1]['name']) + ' with value: ' + msg['sVal'] + ' at ' + dt_string
+                            window.Element('_LIST_').update(set_to_index=nidx)
+                            window.Element('_STATUSTAB_').update(title='Node ' + msg['nID'] + ' Status')
+                            window.Element('_STATSTAB_').update(title='Node ' + msg['nID'] + ' Info')
+
+
+                            nodes[nidx]['sensors'][int(msg['sID'])-1]['last_activity'] = dt_string
+                            nodes[nidx]['sensors'][int(msg['sID'])-1]['state'] = msg['sVal']
+
+                            nodes[int(msg['nID'])-1]['state'] = 1
+                            active_nodes = sum(node[&quot;state&quot;] == 1 for node in nodes)
+                            window.Element('_ACTIVENODES_').update(value=str(active_nodes))
+                            updateTabs(nidx)
+                        if((int(msg['nID']) != 255) and (msg['f'] == 'a')):
+                            nodes[nidx]['last_activity'] = str(nodes[nidx]['actuators'][int(msg['actID'])-1]['name']) + ' with value: ' + msg['actVal'] + ' at ' + dt_string
+                            window.Element('_LIST_').update(set_to_index=nidx)
+                            window.Element('_STATUSTAB_').update(title='Node ' + msg['nID'] + ' Status')
+                            window.Element('_STATSTAB_').update(title='Node ' + msg['nID'] + ' Info')
+                            nodes[nidx]['actuators'][int(msg['actID'])-1]['last_activity'] = dt_string
+                            nodes[nidx]['actuators'][int(msg['actID'])-1]['state'] = msg['actVal']
+                            nodes[int(msg['nID'])-1]['state'] = 1
+                            active_nodes = sum(node[&quot;state&quot;] == 1 for node in nodes)
+                            window.Element('_ACTIVENODES_').update(value=str(active_nodes))
+                            if(nidx == window.Element('_LIST_').get_indexes()[0]):
+                                updateTabs(nidx)
+
+                except:
+                    continue
+                    #print(&quot;ERROR reading from serial!!&quot;)
+
+sc_thread = threading.Thread(target=serial_comm)
+
+
+def main():
+    global active_nodes
+    active_nodes = 0
+    global total_nodes
+    global ser
+    global nodes
+    global stop_threads
+    stop_threads = False
+
+    with open(&quot;../config/wsn_config.yaml&quot;, &quot;r&quot;) as stream:
+        try:
+            config = yaml.safe_load(stream)
+        except yaml.YAMLError as exc:
+            print(exc)
+
+    gateways = config['wsn_config']['gateways']
+    for i in range(len(gateways)):
+        gateways_data = {
+            'state': 0
+        }
+        gateways[i] = {**gateways[i], **gateways_data}
+
+    nodes = config['wsn_config']['nodes']
+
+    node_data = {
+        'state': 0,
+        'last_activity': '',
+        'packets_sent':0,
+        'packets_received':0,
+        'avg_rssi': 0,
+        'avg_snr': 0,
+        'battery': 0,
+        'timestamps': list(),
+        'rssi_list': list(),
+        'snr_list': list(),
+        'battery_list': list(),
+        'msgID_list': list(),
+        'delay_list': list(),
+        'rssi_plot_canvas': None,
+        'snr_plot_canvas': None
+    }
+
+    sensors_data = {
+        'last_activity': '',
+        'state': None
+    }
+    actuators_data = {
+        'last_activity': '',
+        'state': None
+    }
+    for i in range(len(nodes)):
+        for j in range(len(nodes[i]['sensors'])):
+            nodes[i]['sensors'][j] = {**nodes[i]['sensors'][j], **sensors_data}
+        for j in range(len(nodes[i]['actuators'])):
+            nodes[i]['actuators'][j] = {**nodes[i]['actuators'][j], **actuators_data}
+        nodes[i] = {**nodes[i], **node_data}
+
+    total_nodes = len(nodes)
+
+    try:
+        ser = serial.Serial(gateways[0]['serial_port'], 9600, timeout=1)
+    except:
+        print(&quot;Serial port not available!&quot;)
+        return
+
+    sc_thread.start()
+
+    nt_thread = threading.Thread(target=network_test)
+    nt_thread.start()
+
+    gui()
+
+    stop_threads = True
+    sc_thread.join()
+    nt_thread.join()
+
+    ser.close()
+
+    return 0
+
+if __name__ == &quot;__main__&quot;:
+    main()
+
+
+
+
+
+</code></pre>
+<hr />
+<p>Updated on 2022-09-02 at 19:04:52 +0000</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>

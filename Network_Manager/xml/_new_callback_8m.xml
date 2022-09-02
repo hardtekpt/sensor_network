@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_new_callback_8m" kind="file" language="Objective-C">
+    <compoundname>NewCallback.m</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_new_callback_8m_1a15dea87d5316247863b22a2a799aaa84" prot="public" static="no" mutable="no">
+        <type>function</type>
+        <definition>pos output_txt</definition>
+        <argsstring></argsstring>
+        <name>output_txt</name>
+        <initializer>= myfunction(obj,event_obj)
+% Display the position of the data cursor
+% obj          Currently not used (empty)
+% event_obj    Handle to event object
+% output_txt   Data cursor text string (string or cell array of strings).
+
+pos = get(event_obj,&apos;Position&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/NewCallback.m" line="1" column="10" bodyfile="/sensor_network/network_manager/src/NewCallback.m" bodystart="1" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">function</highlight><highlight class="normal"><sp/><ref refid="_new_callback_8m_1a15dea87d5316247863b22a2a799aaa84" kindref="member">output_txt</ref><sp/>=<sp/>myfunction(obj,event_obj)</highlight></codeline>
+<codeline lineno="2"><highlight class="normal">%<sp/>Display<sp/>the<sp/>position<sp/>of<sp/>the<sp/>data<sp/>cursor</highlight></codeline>
+<codeline lineno="3"><highlight class="normal">%<sp/>obj<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Currently<sp/>not<sp/>used<sp/>(empty)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">%<sp/>event_obj<sp/><sp/><sp/><sp/>Handle<sp/>to<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">%<sp/><ref refid="_new_callback_8m_1a15dea87d5316247863b22a2a799aaa84" kindref="member">output_txt</ref><sp/><sp/><sp/>Data<sp/>cursor<sp/>text<sp/>string<sp/>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>or<sp/>cell<sp/>array<sp/>of<sp/>strings).</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">pos<sp/>=<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">(event_obj,</highlight><highlight class="stringliteral">&apos;Position&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="_new_callback_8m_1a15dea87d5316247863b22a2a799aaa84" kindref="member">output_txt</ref><sp/>=<sp/>{[&apos;Y:<sp/>&apos;,num2str(pos(2),4)]};</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">%<sp/>If<sp/>there<sp/>is<sp/><ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref><sp/>Z-coordinate<sp/>in<sp/>the<sp/>position,<sp/>display<sp/>it<sp/>as<sp/>well</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="stats__plotter_8m_1a546ecb44ca38945e237dafdd207aaebb" kindref="member">if</ref><sp/>length(pos)<sp/>&gt;<sp/>2</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_new_callback_8m_1a15dea87d5316247863b22a2a799aaa84" kindref="member">output_txt</ref>{end+1}<sp/>=<sp/>[&apos;Z:<sp/>&apos;,num2str(pos(3),4)];</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">end</highlight></codeline>
+    </programlisting>
+    <location file="/sensor_network/network_manager/src/NewCallback.m"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacenetwork__manager" kind="namespace" language="Python">
+    <compoundname>network_manager</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacenetwork__manager_1aa582773f5fc9e68295513b371344d402" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int network_manager.maxNum</definition>
+        <argsstring></argsstring>
+        <name>maxNum</name>
+        <initializer>=  5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="27" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenetwork__manager_1a9db16d5325395bea8b7a597968fa8662" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string network_manager.gateway_status</definition>
+        <argsstring></argsstring>
+        <name>gateway_status</name>
+        <initializer>=  &quot;Offline&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="28" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenetwork__manager_1a06741227839beb34676f942c1456dfdd" prot="private" static="no" mutable="no">
+        <type>dictionary</type>
+        <definition>dictionary network_manager._VARS</definition>
+        <argsstring></argsstring>
+        <name>_VARS</name>
+        <initializer>=  {&apos;rssi_canvas&apos;: None,
+         &apos;snr_canvas&apos;: None,
+		 &apos;dl_msgs&apos;: {
+			&apos;timestamps&apos;: list(),
+			&apos;<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>&apos;: list(),
+			&apos;<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>&apos;: list(),
+			&apos;<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>&apos;: list(),
+		 }}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="30" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenetwork__manager_1adba2f692df1387f00f16140366ebaca1" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool network_manager.firstTime</definition>
+        <argsstring></argsstring>
+        <name>firstTime</name>
+        <initializer>=  True</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="277" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="277" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenetwork__manager_1acc4164ba54c27fc7b03be9edabcbd673" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>network_manager.sc_thread</definition>
+        <argsstring></argsstring>
+        <name>sc_thread</name>
+        <initializer>=  threading.Thread(target=<ref refid="namespacenetwork__manager_1a2bc3663d311251c292b670a7246a35d7" kindref="member">serial_comm</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="435" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="435" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacenetwork__manager_1ac1085dbb37342eb0a23e528d310365b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def network_manager.network_test</definition>
+        <argsstring>()</argsstring>
+        <name>network_test</name>
+        <briefdescription>
+<para>Function that runs a test on the network. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="41" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="41" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacenetwork__manager_1ae9ccba5a3a49980f73334ca51677006b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def network_manager.draw_figure</definition>
+        <argsstring>(canvas, figure)</argsstring>
+        <name>draw_figure</name>
+        <param>
+          <type>canvas</type>
+          <defname>canvas</defname>
+        </param>
+        <param>
+          <type><ref refid="stats__plotter_8m_1aa6b23b11d06cc74c769d021090c7bfe3" kindref="member">figure</ref></type>
+          <defname>figure</defname>
+        </param>
+        <briefdescription>
+<para>Function that draws a plot onto a figure. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="55" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="55" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacenetwork__manager_1afb8ff37cf5a67151dc1a3617df6f70c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def network_manager.send_dl_msg</definition>
+        <argsstring>(data)</argsstring>
+        <name>send_dl_msg</name>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <briefdescription>
+<para>Function that sends a downlink message to the gateway through the serial connection. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="62" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="62" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacenetwork__manager_1adab19d5a71fda2fec2f6e0bc9a5cf120" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def network_manager.export_data</definition>
+        <argsstring>(path)</argsstring>
+        <name>export_data</name>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+<para>Function to export the gathered data onto a .csv file. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="69" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="69" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacenetwork__manager_1ae45073fb519e114e675fa7db7027fd5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def network_manager.gui</definition>
+        <argsstring>()</argsstring>
+        <name>gui</name>
+        <briefdescription>
+<para>Function responsible for all the GUI initialization and layout. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="83" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="83" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacenetwork__manager_1a3e68c101dd76d685d0824d7bb5938eb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def network_manager.updateTabs</definition>
+        <argsstring>(idx)</argsstring>
+        <name>updateTabs</name>
+        <param>
+          <type>idx</type>
+          <defname>idx</defname>
+        </param>
+        <briefdescription>
+<para>Function that updates the GUI. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="280" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="280" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacenetwork__manager_1a2bc3663d311251c292b670a7246a35d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def network_manager.serial_comm</definition>
+        <argsstring>()</argsstring>
+        <name>serial_comm</name>
+        <briefdescription>
+<para>Function that handles the received messages from the gateway through the serial communication. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="344" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="344" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacenetwork__manager_1aae0fa25ef6b880dbca6ced8dc09fce6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def network_manager.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+<para>Main function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="438" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="438" bodyend="517"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Allows communication with the gateway to monitor and control the network</para>
+<para>This is a python application with a gui designed to interface with the wireless sensor network through the serial port connected to the gateway. It allows for downlink messages to be sent, uplink messages to be received and monitoring of the network. Additionally, network tests can be run and the data monitored can be exported for further analysis </para>
+    </detaileddescription>
+    <location file="/sensor_network/network_manager/src/network_manager.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>
