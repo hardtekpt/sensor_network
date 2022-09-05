@@ -218,13 +218,13 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
   if (!msg_q.isEmpty()) {
 
     // START print msg queue
-    Msg test;
+    /*Msg test;
     for(int i=0; i<msg_q.getCount(); i++){
       msg_q.peekIdx(&test, i);
       Serial.print(test.msgID);
       Serial.print(", ");
     }
-    Serial.println(msg_q.getCount());
+    Serial.println(msg_q.getCount());*/
     // END print msg queue
 
     

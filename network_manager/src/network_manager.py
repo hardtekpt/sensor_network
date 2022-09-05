@@ -46,8 +46,8 @@ def network_test():
 			if stop_threads:
 				return
 			data = 's,' + str(node['id'])
-			send_dl_msg(data)
-			print(datetime.now(), data)
+			#send_dl_msg(data)
+			#print(datetime.now(), data)
 			time.sleep(3)
 	
 
