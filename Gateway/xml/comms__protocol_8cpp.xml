@@ -787,13 +787,13 @@
 <codeline lineno="218"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>.isEmpty())<sp/>{</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"></highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>START<sp/>print<sp/>msg<sp/>queue</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structstr_msg" kindref="compound">Msg</ref><sp/>test;</highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;<sp/>i&lt;<ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>.getCount();<sp/>i++){</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>.peekIdx(&amp;test,<sp/>i);</highlight></codeline>
-<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Serial.print(test.<ref refid="structstr_msg_1a400dc636a83c062cf829e45113b491ce" kindref="member">msgID</ref>);</highlight></codeline>
-<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Serial.print(</highlight><highlight class="stringliteral">&quot;,<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.println(<ref refid="comms__protocol_8cpp_1a5cff2e13cf4105bf39e0843561f55637" kindref="member">msg_q</ref>.getCount());</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Msg<sp/>test;</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/><sp/><sp/><sp/>for(int<sp/>i=0;<sp/>i&lt;msg_q.getCount();<sp/>i++){</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>msg_q.peekIdx(&amp;test,<sp/>i);</highlight></codeline>
+<codeline lineno="224"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>Serial.print(test.msgID);</highlight></codeline>
+<codeline lineno="225"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>Serial.print(&quot;,<sp/>&quot;);</highlight></codeline>
+<codeline lineno="226"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="227"><highlight class="comment"><sp/><sp/><sp/><sp/>Serial.println(msg_q.getCount());*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>END<sp/>print<sp/>msg<sp/>queue</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="229"><highlight class="normal"></highlight></codeline>
 <codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>

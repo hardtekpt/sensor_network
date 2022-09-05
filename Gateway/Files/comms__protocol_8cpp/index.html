@@ -1242,13 +1242,13 @@ void getMsgFromQueueAndSend(unsigned long currentMillis) {
   if (!msg_q.isEmpty()) {
 
     // START print msg queue
-    Msg test;
+    /*Msg test;
     for(int i=0; i&lt;msg_q.getCount(); i++){
       msg_q.peekIdx(&amp;test, i);
       Serial.print(test.msgID);
       Serial.print(&quot;, &quot;);
     }
-    Serial.println(msg_q.getCount());
+    Serial.println(msg_q.getCount());*/
     // END print msg queue
 
 
@@ -1405,7 +1405,7 @@ void onReceive(int packetSize) {
 }
 </code></pre>
 <hr />
-<p>Updated on 2022-09-02 at 19:04:50 +0000</p>
+<p>Updated on 2022-09-05 at 11:31:46 +0000</p>
 
 
 
