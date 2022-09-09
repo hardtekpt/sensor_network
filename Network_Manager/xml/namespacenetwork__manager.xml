@@ -64,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="277" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="277" bodyend="-1"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="282" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="282" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacenetwork__manager_1acc4164ba54c27fc7b03be9edabcbd673" prot="public" static="no" mutable="no">
         <type></type>
@@ -78,7 +78,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="435" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="435" bodyend="-1"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="440" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="440" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenetwork__manager_1a75d474fb30128f2556d856be5ec7b7c4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>network_manager.nt_thread</definition>
+        <argsstring></argsstring>
+        <name>nt_thread</name>
+        <initializer>=  threading.Thread(target=<ref refid="namespacenetwork__manager_1ac1085dbb37342eb0a23e528d310365b8" kindref="member">network_test</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="441" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="441" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -94,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="41" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="41" bodyend="53"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="41" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="41" bodyend="56"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1ae9ccba5a3a49980f73334ca51677006b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -116,7 +130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="55" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="55" bodyend="60"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="58" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="58" bodyend="63"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1afb8ff37cf5a67151dc1a3617df6f70c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -134,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="62" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="62" bodyend="67"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="65" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="65" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1adab19d5a71fda2fec2f6e0bc9a5cf120" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -152,7 +166,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="69" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="69" bodyend="81"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="72" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="72" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1ae45073fb519e114e675fa7db7027fd5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -166,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="83" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="83" bodyend="276"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="87" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="87" bodyend="281"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1a3e68c101dd76d685d0824d7bb5938eb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -184,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="280" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="280" bodyend="342"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="285" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="285" bodyend="347"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1a2bc3663d311251c292b670a7246a35d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -198,7 +212,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="344" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="344" bodyend="434"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="349" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="349" bodyend="439"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1aae0fa25ef6b880dbca6ced8dc09fce6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -212,7 +226,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="438" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="438" bodyend="517"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="444" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="444" bodyend="520"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

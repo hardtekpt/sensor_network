@@ -1348,6 +1348,15 @@ void relayDownlinkMsg(char *dlMsg) {
       sscanf(dlMsg, &quot;%*c,%d,%d,%d&quot;, &amp;nodeID, &amp;actID, &amp;actVal);
       sendActuatorControl((byte)nodeID, (byte)(actID + 1), (byte)(actVal + 1));
       break;
+    case 'p':
+      int sf;
+      long sb;
+      int crd;
+      sscanf(dlMsg, &quot;%*c,%d,%ld,%d&quot;, &amp;crd, &amp;sb, &amp;sf);
+      LoRa.setSignalBandwidth(sb);
+      LoRa.setCodingRate4(crd);
+      LoRa.setSpreadingFactor(sf);
+      break;
   }
 }
 
@@ -1405,7 +1414,7 @@ void onReceive(int packetSize) {
 }
 </code></pre>
 <hr />
-<p>Updated on 2022-09-05 at 11:31:46 +0000</p>
+<p>Updated on 2022-09-09 at 17:40:14 +0000</p>
 
 
 

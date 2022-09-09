@@ -125,7 +125,7 @@
       </memberdef>
       <memberdef kind="define" id="comms__protocol_8h_1addaaa188262c960b2aa51012d684d084" prot="public" static="no">
         <name>MAX_N_RETRY</name>
-        <initializer>5</initializer>
+        <initializer>3</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -136,7 +136,7 @@
       </memberdef>
       <memberdef kind="define" id="comms__protocol_8h_1a13f06f86104b4525a9429ff04d1c852d" prot="public" static="no">
         <name>TIMEOUT_INTERVAL</name>
-        <initializer>1400</initializer>
+        <initializer>3000</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -646,7 +646,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="124" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="355" bodyend="406" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="124" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="124" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="364" bodyend="415" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="124" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1a219dcdade25952b91806066261a45539" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -820,7 +820,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="130" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="327" bodyend="346" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="130" declcolumn="6"/>
+        <location file="/sensor_network/gateway_serial/comms_protocol.h" line="130" column="6" bodyfile="/sensor_network/gateway_serial/comms_protocol.cpp" bodystart="327" bodyend="355" declfile="/sensor_network/gateway_serial/comms_protocol.h" declline="130" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="comms__protocol_8h_1a091b9218e6ed5b060bc3d1104dde7109" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -970,8 +970,8 @@
 <codeline lineno="27" refid="comms__protocol_8h_1a3ea85ebbdc9c6fece31540aeff4887da" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_JSON_PAYLOAD_SIZE<sp/>120</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28" refid="comms__protocol_8h_1ae2132d5b9e92cbf586fc556351235b75" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_R_QUEUE_SIZE<sp/>2</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="29" refid="comms__protocol_8h_1a623ec78b7909090dbedac4af1d52abb4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_QUEUE_SIZE<sp/>5</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30" refid="comms__protocol_8h_1addaaa188262c960b2aa51012d684d084" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_N_RETRY<sp/>5</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31" refid="comms__protocol_8h_1a13f06f86104b4525a9429ff04d1c852d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TIMEOUT_INTERVAL<sp/>1400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="comms__protocol_8h_1addaaa188262c960b2aa51012d684d084" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_N_RETRY<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="comms__protocol_8h_1a13f06f86104b4525a9429ff04d1c852d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TIMEOUT_INTERVAL<sp/>3000</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33" refid="comms__protocol_8h_1ad51ded0bbd705f02f73fc60c0b721ced" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLOCK_SIZE<sp/>16</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="34" refid="comms__protocol_8h_1a6303f7392a2d06be5a121c54278d561b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_PAYLOAD_SIZE<sp/>16</highlight><highlight class="normal"></highlight></codeline>

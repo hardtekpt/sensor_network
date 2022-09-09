@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/gateway_serial.ino" line="24" column="6" bodyfile="/sensor_network/gateway_serial/gateway_serial.ino" bodystart="24" bodyend="51"/>
+        <location file="/sensor_network/gateway_serial/gateway_serial.ino" line="24" column="6" bodyfile="/sensor_network/gateway_serial/gateway_serial.ino" bodystart="24" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="gateway__serial_8ino_1afe461d27b9c48d5921c00d521181f12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -87,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/gateway_serial/gateway_serial.ino" line="64" column="6" bodyfile="/sensor_network/gateway_serial/gateway_serial.ino" bodystart="64" bodyend="90"/>
+        <location file="/sensor_network/gateway_serial/gateway_serial.ino" line="63" column="6" bodyfile="/sensor_network/gateway_serial/gateway_serial.ino" bodystart="63" bodyend="89"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -126,44 +126,43 @@
 <codeline lineno="39"><highlight class="normal"><sp/><sp/>LoRa.setSignalBandwidth(<ref refid="comms__protocol_8h_1aacf3a14e005217a72253af251126b997" kindref="member">signalBandwidth</ref>);</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"><sp/><sp/>LoRa.setCodingRate4(<ref refid="comms__protocol_8h_1ad4ec9bca325aa0279afa600576973bd4" kindref="member">codingRateDenominator</ref>);</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/>LoRa.setSpreadingFactor(<ref refid="comms__protocol_8h_1a593d148617786934b5b925be6310c092" kindref="member">spreadingFactor</ref>);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/>LoRa.setCodingRate4(<ref refid="comms__protocol_8h_1ad4ec9bca325aa0279afa600576973bd4" kindref="member">codingRateDenominator</ref>);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/>LoRa.setSyncWord(<ref refid="gateway__serial__definitions_8h_1ade7b2a67f256bbe99e2fc48a80068ee8" kindref="member">netID</ref>);</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/>LoRa.enableCrc();</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1af107f16dd1552bb658c1936141d9ae7a" kindref="member">LoRa_rxMode</ref>();</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1afad07369259cd493d556473fa3ba8433" kindref="member">prevMil</ref><sp/>=<sp/>millis();</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/>Serial.write(</highlight><highlight class="stringliteral">&quot;Startup<sp/>complete\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="gateway__serial_8ino_1afe461d27b9c48d5921c00d521181f12f" kindref="member">loop</ref>()</highlight></codeline>
-<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>currentMillis<sp/>=<sp/>millis();</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>packetSize<sp/>=<sp/>LoRa.parsePacket();</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(packetSize)<sp/>{</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a54817002e33761dc61558b1138749dfb" kindref="member">onReceive</ref>(packetSize);</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Receive<sp/>downlink<sp/>msgs<sp/>from<sp/>server</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Serial.available()<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/>dlMsg<sp/>=<sp/>Serial.readString();</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>msg[dlMsg.length()];</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>dlMsg.toCharArray(msg,<sp/>dlMsg.length());</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a15c330bc3cd75ecf3800db120a1a22d3" kindref="member">relayDownlinkMsg</ref>(msg);</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//if((currentMillis-prevMilR)<sp/>&gt;<sp/>RELAY_INTERVAL){</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1af05ee2950c64bf21cb7aa13a8280163f" kindref="member">relayMsgFromQueueToServer</ref>(currentMillis);</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((currentMillis-<ref refid="comms__protocol_8cpp_1afad07369259cd493d556473fa3ba8433" kindref="member">prevMil</ref>)<sp/>&gt;<sp/><ref refid="comms__protocol_8h_1a13f06f86104b4525a9429ff04d1c852d" kindref="member">TIMEOUT_INTERVAL</ref>){</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//sendStatusRequest(1);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a091b9218e6ed5b060bc3d1104dde7109" kindref="member">getMsgFromQueueAndSend</ref>(currentMillis);</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>LoRa.setSyncWord(<ref refid="gateway__serial__definitions_8h_1ade7b2a67f256bbe99e2fc48a80068ee8" kindref="member">netID</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>LoRa.enableCrc();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1af107f16dd1552bb658c1936141d9ae7a" kindref="member">LoRa_rxMode</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1afad07369259cd493d556473fa3ba8433" kindref="member">prevMil</ref><sp/>=<sp/>millis();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>Serial.write(</highlight><highlight class="stringliteral">&quot;Startup<sp/>complete\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="gateway__serial_8ino_1afe461d27b9c48d5921c00d521181f12f" kindref="member">loop</ref>()</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>currentMillis<sp/>=<sp/>millis();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>packetSize<sp/>=<sp/>LoRa.parsePacket();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(packetSize)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a54817002e33761dc61558b1138749dfb" kindref="member">onReceive</ref>(packetSize);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Receive<sp/>downlink<sp/>msgs<sp/>from<sp/>server</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(Serial.available()<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/>dlMsg<sp/>=<sp/>Serial.readString();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>msg[dlMsg.length()];</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>dlMsg.toCharArray(msg,<sp/>dlMsg.length());</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a15c330bc3cd75ecf3800db120a1a22d3" kindref="member">relayDownlinkMsg</ref>(msg);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//if((currentMillis-prevMilR)<sp/>&gt;<sp/>RELAY_INTERVAL){</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><ref refid="comms__protocol_8cpp_1af05ee2950c64bf21cb7aa13a8280163f" kindref="member">relayMsgFromQueueToServer</ref>(currentMillis);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((currentMillis-<ref refid="comms__protocol_8cpp_1afad07369259cd493d556473fa3ba8433" kindref="member">prevMil</ref>)<sp/>&gt;<sp/><ref refid="comms__protocol_8h_1a13f06f86104b4525a9429ff04d1c852d" kindref="member">TIMEOUT_INTERVAL</ref>){</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//sendStatusRequest(1);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="comms__protocol_8cpp_1a091b9218e6ed5b060bc3d1104dde7109" kindref="member">getMsgFromQueueAndSend</ref>(currentMillis);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/sensor_network/gateway_serial/gateway_serial.ino"/>
   </compounddef>

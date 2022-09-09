@@ -6,6 +6,7 @@
     <member refid="namespacenetwork__manager_1a06741227839beb34676f942c1456dfdd" kind="variable"><name>_VARS</name></member>
     <member refid="namespacenetwork__manager_1adba2f692df1387f00f16140366ebaca1" kind="variable"><name>firstTime</name></member>
     <member refid="namespacenetwork__manager_1acc4164ba54c27fc7b03be9edabcbd673" kind="variable"><name>sc_thread</name></member>
+    <member refid="namespacenetwork__manager_1a75d474fb30128f2556d856be5ec7b7c4" kind="variable"><name>nt_thread</name></member>
     <member refid="namespacenetwork__manager_1ac1085dbb37342eb0a23e528d310365b8" kind="function"><name>network_test</name></member>
     <member refid="namespacenetwork__manager_1ae9ccba5a3a49980f73334ca51677006b" kind="function"><name>draw_figure</name></member>
     <member refid="namespacenetwork__manager_1afb8ff37cf5a67151dc1a3617df6f70c3" kind="function"><name>send_dl_msg</name></member>
