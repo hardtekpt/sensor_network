@@ -39,7 +39,6 @@ void setup() {
   LoRa.setSignalBandwidth(signalBandwidth);
   LoRa.setCodingRate4(codingRateDenominator);
   LoRa.setSpreadingFactor(spreadingFactor);
-  LoRa.setCodingRate4(codingRateDenominator);
   
   LoRa.setSyncWord(netID);
   LoRa.enableCrc();

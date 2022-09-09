@@ -342,6 +342,15 @@ void relayDownlinkMsg(char *dlMsg) {
       sscanf(dlMsg, "%*c,%d,%d,%d", &nodeID, &actID, &actVal);
       sendActuatorControl((byte)nodeID, (byte)(actID + 1), (byte)(actVal + 1));
       break;
+    case 'p':
+      int sf;
+      long sb;
+      int crd;
+      sscanf(dlMsg, "%*c,%d,%ld,%d", &crd, &sb, &sf);
+      LoRa.setSignalBandwidth(sb);
+      LoRa.setCodingRate4(crd);
+      LoRa.setSpreadingFactor(sf);
+      break;
   }
 }
 

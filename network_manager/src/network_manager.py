@@ -39,16 +39,19 @@ _VARS = {'rssi_canvas': None,
 
 ## Function that runs a test on the network
 def network_test():
-	time.sleep(5)
-	for i in range(3):
+	runs = 50
+	msg_delay = 10
+	print('Starting test!')
+	for i in range(runs):
 		global stop_threads
 		for node in nodes:
 			if stop_threads:
 				return
 			data = 's,' + str(node['id'])
-			#send_dl_msg(data)
+			send_dl_msg(data)
 			#print(datetime.now(), data)
-			time.sleep(3)
+			time.sleep(msg_delay)
+	print('Test finished!')
 	
 
 ## Function that draws a plot onto a figure
@@ -67,7 +70,7 @@ def send_dl_msg(data):
 
 ## Function to export the gathered data onto a .csv file
 def export_data(path):
-	print(path)
+	#print(path)
 	with open(path, 'w', newline='') as csvfile:
 		writer = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
 		for node in nodes:
@@ -75,6 +78,7 @@ def export_data(path):
 				writer.writerow([node['timestamps'][i], node['delay_list'][i], node['msgID_list'][i], node['id'], node['rssi_list'][i], node['snr_list'][i], node['battery_list'][i], '0'])
 		for i in range(len(_VARS['dl_msgs']['timestamps'])):
 			writer.writerow([_VARS['dl_msgs']['timestamps'][i], _VARS['dl_msgs']['delay'][i], _VARS['dl_msgs']['msgID'][i], _VARS['dl_msgs']['nodeID'][i], 0, 0, 0, '1'])
+	print('Data exported!')
 	#timestamp, nodeID, rssi, snr, battery, DL/UL
 	#if DL we only care about timestamp and nodeID
 	# set up custom commands for DLMSG: test1, test2 -> execute predetermined tests and save data
@@ -155,12 +159,8 @@ def gui():
 				[
 					sg.Frame(layout = [[sg.Canvas(key='rssi_canvas', background_color=sg.theme_background_color())]], title = "RSSI vs Packet", size=(250,250)),
 					sg.Frame(layout = [[sg.Canvas(key='snr_canvas', background_color=sg.theme_background_color())]], title = "SNR vs Packet", size=(250,250))
-				],
-				[
-					sg.Frame(layout = [[]], title = "Battery vs Time", size=(250,250)),
-					sg.Frame(layout = [[]], title = "Packet Delay", size=(250,250))
 				]
-			], scrollable=True, expand_x = True, expand_y = True)
+			], scrollable=False, expand_x = True, expand_y = True)
 		]
 	]
 
@@ -193,8 +193,10 @@ def gui():
 						title_color='white'					
 					)
 				],
+				[sg.Output(size=(119,8))],
 				[
 					sg.Button('Rescan Network', key='_RSNET_'), 
+					sg.Button('Start Test', key='_TEST_'), 
 					sg.InputText(visible=False, enable_events=True, key='export_data_path'),
 					sg.FileSaveAs('Export data', key='_EXPORT_', file_types=(('CSV', '.csv'),)),
 					sg.Push(),
@@ -227,6 +229,9 @@ def gui():
 		event, values = window.read(timeout = 200)
 		if event == sg.WIN_CLOSED or event == 'Exit': 
 			break
+		if event == '_TEST_':
+			global nt_thread
+			nt_thread.start()
 		if event == 'export_data_path':
 			path = values['export_data_path']
 			export_data(path)
@@ -433,6 +438,7 @@ def serial_comm():
 					#print("ERROR reading from serial!!")
 
 sc_thread = threading.Thread(target=serial_comm)
+nt_thread = threading.Thread(target=network_test)
 
 ## Main function
 def main():
@@ -502,14 +508,11 @@ def main():
 
 	sc_thread.start()
 
-	nt_thread = threading.Thread(target=network_test)
-	nt_thread.start()
-
 	gui()
 
 	stop_threads = True
 	sc_thread.join()
-	nt_thread.join()
+	#nt_thread.join()
 
 	ser.close()
 
