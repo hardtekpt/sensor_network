@@ -4,7 +4,6 @@ var searchData=
   ['network_5fmanager_35',['network_manager',['../namespacenetwork__manager.html',1,'']]],
   ['network_5fmanager_2epy_36',['network_manager.py',['../network__manager_8py.html',1,'']]],
   ['network_5ftest_37',['network_test',['../namespacenetwork__manager.html#ac1085dbb37342eb0a23e528d310365b8',1,'network_manager']]],
-  ['newcallback_2em_38',['NewCallback.m',['../_new_callback_8m.html',1,'']]],
-  ['nodeid_39',['nodeID',['../stats__plotter_8m.html#a8648bfa015cb1c03542e29951cb5503f',1,'stats_plotter.m']]],
-  ['nt_5fthread_40',['nt_thread',['../namespacenetwork__manager.html#a75d474fb30128f2556d856be5ec7b7c4',1,'network_manager']]]
+  ['nodeid_38',['nodeID',['../stats__plotter_8m.html#a8648bfa015cb1c03542e29951cb5503f',1,'stats_plotter.m']]],
+  ['nt_5fthread_39',['nt_thread',['../namespacenetwork__manager.html#a75d474fb30128f2556d856be5ec7b7c4',1,'network_manager']]]
 ];

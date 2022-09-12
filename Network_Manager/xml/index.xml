@@ -18,9 +18,6 @@
   </compound>
   <compound refid="network__manager_8py" kind="file"><name>network_manager.py</name>
   </compound>
-  <compound refid="_new_callback_8m" kind="file"><name>NewCallback.m</name>
-    <member refid="_new_callback_8m_1a15dea87d5316247863b22a2a799aaa84" kind="variable"><name>output_txt</name></member>
-  </compound>
   <compound refid="stats__plotter_8m" kind="file"><name>stats_plotter.m</name>
     <member refid="stats__plotter_8m_1a00a349297fa58bc80ff5329e25dcfe28" kind="variable"><name>all</name></member>
     <member refid="stats__plotter_8m_1a3765dc1068dc7251097873029d8365d2" kind="variable"><name>Array</name></member>

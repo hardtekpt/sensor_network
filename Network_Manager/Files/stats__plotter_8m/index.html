@@ -1638,7 +1638,7 @@
 <pre><code class="language-objective-c">close all;
 </code></pre>
 <h3 id="variable-array">variable Array</h3>
-<pre><code class="language-objective-c">Array =readtable('basic50.csv');
+<pre><code class="language-objective-c">Array =readtable('test_results/field_test/field_A_crd5_sb125_sf7_50.csv');
 </code></pre>
 <h3 id="variable-t">variable t</h3>
 <pre><code class="language-objective-c">t = datetime(table2array(Array(:,1)),'InputFormat','yyyy-MM-dd HH:mm:ss.SSSSSS');
@@ -1720,7 +1720,7 @@
 <h2 id="source-code">Source code</h2>
 <pre><code class="language-objective-c">close all;
 
-Array=readtable('basic50.csv');
+Array=readtable('test_results/field_test/field_A_crd5_sb125_sf7_50.csv');
 
 t = datetime(table2array(Array(:,1)),'InputFormat','yyyy-MM-dd HH:mm:ss.SSSSSS');
 delay = table2array(Array(:, 2));
@@ -1783,17 +1783,17 @@ end
 
 avg_rssi(1) = mean(rssi(indxs(1:a,1)));
 avg_rssi(2) = mean(rssi(indxs(1:b,2)));
-avg_rssi(3) = mean(rssi(indxs(1:c,3)));
+%avg_rssi(3) = mean(rssi(indxs(1:c,3)));
 
 avg_snr(1) = mean(snr(indxs(1:a,1)));
 avg_snr(2) = mean(snr(indxs(1:b,2)));
-avg_snr(3) = mean(snr(indxs(1:c,3)));
+%avg_snr(3) = mean(snr(indxs(1:c,3)));
 
 %% Calculate Average Delay Time
 
 avg_delay(1) = mean(delay(indxs(1:a,1))-delay(indxs_dl(1:d,1)));
 avg_delay(2) = mean(delay(indxs(1:b,2))-delay(indxs_dl(1:e,2)));
-avg_delay(3) = mean(delay(indxs(1:c,3))-delay(indxs_dl(1:f,3)));
+%avg_delay(3) = mean(delay(indxs(1:c,3))-delay(indxs_dl(1:f,3)));
 avg_delay_m = mean(avg_delay);
 
 mID = max(msgID);
@@ -1895,7 +1895,7 @@ xlabel(&quot;Time (mm:ss)&quot;);
 ylabel(&quot;Packet Delay (ms)&quot;);
 </code></pre>
 <hr />
-<p>Updated on 2022-09-09 at 17:40:17 +0000</p>
+<p>Updated on 2022-09-12 at 11:13:47 +0000</p>
 
 
 
