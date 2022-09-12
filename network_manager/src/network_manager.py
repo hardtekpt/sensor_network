@@ -40,7 +40,7 @@ _VARS = {'rssi_canvas': None,
 ## Function that runs a test on the network
 def network_test():
 	runs = 50
-	msg_delay = 10
+	msg_delay = 7
 	print('Starting test!')
 	for i in range(runs):
 		global stop_threads
