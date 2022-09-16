@@ -8,6 +8,7 @@
     <member refid="namespacenetwork__manager_1acc4164ba54c27fc7b03be9edabcbd673" kind="variable"><name>sc_thread</name></member>
     <member refid="namespacenetwork__manager_1a75d474fb30128f2556d856be5ec7b7c4" kind="variable"><name>nt_thread</name></member>
     <member refid="namespacenetwork__manager_1ac1085dbb37342eb0a23e528d310365b8" kind="function"><name>network_test</name></member>
+    <member refid="namespacenetwork__manager_1a02f4f77c104efb342a0251d052caa8c6" kind="function"><name>idxFromID</name></member>
     <member refid="namespacenetwork__manager_1ae9ccba5a3a49980f73334ca51677006b" kind="function"><name>draw_figure</name></member>
     <member refid="namespacenetwork__manager_1afb8ff37cf5a67151dc1a3617df6f70c3" kind="function"><name>send_dl_msg</name></member>
     <member refid="namespacenetwork__manager_1adab19d5a71fda2fec2f6e0bc9a5cf120" kind="function"><name>export_data</name></member>
@@ -36,24 +37,32 @@
     <member refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kind="variable"><name>d</name></member>
     <member refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kind="variable"><name>e</name></member>
     <member refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kind="variable"><name>f</name></member>
+    <member refid="stats__plotter_8m_1aea6edee744966c3c75ec5b89949abcc2" kind="variable"><name>g</name></member>
+    <member refid="stats__plotter_8m_1ab7a8ea21de0a5443a10106032482c521" kind="variable"><name>h</name></member>
+    <member refid="stats__plotter_8m_1afa2ab6511b2a9b6744db136e3a30d014" kind="variable"><name>ii</name></member>
     <member refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kind="variable"><name>time</name></member>
     <member refid="stats__plotter_8m_1a2c144cdac64453e218a28b78d8cf5294" kind="variable"><name>ul_packets</name></member>
-    <member refid="stats__plotter_8m_1a88f6cae9348dc95432577231789018bf" kind="variable"><name>dl_packets</name></member>
+    <member refid="stats__plotter_8m_1a460ad9b0e2fb2657ce239b3255768b45" kind="variable"><name>dl_packets</name></member>
     <member refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kind="variable"><name>markerSize</name></member>
     <member refid="stats__plotter_8m_1a783b7554bb0f3345db416486daad3178" kind="variable"><name>lineThickness</name></member>
-    <member refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kind="variable"><name>i</name></member>
+    <member refid="stats__plotter_8m_1ad488b725bf28bd6cb39231a7a95ce0b6" kind="variable"><name>prevID</name></member>
+    <member refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kind="variable"><name>i</name></member>
     <member refid="stats__plotter_8m_1aa7a4af0c0d03d8386daf3ca8a4568a34" kind="variable"><name>avg_delay_m</name></member>
     <member refid="stats__plotter_8m_1aebd429d404fd1b08b74c840b95a70cd5" kind="variable"><name>mID</name></member>
     <member refid="stats__plotter_8m_1aa6b60f4c5e856b2b3adda996c0a4c35f" kind="variable"><name>packet_loss</name></member>
+    <member refid="stats__plotter_8m_1a4ddecec4c2c9e282d1f08a85b391f544" kind="variable"><name>node1_pl</name></member>
+    <member refid="stats__plotter_8m_1a91662071cccfd469b95e39b3f78be113" kind="variable"><name>node2_pl</name></member>
+    <member refid="stats__plotter_8m_1a8e56feee0d5a6a9141c7cc3ecedaef6e" kind="variable"><name>node3_pl</name></member>
     <member refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kind="variable"><name>on</name></member>
+    <member refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kind="function"><name>indxs</name></member>
     <member refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kind="function"><name>indxs</name></member>
-    <member refid="stats__plotter_8m_1a546ecb44ca38945e237dafdd207aaebb" kind="function"><name>if</name></member>
+    <member refid="stats__plotter_8m_1a26fc02319e080a342e8c5ec275e2c85e" kind="function"><name>if</name></member>
     <member refid="stats__plotter_8m_1a6d4d01d8c48ff0cd318eda6844bf1884" kind="function"><name>indxs</name></member>
     <member refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kind="function"><name>indxs</name></member>
     <member refid="stats__plotter_8m_1a6b1f4deff1cc5bfd170c19b417b34b43" kind="function"><name>if</name></member>
-    <member refid="stats__plotter_8m_1a7f4dbf2e83cb0d899111266f80bf8137" kind="function"><name>indxs_dl</name></member>
-    <member refid="stats__plotter_8m_1a04b5d3e2f6d7aafe46a344e67010b6ba" kind="function"><name>indxs_dl</name></member>
-    <member refid="stats__plotter_8m_1aecac7d27170c0a0746da43128016ed96" kind="function"><name>indxs_dl</name></member>
+    <member refid="stats__plotter_8m_1afdee5a312686bc442bf2b7e02b190ac1" kind="function"><name>if</name></member>
+    <member refid="stats__plotter_8m_1af5a01d8e148fac0bcfdf7bb3bacef9c1" kind="function"><name>if</name></member>
+    <member refid="stats__plotter_8m_1a9dff4370701ffe5bb11b5e3b022cfbe3" kind="function"><name>if</name></member>
     <member refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kind="function"><name>avg_rssi</name></member>
     <member refid="stats__plotter_8m_1a29153528f7f4e030d7ba23da94006c10" kind="function"><name>avg_rssi</name></member>
     <member refid="stats__plotter_8m_1ac73e86ab91fd0b868995873e326bf504" kind="function"><name>avg_rssi</name></member>
@@ -67,8 +76,8 @@
     <member refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kind="function"><name>line</name></member>
     <member refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kind="function"><name>scatter</name></member>
     <member refid="stats__plotter_8m_1ac3b3edb8be3bb93c2834204c37e83304" kind="function"><name>scatter</name></member>
-    <member refid="stats__plotter_8m_1a807342a8e5c5c2a3b0d698b2916d33e0" kind="function"><name>scatter</name></member>
-    <member refid="stats__plotter_8m_1a8e4b1e7c7c9ce5ee074791723e553ac1" kind="function"><name>ylim</name></member>
+    <member refid="stats__plotter_8m_1a5f2ce7a3d4270fef1b272c2dabe4f6c9" kind="function"><name>scatter</name></member>
+    <member refid="stats__plotter_8m_1a99c085e92e737c5c6517252118197de8" kind="function"><name>ylim</name></member>
     <member refid="stats__plotter_8m_1a2f08986a40e4937f644127afe67e2444" kind="function"><name>xlim</name></member>
     <member refid="stats__plotter_8m_1a5304cf5a0c05352e7926dbb2beaa07d1" kind="function"><name>xtickformat</name></member>
     <member refid="stats__plotter_8m_1a022c62f640943c97004fcf0075553331" kind="function"><name>legend</name></member>
@@ -77,11 +86,11 @@
     <member refid="stats__plotter_8m_1a8a808ab08eb9433293bfcbbb92c8960e" kind="function"><name>line</name></member>
     <member refid="stats__plotter_8m_1a9e68622c051039e468d4ec77ca3a3bd9" kind="function"><name>scatter</name></member>
     <member refid="stats__plotter_8m_1a2036360f2667793a7722d4caf7137c5a" kind="function"><name>scatter</name></member>
-    <member refid="stats__plotter_8m_1a3241b1982218318ae3ccbebcd8e4421d" kind="function"><name>scatter</name></member>
+    <member refid="stats__plotter_8m_1a52f76d26d391abe12287f5d28d9af8ec" kind="function"><name>scatter</name></member>
     <member refid="stats__plotter_8m_1a6556474532452da0080b468db32b0eda" kind="function"><name>ylabel</name></member>
     <member refid="stats__plotter_8m_1a2161b9a35e68d7361547e924e9f4cbc8" kind="function"><name>scatter</name></member>
     <member refid="stats__plotter_8m_1aabff7bf6bacff3febc5b4e918061c791" kind="function"><name>scatter</name></member>
-    <member refid="stats__plotter_8m_1a52916a358113d4e32bd8b755d4520931" kind="function"><name>scatter</name></member>
+    <member refid="stats__plotter_8m_1a37cac98196ce651e724a78d25cddb7cd" kind="function"><name>scatter</name></member>
     <member refid="stats__plotter_8m_1a22753c35f8ea1e4c50f4c96ffa0b7a37" kind="function"><name>legend</name></member>
     <member refid="stats__plotter_8m_1a73c6544118bbbaadb0208dcadaad1549" kind="function"><name>ylabel</name></member>
   </compound>

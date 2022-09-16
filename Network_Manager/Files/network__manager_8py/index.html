@@ -651,8 +651,8 @@ _VARS = {'rssi_canvas': None,
 
 
 def network_test():
-    runs = 50
-    msg_delay = 7
+    runs = 5
+    msg_delay = 3
     print('Starting test!')
     for i in range(runs):
         global stop_threads
@@ -660,10 +660,19 @@ def network_test():
             if stop_threads:
                 return
             data = 's,' + str(node['id'])
-            send_dl_msg(data)
+            send_dl_msg('s,2')
             #print(datetime.now(), data)
             time.sleep(msg_delay)
     print('Test finished!')
+
+def idxFromID(id):
+    idx = -1
+
+    for i in range(len(nodes)):
+        if nodes[i]['id'] == id:
+            idx = i
+            break       
+    return idx
 
 
 
@@ -854,9 +863,10 @@ def gui():
 
         if event == '_LIST_' and len(values['_LIST_']): 
             r = parse(&quot;[\'Node {}\']&quot;, str(values['_LIST_']))
-            idx = int(r[0])-1
-            window.Element('_STATUSTAB_').update(title='Node ' + str(idx+1) + ' Status')
-            window.Element('_STATSTAB_').update(title='Node ' + str(idx+1) + ' Stats')
+            idx = int(r[0])
+            idx = idxFromID(idx)
+            window.Element('_STATUSTAB_').update(title='Node ' + str(nodes[idx]['id']) + ' Status')
+            window.Element('_STATSTAB_').update(title='Node ' + str(nodes[idx]['id']) + ' Stats')
             updateTabs(idx)
         if event == '_RSNET_':
             active_nodes = 0
@@ -984,21 +994,20 @@ def serial_comm():
                         _VARS['dl_msgs']['msgID'].append(msg['msgID'])
                         _VARS['dl_msgs']['delay'].append(msg['t'])
                     else:
-
-                        nidx = int(msg['nID'])-1
+                        nidx = idxFromID(int(msg['nID']))
                         now = datetime.now()
                         dt_string = now.strftime(&quot;%d/%m/%Y %H:%M:%S&quot;)
 
                         if(int(msg['RSSI']) != 0):
-                            nodes[int(msg['nID'])-1]['packets_sent'] += 1   
-                            t_packets = nodes[int(msg['nID'])-1]['packets_sent'] + nodes[int(msg['nID'])-1]['packets_received']
-                            avg_rssi = float(nodes[int(msg['nID'])-1]['avg_rssi']) * float(t_packets-1)/t_packets + float(msg['RSSI']) * float(1/t_packets)
-                            avg_snr = nodes[int(msg['nID'])-1]['avg_snr'] * float(t_packets-1)/t_packets + float(msg['SNR']) * float(1/t_packets)
+                            nodes[idxFromID(int(msg['nID']))]['packets_sent'] += 1  
+                            t_packets = nodes[idxFromID(int(msg['nID']))]['packets_sent'] + nodes[idxFromID(int(msg['nID']))]['packets_received']
+                            avg_rssi = float(nodes[idxFromID(int(msg['nID']))]['avg_rssi']) * float(t_packets-1)/t_packets + float(msg['RSSI']) * float(1/t_packets)
+                            avg_snr = nodes[idxFromID(int(msg['nID']))]['avg_snr'] * float(t_packets-1)/t_packets + float(msg['SNR']) * float(1/t_packets)
                             bat = float(msg['VBAT'])
 
-                            nodes[int(msg['nID'])-1]['avg_rssi'] = round(avg_rssi, 2)
-                            nodes[int(msg['nID'])-1]['avg_snr'] = round(avg_snr, 2)
-                            nodes[int(msg['nID'])-1]['battery'] = round(bat, 1)
+                            nodes[idxFromID(int(msg['nID']))]['avg_rssi'] = round(avg_rssi, 2)
+                            nodes[idxFromID(int(msg['nID']))]['avg_snr'] = round(avg_snr, 2)
+                            nodes[idxFromID(int(msg['nID']))]['battery'] = round(bat, 1)
 
                             for node in nodes:
                                 if int(node['id']) == int(msg['nID']):
@@ -1010,7 +1019,7 @@ def serial_comm():
                                     node['delay_list'] += [msg['t']]
 
                         if((int(msg['nID']) != 255) and (msg['f'] == 's')):
-                            nodes[int(msg['nID'])-1]['state'] = int(msg['state'])
+                            nodes[idxFromID(int(msg['nID']))]['state'] = int(msg['state'])
 
                             active_nodes = sum(node[&quot;state&quot;] == 1 for node in nodes)
                             window.Element('_ACTIVENODES_').update(value=str(active_nodes))
@@ -1028,7 +1037,7 @@ def serial_comm():
                             nodes[nidx]['sensors'][int(msg['sID'])-1]['last_activity'] = dt_string
                             nodes[nidx]['sensors'][int(msg['sID'])-1]['state'] = msg['sVal']
 
-                            nodes[int(msg['nID'])-1]['state'] = 1
+                            nodes[idxFromID(int(msg['nID']))]['state'] = 1
                             active_nodes = sum(node[&quot;state&quot;] == 1 for node in nodes)
                             window.Element('_ACTIVENODES_').update(value=str(active_nodes))
                             updateTabs(nidx)
@@ -1039,7 +1048,7 @@ def serial_comm():
                             window.Element('_STATSTAB_').update(title='Node ' + msg['nID'] + ' Info')
                             nodes[nidx]['actuators'][int(msg['actID'])-1]['last_activity'] = dt_string
                             nodes[nidx]['actuators'][int(msg['actID'])-1]['state'] = msg['actVal']
-                            nodes[int(msg['nID'])-1]['state'] = 1
+                            nodes[idxFromID(int(msg['nID']))]['state'] = 1
                             active_nodes = sum(node[&quot;state&quot;] == 1 for node in nodes)
                             window.Element('_ACTIVENODES_').update(value=str(active_nodes))
                             if(nidx == window.Element('_LIST_').get_indexes()[0]):
@@ -1139,7 +1148,7 @@ if __name__ == &quot;__main__&quot;:
 
 </code></pre>
 <hr />
-<p>Updated on 2022-09-12 at 11:13:47 +0000</p>
+<p>Updated on 2022-09-16 at 12:16:43 +0000</p>
 
 
 

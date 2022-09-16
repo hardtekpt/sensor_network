@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['t_113',['t',['../stats__plotter_8m.html#aaccc9105df5383111407fd5b41255e23',1,'stats_plotter.m']]],
-  ['time_114',['time',['../stats__plotter_8m.html#a70c092a6aebace0b1ea406e14da78a40',1,'stats_plotter.m']]]
+  ['sc_5fthread_125',['sc_thread',['../namespacenetwork__manager.html#acc4164ba54c27fc7b03be9edabcbd673',1,'network_manager']]],
+  ['snr_126',['snr',['../stats__plotter_8m.html#ae6e82a215dff6b79fb6e9952a1b78453',1,'stats_plotter.m']]]
 ];

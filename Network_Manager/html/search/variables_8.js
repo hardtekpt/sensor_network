@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['linethickness_100',['lineThickness',['../stats__plotter_8m.html#a783b7554bb0f3345db416486daad3178',1,'stats_plotter.m']]]
+  ['i_108',['i',['../stats__plotter_8m.html#a6f6ccfcf58b31cb6412107d9d5281426',1,'stats_plotter.m']]],
+  ['ii_109',['ii',['../stats__plotter_8m.html#afa2ab6511b2a9b6744db136e3a30d014',1,'stats_plotter.m']]]
 ];

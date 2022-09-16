@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['n_105',['n',['../stats__plotter_8m.html#aeab71244afb687f16d8c4f5ee9d6ef0e',1,'stats_plotter.m']]],
-  ['nodeid_106',['nodeID',['../stats__plotter_8m.html#a8648bfa015cb1c03542e29951cb5503f',1,'stats_plotter.m']]],
-  ['nt_5fthread_107',['nt_thread',['../namespacenetwork__manager.html#a75d474fb30128f2556d856be5ec7b7c4',1,'network_manager']]]
+  ['markersize_111',['markerSize',['../stats__plotter_8m.html#af986b19d1d869059ed61b7f978023333',1,'stats_plotter.m']]],
+  ['maxnum_112',['maxNum',['../namespacenetwork__manager.html#aa582773f5fc9e68295513b371344d402',1,'network_manager']]],
+  ['mid_113',['mID',['../stats__plotter_8m.html#aebd429d404fd1b08b74c840b95a70cd5',1,'stats_plotter.m']]],
+  ['msgid_114',['msgID',['../stats__plotter_8m.html#aaf68d3f8372cecbc5a0688a1167e287b',1,'stats_plotter.m']]]
 ];

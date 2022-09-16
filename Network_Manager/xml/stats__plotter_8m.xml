@@ -21,7 +21,7 @@
         <definition>Array</definition>
         <argsstring></argsstring>
         <name>Array</name>
-        <initializer>=readtable(&apos;test_results/field_test/field_A_crd5_sb125_sf7_50.csv&apos;)</initializer>
+        <initializer>=readtable(&apos;test_results/field_test/field_A_crd5_sb125_sf11_50.csv&apos;)</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -240,6 +240,48 @@
         </inbodydescription>
         <location file="/sensor_network/network_manager/src/stats_plotter.m" line="17" column="6" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="17" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="stats__plotter_8m_1aea6edee744966c3c75ec5b89949abcc2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>end end g</definition>
+        <argsstring></argsstring>
+        <name>g</name>
+        <initializer>=0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="17" column="7" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="stats__plotter_8m_1ab7a8ea21de0a5443a10106032482c521" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>end end h</definition>
+        <argsstring></argsstring>
+        <name>h</name>
+        <initializer>=0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="17" column="8" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="stats__plotter_8m_1afa2ab6511b2a9b6744db136e3a30d014" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>end end ii</definition>
+        <argsstring></argsstring>
+        <name>ii</name>
+        <initializer>=0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="17" column="9" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="17" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" prot="public" static="no" mutable="no">
         <type></type>
         <definition>time</definition>
@@ -268,9 +310,9 @@
         </inbodydescription>
         <location file="/sensor_network/network_manager/src/stats_plotter.m" line="21" column="1" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="21" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="stats__plotter_8m_1a88f6cae9348dc95432577231789018bf" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="stats__plotter_8m_1a460ad9b0e2fb2657ce239b3255768b45" prot="public" static="no" mutable="no">
         <type></type>
-        <definition>end dl_packets</definition>
+        <definition>end end dl_packets</definition>
         <argsstring></argsstring>
         <name>dl_packets</name>
         <initializer>= 0</initializer>
@@ -310,14 +352,28 @@
         </inbodydescription>
         <location file="/sensor_network/network_manager/src/stats_plotter.m" line="26" column="1" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="26" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" prot="public" static="no" mutable="no">
-        <type>Claculate Average RSSI and SNR and AvgDelay for</type>
-        <definition>Claculate Average RSSI and SNR and AvgDelay for i</definition>
+      <memberdef kind="variable" id="stats__plotter_8m_1ad488b725bf28bd6cb39231a7a95ce0b6" prot="public" static="no" mutable="no">
+        <type>Claculate Average RSSI and SNR and AvgDelay</type>
+        <definition>prevID</definition>
+        <argsstring></argsstring>
+        <name>prevID</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="32" column="1" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" prot="public" static="no" mutable="no">
+        <type>for</type>
+        <definition>for i</definition>
         <argsstring></argsstring>
         <name>i</name>
         <initializer>=1:<ref refid="stats__plotter_8m_1aeab71244afb687f16d8c4f5ee9d6ef0e" kindref="member">n</ref>
-    <ref refid="stats__plotter_8m_1a6b1f4deff1cc5bfd170c19b417b34b43" kindref="member">if</ref>(<ref refid="stats__plotter_8m_1a4ca269cf93df1b512b52174c1a256fe5" kindref="member">dir</ref>(i) == 0)
-        <ref refid="stats__plotter_8m_1a6b1f4deff1cc5bfd170c19b417b34b43" kindref="member">if</ref>(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(i) == 1)
+    <ref refid="stats__plotter_8m_1a9dff4370701ffe5bb11b5e3b022cfbe3" kindref="member">if</ref>(<ref refid="stats__plotter_8m_1a4ca269cf93df1b512b52174c1a256fe5" kindref="member">dir</ref>(i) == 0)
+        <ref refid="stats__plotter_8m_1a9dff4370701ffe5bb11b5e3b022cfbe3" kindref="member">if</ref>(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(i) == 1)
             <ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref> = <ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>+1</initializer>
         <briefdescription>
         </briefdescription>
@@ -325,7 +381,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="31" column="5" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="31" bodyend="-1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="34" column="5" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="stats__plotter_8m_1aa7a4af0c0d03d8386daf3ca8a4568a34" prot="public" static="no" mutable="no">
         <type></type>
@@ -339,7 +395,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="77" column="1" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="77" bodyend="-1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="103" column="1" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="stats__plotter_8m_1aebd429d404fd1b08b74c840b95a70cd5" prot="public" static="no" mutable="no">
         <type></type>
@@ -353,21 +409,63 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="79" column="1" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="79" bodyend="-1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="105" column="1" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="105" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="stats__plotter_8m_1aa6b60f4c5e856b2b3adda996c0a4c35f" prot="public" static="no" mutable="no">
         <type><ref refid="stats__plotter_8m_1aa7a4af0c0d03d8386daf3ca8a4568a34" kindref="member">avg_delay_m</ref> Calculate Package Loss</type>
         <definition>avg_delay_m Calculate Package Loss packet_loss</definition>
         <argsstring></argsstring>
         <name>packet_loss</name>
-        <initializer>= 1 - <ref refid="stats__plotter_8m_1a2c144cdac64453e218a28b78d8cf5294" kindref="member">ul_packets</ref>/<ref refid="stats__plotter_8m_1a88f6cae9348dc95432577231789018bf" kindref="member">dl_packets</ref></initializer>
+        <initializer>= (1 - <ref refid="stats__plotter_8m_1a2c144cdac64453e218a28b78d8cf5294" kindref="member">ul_packets</ref>/<ref refid="stats__plotter_8m_1a460ad9b0e2fb2657ce239b3255768b45" kindref="member">dl_packets</ref>)*100</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="85" column="1" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="85" bodyend="-1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="111" column="1" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="stats__plotter_8m_1a4ddecec4c2c9e282d1f08a85b391f544" prot="public" static="no" mutable="no">
+        <type><ref refid="stats__plotter_8m_1aa6b60f4c5e856b2b3adda996c0a4c35f" kindref="member">packet_loss</ref></type>
+        <definition>packet_loss node1_pl</definition>
+        <argsstring></argsstring>
+        <name>node1_pl</name>
+        <initializer>= (1- <ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>/<ref refid="stats__plotter_8m_1aea6edee744966c3c75ec5b89949abcc2" kindref="member">g</ref>)*100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="114" column="1" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="stats__plotter_8m_1a91662071cccfd469b95e39b3f78be113" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>node2_pl</definition>
+        <argsstring></argsstring>
+        <name>node2_pl</name>
+        <initializer>= (1- <ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>/<ref refid="stats__plotter_8m_1ab7a8ea21de0a5443a10106032482c521" kindref="member">h</ref>)*100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="115" column="1" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="stats__plotter_8m_1a8e56feee0d5a6a9141c7cc3ecedaef6e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>node3_pl</definition>
+        <argsstring></argsstring>
+        <name>node3_pl</name>
+        <initializer>= (1- <ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>/<ref refid="stats__plotter_8m_1afa2ab6511b2a9b6744db136e3a30d014" kindref="member">ii</ref>)*100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="116" column="1" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="116" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" prot="public" static="no" mutable="no">
         <type>grid</type>
@@ -380,10 +478,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="108" column="6" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="108" bodyend="-1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="138" column="6" bodyfile="/sensor_network/network_manager/src/stats_plotter.m" bodystart="138" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
+      <memberdef kind="function" id="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type></type>
+        <definition>indxs</definition>
+        <argsstring>(1, 3)=0</argsstring>
+        <name>indxs</name>
+        <param>
+          <type>1</type>
+        </param>
+        <param>
+          <type>3</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="28" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="28" declcolumn="1"/>
+      </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>indxs</definition>
@@ -401,15 +518,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="35" column="13" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="35" declcolumn="13"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="38" column="13" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="38" declcolumn="13"/>
       </memberdef>
-      <memberdef kind="function" id="stats__plotter_8m_1a546ecb44ca38945e237dafdd207aaebb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="stats__plotter_8m_1a26fc02319e080a342e8c5ec275e2c85e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>end</type>
-        <definition>end if</definition>
+        <definition>end end if</definition>
         <argsstring>(nodeID(i)==2) b</argsstring>
         <name>if</name>
         <param>
-          <type><ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>)</type>
+          <type><ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)</type>
           <defval>=2</defval>
         </param>
         <initializer>= <ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>+1</initializer>
@@ -419,7 +536,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="37" column="9" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="37" declcolumn="9"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="40" column="9" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="40" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a6d4d01d8c48ff0cd318eda6844bf1884" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -438,7 +555,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="39" column="13" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="39" declcolumn="13"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="42" column="13" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="42" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -457,7 +574,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="43" column="13" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="43" declcolumn="13"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="46" column="13" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="46" declcolumn="13"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a6b1f4deff1cc5bfd170c19b417b34b43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>end</type>
@@ -465,7 +582,7 @@
         <argsstring>(dir(i)==1) if(nodeID(i)</argsstring>
         <name>if</name>
         <param>
-          <type><ref refid="stats__plotter_8m_1a4ca269cf93df1b512b52174c1a256fe5" kindref="member">dir</ref>(<ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>)</type>
+          <type><ref refid="stats__plotter_8m_1a4ca269cf93df1b512b52174c1a256fe5" kindref="member">dir</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)</type>
           <defval>=1</defval>
         </param>
         <briefdescription>
@@ -474,18 +591,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="47" column="5" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="47" declcolumn="5"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="50" column="5" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="50" declcolumn="5"/>
       </memberdef>
-      <memberdef kind="function" id="stats__plotter_8m_1a7f4dbf2e83cb0d899111266f80bf8137" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="stats__plotter_8m_1afdee5a312686bc442bf2b7e02b190ac1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>indxs_dl</definition>
-        <argsstring>(d, 1)</argsstring>
-        <name>indxs_dl</name>
+        <definition>if</definition>
+        <argsstring>(any(msgID(indxs(1:a, 1))==msgID(i))) indxs_dl(d</argsstring>
+        <name>if</name>
         <param>
-          <type><ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref></type>
-        </param>
-        <param>
-          <type>1</type>
+          <type>any(<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>, 1))==<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>))</type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -493,18 +607,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="50" column="13" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="50" declcolumn="13"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="59" column="13"/>
       </memberdef>
-      <memberdef kind="function" id="stats__plotter_8m_1a04b5d3e2f6d7aafe46a344e67010b6ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="stats__plotter_8m_1af5a01d8e148fac0bcfdf7bb3bacef9c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>indxs_dl</definition>
-        <argsstring>(e, 2)</argsstring>
-        <name>indxs_dl</name>
+        <definition>if</definition>
+        <argsstring>(any(msgID(indxs(1:b, 2))==msgID(i))) indxs_dl(e</argsstring>
+        <name>if</name>
         <param>
-          <type><ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref></type>
-        </param>
-        <param>
-          <type>2</type>
+          <type>any(<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>, 2))==<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>))</type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -512,18 +623,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="54" column="13" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="54" declcolumn="13"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="70" column="13"/>
       </memberdef>
-      <memberdef kind="function" id="stats__plotter_8m_1aecac7d27170c0a0746da43128016ed96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="stats__plotter_8m_1a9dff4370701ffe5bb11b5e3b022cfbe3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
-        <definition>indxs_dl</definition>
-        <argsstring>(f, 3)</argsstring>
-        <name>indxs_dl</name>
+        <definition>if</definition>
+        <argsstring>(any(msgID(indxs(1:c, 3))==msgID(i))) indxs_dl(f</argsstring>
+        <name>if</name>
         <param>
-          <type><ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref></type>
-        </param>
-        <param>
-          <type>3</type>
+          <type>any(<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>, 3))==<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>))</type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -531,7 +639,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="58" column="13" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="58" declcolumn="13"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="81" column="13"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>end end</type>
@@ -547,7 +655,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="64" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="64" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="90" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="90" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a29153528f7f4e030d7ba23da94006c10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -563,7 +671,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="65" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="65" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="91" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="91" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1ac73e86ab91fd0b868995873e326bf504" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -579,7 +687,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="66" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="66" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="92" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="92" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -595,7 +703,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="68" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="68" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="94" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="94" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a65f6034aa76151f70d8af8b88d615c40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -611,7 +719,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="69" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="69" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="95" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="95" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1ac270d8ec814433159a3d30b16ec49d22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -627,7 +735,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="70" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="70" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="96" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="96" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Calculate Average Delay Time</type>
@@ -643,7 +751,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="74" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="74" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="100" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="100" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a93df4233f45a1a7e1481563fb08986b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -659,7 +767,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="75" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="75" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="101" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="101" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a11cdf7074916db785ba75754440ddacb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -675,10 +783,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="76" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="76" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="102" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="102" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1aa6b23b11d06cc74c769d021090c7bfe3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="stats__plotter_8m_1aa6b60f4c5e856b2b3adda996c0a4c35f" kindref="member">packet_loss</ref> Plot RSSI vs Time</type>
+        <type>Plot RSSI vs Time</type>
         <definition>Plot Delays figure</definition>
         <argsstring>()</argsstring>
         <name>figure</name>
@@ -688,7 +796,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="89" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="89" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="119" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="119" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>hold <ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref></type>
@@ -710,7 +818,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="92" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="92" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="122" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="122" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -744,7 +852,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="96" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="96" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="126" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="126" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1ac3b3edb8be3bb93c2834204c37e83304" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -778,12 +886,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="100" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="100" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="130" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="130" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="stats__plotter_8m_1a807342a8e5c5c2a3b0d698b2916d33e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="stats__plotter_8m_1a5f2ce7a3d4270fef1b272c2dabe4f6c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scatter</definition>
-        <argsstring>(time(indxs(1:c, 3)), rssi(indxs(1:c, 3)), markerSize, &apos;MarkerEdgeColor&apos;,[0.8290 0.5940 0.0250],... &apos;MarkerFaceColor&apos;,[0.9290 0.6940 0.1250],... &apos;LineWidth&apos;, 1)</argsstring>
+        <argsstring>(time(indxs(1:c, 3)), rssi(indxs(1:c, 3)), markerSize, &apos;MarkerEdgeColor&apos;,[0.8290 0.5940 0.0250],... % &apos;MarkerFaceColor&apos;,[0.9290 0.6940 0.1250],... % &apos;LineWidth&apos;, 1)</argsstring>
         <name>scatter</name>
         <param>
           <type><ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>, 3))</type>
@@ -798,10 +906,10 @@
           <type>&apos;MarkerEdgeColor&apos;</type>
         </param>
         <param>
-          <type>... &apos;MarkerFaceColor&apos;</type>
+          <type>... % &apos;MarkerFaceColor&apos;</type>
         </param>
         <param>
-          <type>... &apos;LineWidth&apos;</type>
+          <type>... % &apos;LineWidth&apos;</type>
         </param>
         <param>
           <type>1</type>
@@ -812,12 +920,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="104" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="104" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="134" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="134" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="stats__plotter_8m_1a8e4b1e7c7c9ce5ee074791723e553ac1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="stats__plotter_8m_1a99c085e92e737c5c6517252118197de8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>ylim</definition>
-        <argsstring>([-90 -30])</argsstring>
+        <argsstring>([-120 -30])</argsstring>
         <name>ylim</name>
         <briefdescription>
         </briefdescription>
@@ -825,7 +933,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="109" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="109" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="139" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="139" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a2f08986a40e4937f644127afe67e2444" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -838,7 +946,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="110" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="110" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="140" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="140" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a5304cf5a0c05352e7926dbb2beaa07d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -854,7 +962,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="111" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="111" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="141" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="141" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a022c62f640943c97004fcf0075553331" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -891,7 +999,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="112" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="112" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="142" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="142" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1abe882a395248d0633f8beac19f3b6705" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -907,7 +1015,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="113" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="113" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="143" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="143" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a74b1ee69969fa8295a540e0893d9e8c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -923,7 +1031,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="114" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="114" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="144" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="144" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a8a808ab08eb9433293bfcbbb92c8960e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>hold <ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref></type>
@@ -939,7 +1047,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="121" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="121" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="151" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="151" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a9e68622c051039e468d4ec77ca3a3bd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -973,7 +1081,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="125" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="125" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="155" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="155" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a2036360f2667793a7722d4caf7137c5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1007,12 +1115,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="129" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="129" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="159" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="159" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="stats__plotter_8m_1a3241b1982218318ae3ccbebcd8e4421d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="stats__plotter_8m_1a52f76d26d391abe12287f5d28d9af8ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scatter</definition>
-        <argsstring>(time(indxs(1:c, 3)), snr(indxs(1:c, 3)), markerSize, &apos;MarkerEdgeColor&apos;,[0.8290 0.5940 0.0250],... &apos;MarkerFaceColor&apos;,[0.9290 0.6940 0.1250],... &apos;LineWidth&apos;, 1)</argsstring>
+        <argsstring>(time(indxs(1:c, 3)), snr(indxs(1:c, 3)), markerSize, &apos;MarkerEdgeColor&apos;,[0.8290 0.5940 0.0250],... % &apos;MarkerFaceColor&apos;,[0.9290 0.6940 0.1250],... % &apos;LineWidth&apos;, 1)</argsstring>
         <name>scatter</name>
         <param>
           <type><ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>, 3))</type>
@@ -1027,10 +1135,10 @@
           <type>&apos;MarkerEdgeColor&apos;</type>
         </param>
         <param>
-          <type>... &apos;MarkerFaceColor&apos;</type>
+          <type>... % &apos;MarkerFaceColor&apos;</type>
         </param>
         <param>
-          <type>... &apos;LineWidth&apos;</type>
+          <type>... % &apos;LineWidth&apos;</type>
         </param>
         <param>
           <type>1</type>
@@ -1041,7 +1149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="133" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="133" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="163" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="163" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a6556474532452da0080b468db32b0eda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1057,7 +1165,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="143" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="143" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="173" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="173" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a2161b9a35e68d7361547e924e9f4cbc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1068,7 +1176,7 @@
           <type><ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>, 1))</type>
         </param>
         <param>
-          <type><ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>, 1)) -<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1aecac7d27170c0a0746da43128016ed96" kindref="member">indxs_dl</ref>(1:<ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref>, 1))</type>
+          <type><ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>, 1)) -<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(indxs_dl(1:<ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref>, 1))</type>
         </param>
         <param>
           <type><ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref></type>
@@ -1091,7 +1199,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="157" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="157" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="187" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="187" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1aabff7bf6bacff3febc5b4e918061c791" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1102,7 +1210,7 @@
           <type><ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>, 2))</type>
         </param>
         <param>
-          <type><ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>, 2)) -<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1aecac7d27170c0a0746da43128016ed96" kindref="member">indxs_dl</ref>(1:<ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref>, 2))</type>
+          <type><ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>, 2)) -<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(indxs_dl(1:<ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref>, 2))</type>
         </param>
         <param>
           <type><ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref></type>
@@ -1125,18 +1233,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="161" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="161" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="191" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="191" declcolumn="1"/>
       </memberdef>
-      <memberdef kind="function" id="stats__plotter_8m_1a52916a358113d4e32bd8b755d4520931" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="stats__plotter_8m_1a37cac98196ce651e724a78d25cddb7cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>scatter</definition>
-        <argsstring>(time(indxs(1:c, 3)), delay(indxs(1:c, 3)) -delay(indxs_dl(1:f, 3)), markerSize, &apos;MarkerEdgeColor&apos;,[0.8290 0.5940 0.0250],... &apos;MarkerFaceColor&apos;,[0.9290 0.6940 0.1250],... &apos;LineWidth&apos;, 1)</argsstring>
+        <argsstring>(time(indxs(1:c, 3)), delay(indxs(1:c, 3)) -delay(indxs_dl(1:f, 3)), markerSize, &apos;MarkerEdgeColor&apos;,[0.8290 0.5940 0.0250],... % &apos;MarkerFaceColor&apos;,[0.9290 0.6940 0.1250],... % &apos;LineWidth&apos;, 1)</argsstring>
         <name>scatter</name>
         <param>
           <type><ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>, 3))</type>
         </param>
         <param>
-          <type><ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>, 3)) -<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1aecac7d27170c0a0746da43128016ed96" kindref="member">indxs_dl</ref>(1:<ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref>, 3))</type>
+          <type><ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a5fa1766484d1601d25b5efc48b8b4eb7" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>, 3)) -<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(indxs_dl(1:<ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref>, 3))</type>
         </param>
         <param>
           <type><ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref></type>
@@ -1145,10 +1253,10 @@
           <type>&apos;MarkerEdgeColor&apos;</type>
         </param>
         <param>
-          <type>... &apos;MarkerFaceColor&apos;</type>
+          <type>... % &apos;MarkerFaceColor&apos;</type>
         </param>
         <param>
-          <type>... &apos;LineWidth&apos;</type>
+          <type>... % &apos;LineWidth&apos;</type>
         </param>
         <param>
           <type>1</type>
@@ -1159,7 +1267,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="165" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="165" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="195" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="195" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a22753c35f8ea1e4c50f4c96ffa0b7a37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1196,7 +1304,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="173" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="173" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="203" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="203" declcolumn="1"/>
       </memberdef>
       <memberdef kind="function" id="stats__plotter_8m_1a73c6544118bbbaadb0208dcadaad1549" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1212,7 +1320,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="175" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="175" declcolumn="1"/>
+        <location file="/sensor_network/network_manager/src/stats_plotter.m" line="205" column="1" declfile="/sensor_network/network_manager/src/stats_plotter.m" declline="205" declcolumn="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1222,7 +1330,7 @@
     <programlisting>
 <codeline lineno="1"><highlight class="normal">close<sp/><ref refid="stats__plotter_8m_1a00a349297fa58bc80ff5329e25dcfe28" kindref="member">all</ref>;</highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"><ref refid="stats__plotter_8m_1a3765dc1068dc7251097873029d8365d2" kindref="member">Array</ref>=readtable(</highlight><highlight class="stringliteral">&apos;test_results/field_test/field_A_crd5_sb125_sf7_50.csv&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><ref refid="stats__plotter_8m_1a3765dc1068dc7251097873029d8365d2" kindref="member">Array</ref>=readtable(</highlight><highlight class="stringliteral">&apos;test_results/field_test/field_A_crd5_sb125_sf11_50.csv&apos;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"><ref refid="stats__plotter_8m_1aaccc9105df5383111407fd5b41255e23" kindref="member">t</ref><sp/>=<sp/>datetime(table2array(<ref refid="stats__plotter_8m_1a3765dc1068dc7251097873029d8365d2" kindref="member">Array</ref>(:,1)),</highlight><highlight class="stringliteral">&apos;InputFormat&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;yyyy-MM-dd<sp/>HH:mm:ss.SSSSSS&apos;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="6"><highlight class="normal"><ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref><sp/>=<sp/>table2array(<ref refid="stats__plotter_8m_1a3765dc1068dc7251097873029d8365d2" kindref="member">Array</ref>(:,<sp/>2));</highlight></codeline>
@@ -1236,169 +1344,200 @@
 <codeline lineno="14"><highlight class="normal"><ref refid="stats__plotter_8m_1aeab71244afb687f16d8c4f5ee9d6ef0e" kindref="member">n</ref><sp/>=<sp/>size(<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>);</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><ref refid="stats__plotter_8m_1aeab71244afb687f16d8c4f5ee9d6ef0e" kindref="member">n</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1aeab71244afb687f16d8c4f5ee9d6ef0e" kindref="member">n</ref>(1);</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>=0;<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>=0;<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>=0;<ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref>=0;<ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref>=0;<ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref>=0;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>=0;<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>=0;<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>=0;<ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref>=0;<ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref>=0;<ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref>=0;<ref refid="stats__plotter_8m_1aea6edee744966c3c75ec5b89949abcc2" kindref="member">g</ref>=0;<ref refid="stats__plotter_8m_1ab7a8ea21de0a5443a10106032482c521" kindref="member">h</ref>=0;<ref refid="stats__plotter_8m_1afa2ab6511b2a9b6744db136e3a30d014" kindref="member">ii</ref>=0;</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1aaccc9105df5383111407fd5b41255e23" kindref="member">t</ref>-<ref refid="stats__plotter_8m_1aaccc9105df5383111407fd5b41255e23" kindref="member">t</ref>(1);</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><ref refid="stats__plotter_8m_1a2c144cdac64453e218a28b78d8cf5294" kindref="member">ul_packets</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><ref refid="stats__plotter_8m_1a88f6cae9348dc95432577231789018bf" kindref="member">dl_packets</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><ref refid="stats__plotter_8m_1a460ad9b0e2fb2657ce239b3255768b45" kindref="member">dl_packets</ref><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal">%<sp/>Plot<sp/>Settings</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"><ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref><sp/>=<sp/>15;</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><ref refid="stats__plotter_8m_1a783b7554bb0f3345db416486daad3178" kindref="member">lineThickness</ref><sp/>=<sp/>0.0567;</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal">%%<sp/>Claculate<sp/>Average<sp/>RSSI<sp/>and<sp/>SNR<sp/>and<sp/>AvgDelay</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1,3)=0;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/><ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>=1:<ref refid="stats__plotter_8m_1aeab71244afb687f16d8c4f5ee9d6ef0e" kindref="member">n</ref></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="stats__plotter_8m_1a4ca269cf93df1b512b52174c1a256fe5" kindref="member">dir</ref>(<ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>)<sp/>==<sp/>0)</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>)<sp/>==<sp/>1)</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>+1;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)<sp/>=<sp/><ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>)<sp/>==<sp/>2)</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>+1;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)<sp/>=<sp/><ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>;<sp/></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>)<sp/>==<sp/>3)</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>+1;</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)<sp/>=<sp/><ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a2c144cdac64453e218a28b78d8cf5294" kindref="member">ul_packets</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a2c144cdac64453e218a28b78d8cf5294" kindref="member">ul_packets</ref><sp/>+<sp/>1;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>end</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="stats__plotter_8m_1a4ca269cf93df1b512b52174c1a256fe5" kindref="member">dir</ref>(<ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>)<sp/>==<sp/>1)</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>)<sp/>==<sp/>1)</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref>+1;</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a7f4dbf2e83cb0d899111266f80bf8137" kindref="member">indxs_dl</ref>(<ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref>,1)<sp/>=<sp/><ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>)<sp/>==<sp/>2)</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref>+1;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a7f4dbf2e83cb0d899111266f80bf8137" kindref="member">indxs_dl</ref>(<ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref>,2)<sp/>=<sp/><ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>;<sp/></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>)<sp/>==<sp/>3)</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref>+1;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a7f4dbf2e83cb0d899111266f80bf8137" kindref="member">indxs_dl</ref>(<ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref>,3)<sp/>=<sp/><ref refid="stats__plotter_8m_1a49a3d505c05728ee2b53a25fe06fc6e4" kindref="member">i</ref>;</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a88f6cae9348dc95432577231789018bf" kindref="member">dl_packets</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a88f6cae9348dc95432577231789018bf" kindref="member">dl_packets</ref><sp/>+<sp/>1;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>end</highlight></codeline>
-<codeline lineno="62"><highlight class="normal">end</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(1)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1affaf51bc4fc62ee1757230a1b7835393" kindref="member">rssi</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)));</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(2)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1affaf51bc4fc62ee1757230a1b7835393" kindref="member">rssi</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)));</highlight></codeline>
-<codeline lineno="66"><highlight class="normal">%<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(3)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1affaf51bc4fc62ee1757230a1b7835393" kindref="member">rssi</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)));</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(1)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1ae6e82a215dff6b79fb6e9952a1b78453" kindref="member">snr</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)));</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(2)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1ae6e82a215dff6b79fb6e9952a1b78453" kindref="member">snr</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)));</highlight></codeline>
-<codeline lineno="70"><highlight class="normal">%<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(3)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1ae6e82a215dff6b79fb6e9952a1b78453" kindref="member">snr</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)));</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal">%%<sp/>Calculate<sp/>Average<sp/>Delay<sp/>Time</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(1)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1))-<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a7f4dbf2e83cb0d899111266f80bf8137" kindref="member">indxs_dl</ref>(1:<ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref>,1)));</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(2)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2))-<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a7f4dbf2e83cb0d899111266f80bf8137" kindref="member">indxs_dl</ref>(1:<ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref>,2)));</highlight></codeline>
-<codeline lineno="76"><highlight class="normal">%<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(3)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3))-<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a7f4dbf2e83cb0d899111266f80bf8137" kindref="member">indxs_dl</ref>(1:<ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref>,3)));</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><ref refid="stats__plotter_8m_1aa7a4af0c0d03d8386daf3ca8a4568a34" kindref="member">avg_delay_m</ref><sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>);</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><ref refid="stats__plotter_8m_1aebd429d404fd1b08b74c840b95a70cd5" kindref="member">mID</ref><sp/>=<sp/>max(<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>);</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><ref refid="stats__plotter_8m_1aa7a4af0c0d03d8386daf3ca8a4568a34" kindref="member">avg_delay_m</ref></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal">%%<sp/>Calculate<sp/>Package<sp/>Loss</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><ref refid="stats__plotter_8m_1aa6b60f4c5e856b2b3adda996c0a4c35f" kindref="member">packet_loss</ref><sp/>=<sp/>1<sp/>-<sp/><ref refid="stats__plotter_8m_1a2c144cdac64453e218a28b78d8cf5294" kindref="member">ul_packets</ref>/<ref refid="stats__plotter_8m_1a88f6cae9348dc95432577231789018bf" kindref="member">dl_packets</ref>;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><ref refid="stats__plotter_8m_1aa6b60f4c5e856b2b3adda996c0a4c35f" kindref="member">packet_loss</ref></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal">%%<sp/>Plot<sp/>RSSI<sp/>vs<sp/>Time</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><ref refid="stats__plotter_8m_1aa6b23b11d06cc74c769d021090c7bfe3" kindref="member">figure</ref>();</highlight></codeline>
-<codeline lineno="90"><highlight class="normal">hold<sp/><ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(1),<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(1)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0<sp/>0.4470<sp/>0.7410],<sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,<ref refid="stats__plotter_8m_1a783b7554bb0f3345db416486daad3178" kindref="member">lineThickness</ref>);</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(2),<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(2)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0.8500<sp/>0.3250<sp/>0.0980],<sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,<ref refid="stats__plotter_8m_1a783b7554bb0f3345db416486daad3178" kindref="member">lineThickness</ref>);</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(3),<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(3)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0.9290<sp/>0.6940<sp/>0.1250],<sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,<ref refid="stats__plotter_8m_1a783b7554bb0f3345db416486daad3178" kindref="member">lineThickness</ref>);</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)),<sp/><ref refid="stats__plotter_8m_1affaf51bc4fc62ee1757230a1b7835393" kindref="member">rssi</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0<sp/>0.3470<sp/>0.6410],...</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0<sp/>0.4470<sp/>0.7410],...</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)),<sp/><ref refid="stats__plotter_8m_1affaf51bc4fc62ee1757230a1b7835393" kindref="member">rssi</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0.7500<sp/>0.2250<sp/>0.0680],...</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0.8500<sp/>0.3250<sp/>0.0980],...</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)),<sp/><ref refid="stats__plotter_8m_1affaf51bc4fc62ee1757230a1b7835393" kindref="member">rssi</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0.8290<sp/>0.5940<sp/>0.0250],...</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0.9290<sp/>0.6940<sp/>0.1250],...</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="108"><highlight class="normal">grid<sp/><ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref>;</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><ref refid="stats__plotter_8m_1a8e4b1e7c7c9ce5ee074791723e553ac1" kindref="member">ylim</ref>([-90<sp/>-30]);</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><ref refid="stats__plotter_8m_1a2f08986a40e4937f644127afe67e2444" kindref="member">xlim</ref>([<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(1)<sp/><ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>+<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>+<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>)]);</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><ref refid="stats__plotter_8m_1a5304cf5a0c05352e7926dbb2beaa07d1" kindref="member">xtickformat</ref>(</highlight><highlight class="stringliteral">&apos;mm:ss&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><ref refid="stats__plotter_8m_1a022c62f640943c97004fcf0075553331" kindref="member">legend</ref>(</highlight><highlight class="stringliteral">&apos;Node<sp/>1<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>2<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>3<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>1<sp/>Packets&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>2<sp/>Packets&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>3<sp/>Packets&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;Location&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;best&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><ref refid="stats__plotter_8m_1abe882a395248d0633f8beac19f3b6705" kindref="member">xlabel</ref>(</highlight><highlight class="stringliteral">&quot;Time<sp/>(mm:ss)&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><ref refid="stats__plotter_8m_1a74b1ee69969fa8295a540e0893d9e8c2" kindref="member">ylabel</ref>(</highlight><highlight class="stringliteral">&quot;RSSI<sp/>(dB)&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal">%%<sp/>Plot<sp/>SNR<sp/>vs<sp/>Time</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><ref refid="stats__plotter_8m_1aa6b23b11d06cc74c769d021090c7bfe3" kindref="member">figure</ref>();</highlight></codeline>
-<codeline lineno="119"><highlight class="normal">hold<sp/><ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(1),<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(1)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0<sp/>0.4470<sp/>0.7410]);</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(2),<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(2)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0.8500<sp/>0.3250<sp/>0.0980]);</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(3),<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(3)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0.9290<sp/>0.6940<sp/>0.1250]);</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)),<sp/><ref refid="stats__plotter_8m_1ae6e82a215dff6b79fb6e9952a1b78453" kindref="member">snr</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0<sp/>0.3470<sp/>0.6410],...</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0<sp/>0.4470<sp/>0.7410],...</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)),<sp/><ref refid="stats__plotter_8m_1ae6e82a215dff6b79fb6e9952a1b78453" kindref="member">snr</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0.7500<sp/>0.2250<sp/>0.0680],...</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0.8500<sp/>0.3250<sp/>0.0980],...</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)),<sp/><ref refid="stats__plotter_8m_1ae6e82a215dff6b79fb6e9952a1b78453" kindref="member">snr</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0.8290<sp/>0.5940<sp/>0.0250],...</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0.9290<sp/>0.6940<sp/>0.1250],...</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="137"><highlight class="normal">grid<sp/><ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref>;</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><ref refid="stats__plotter_8m_1a8e4b1e7c7c9ce5ee074791723e553ac1" kindref="member">ylim</ref>([6<sp/>13]);</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><ref refid="stats__plotter_8m_1a2f08986a40e4937f644127afe67e2444" kindref="member">xlim</ref>([<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(1)<sp/><ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>+<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>+<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>)]);</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><ref refid="stats__plotter_8m_1a5304cf5a0c05352e7926dbb2beaa07d1" kindref="member">xtickformat</ref>(</highlight><highlight class="stringliteral">&apos;mm:ss&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><ref refid="stats__plotter_8m_1a022c62f640943c97004fcf0075553331" kindref="member">legend</ref>(</highlight><highlight class="stringliteral">&apos;Node<sp/>1<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>2<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>3<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>1<sp/>Packets&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>2<sp/>Packets&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>3<sp/>Packets&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;Location&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;best&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><ref refid="stats__plotter_8m_1abe882a395248d0633f8beac19f3b6705" kindref="member">xlabel</ref>(</highlight><highlight class="stringliteral">&quot;Time<sp/>(mm:ss)&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><ref refid="stats__plotter_8m_1a74b1ee69969fa8295a540e0893d9e8c2" kindref="member">ylabel</ref>(</highlight><highlight class="stringliteral">&quot;SNR<sp/>(dB)&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">%%<sp/>Claculate<sp/>Average<sp/>RSSI<sp/>and<sp/>SNR<sp/>and<sp/>AvgDelay</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="stats__plotter_8m_1ad488b725bf28bd6cb39231a7a95ce0b6" kindref="member">prevID</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/><ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>=1:<ref refid="stats__plotter_8m_1aeab71244afb687f16d8c4f5ee9d6ef0e" kindref="member">n</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="stats__plotter_8m_1a4ca269cf93df1b512b52174c1a256fe5" kindref="member">dir</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>+1;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)<sp/>=<sp/><ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)<sp/>==<sp/>2)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>+1;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)<sp/>=<sp/><ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>;<sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>+1;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)<sp/>=<sp/><ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a2c144cdac64453e218a28b78d8cf5294" kindref="member">ul_packets</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a2c144cdac64453e218a28b78d8cf5294" kindref="member">ul_packets</ref><sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="stats__plotter_8m_1a4ca269cf93df1b512b52174c1a256fe5" kindref="member">dir</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)<sp/>~=<sp/><ref refid="stats__plotter_8m_1ad488b725bf28bd6cb39231a7a95ce0b6" kindref="member">prevID</ref>)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(any(<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1))<sp/>==<sp/><ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)))</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref>+1;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1aea6edee744966c3c75ec5b89949abcc2" kindref="member">g</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1aea6edee744966c3c75ec5b89949abcc2" kindref="member">g</ref>+1;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(any(<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1))<sp/>==<sp/><ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)))</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indxs_dl(<ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref>,1)<sp/>=<sp/><ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)<sp/>==<sp/>2)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)<sp/>~=<sp/><ref refid="stats__plotter_8m_1ad488b725bf28bd6cb39231a7a95ce0b6" kindref="member">prevID</ref>)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(any(<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2))<sp/>==<sp/><ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)))</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref>+1;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1ab7a8ea21de0a5443a10106032482c521" kindref="member">h</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1ab7a8ea21de0a5443a10106032482c521" kindref="member">h</ref>+1;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(any(<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2))<sp/>==<sp/><ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)))</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indxs_dl(<ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref>,2)<sp/>=<sp/><ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>;<sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)<sp/>~=<sp/><ref refid="stats__plotter_8m_1ad488b725bf28bd6cb39231a7a95ce0b6" kindref="member">prevID</ref>)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(any(<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3))<sp/>==<sp/><ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)))</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref>+1;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1afa2ab6511b2a9b6744db136e3a30d014" kindref="member">ii</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1afa2ab6511b2a9b6744db136e3a30d014" kindref="member">ii</ref>+1;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(any(<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3))<sp/>==<sp/><ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>)))</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>indxs_dl(<ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref>,3)<sp/>=<sp/><ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1a460ad9b0e2fb2657ce239b3255768b45" kindref="member">dl_packets</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a460ad9b0e2fb2657ce239b3255768b45" kindref="member">dl_packets</ref><sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="stats__plotter_8m_1ad488b725bf28bd6cb39231a7a95ce0b6" kindref="member">prevID</ref><sp/>=<sp/><ref refid="stats__plotter_8m_1a8648bfa015cb1c03542e29951cb5503f" kindref="member">nodeID</ref>(<ref refid="stats__plotter_8m_1a6f6ccfcf58b31cb6412107d9d5281426" kindref="member">i</ref>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>end</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">end</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(1)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1affaf51bc4fc62ee1757230a1b7835393" kindref="member">rssi</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)));</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(2)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1affaf51bc4fc62ee1757230a1b7835393" kindref="member">rssi</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)));</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">%<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(3)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1affaf51bc4fc62ee1757230a1b7835393" kindref="member">rssi</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)));</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(1)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1ae6e82a215dff6b79fb6e9952a1b78453" kindref="member">snr</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)));</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(2)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1ae6e82a215dff6b79fb6e9952a1b78453" kindref="member">snr</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)));</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">%<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(3)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1ae6e82a215dff6b79fb6e9952a1b78453" kindref="member">snr</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)));</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">%%<sp/>Calculate<sp/>Average<sp/>Delay<sp/>Time</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(1)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1))-<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(indxs_dl(1:<ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref>,1)));</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(2)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2))-<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(indxs_dl(1:<ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref>,2)));</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">%<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(3)<sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3))-<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(indxs_dl(1:<ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref>,3)));</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><ref refid="stats__plotter_8m_1aa7a4af0c0d03d8386daf3ca8a4568a34" kindref="member">avg_delay_m</ref><sp/>=<sp/>mean(<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><ref refid="stats__plotter_8m_1aebd429d404fd1b08b74c840b95a70cd5" kindref="member">mID</ref><sp/>=<sp/>max(<ref refid="stats__plotter_8m_1aaf68d3f8372cecbc5a0688a1167e287b" kindref="member">msgID</ref>);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><ref refid="stats__plotter_8m_1aa7a4af0c0d03d8386daf3ca8a4568a34" kindref="member">avg_delay_m</ref></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal">%%<sp/>Calculate<sp/>Package<sp/>Loss</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><ref refid="stats__plotter_8m_1aa6b60f4c5e856b2b3adda996c0a4c35f" kindref="member">packet_loss</ref><sp/>=<sp/>(1<sp/>-<sp/><ref refid="stats__plotter_8m_1a2c144cdac64453e218a28b78d8cf5294" kindref="member">ul_packets</ref>/<ref refid="stats__plotter_8m_1a460ad9b0e2fb2657ce239b3255768b45" kindref="member">dl_packets</ref>)*100;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><ref refid="stats__plotter_8m_1aa6b60f4c5e856b2b3adda996c0a4c35f" kindref="member">packet_loss</ref></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><ref refid="stats__plotter_8m_1a4ddecec4c2c9e282d1f08a85b391f544" kindref="member">node1_pl</ref><sp/>=<sp/>(1-<sp/><ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>/<ref refid="stats__plotter_8m_1aea6edee744966c3c75ec5b89949abcc2" kindref="member">g</ref>)*100;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><ref refid="stats__plotter_8m_1a91662071cccfd469b95e39b3f78be113" kindref="member">node2_pl</ref><sp/>=<sp/>(1-<sp/><ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>/<ref refid="stats__plotter_8m_1ab7a8ea21de0a5443a10106032482c521" kindref="member">h</ref>)*100;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">%<ref refid="stats__plotter_8m_1a8e56feee0d5a6a9141c7cc3ecedaef6e" kindref="member">node3_pl</ref><sp/>=<sp/>(1-<sp/><ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>/<ref refid="stats__plotter_8m_1afa2ab6511b2a9b6744db136e3a30d014" kindref="member">ii</ref>)*100;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">%%<sp/>Plot<sp/>RSSI<sp/>vs<sp/>Time</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><ref refid="stats__plotter_8m_1aa6b23b11d06cc74c769d021090c7bfe3" kindref="member">figure</ref>();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">hold<sp/><ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(1),<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(1)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0<sp/>0.4470<sp/>0.7410],<sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,<ref refid="stats__plotter_8m_1a783b7554bb0f3345db416486daad3178" kindref="member">lineThickness</ref>);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(2),<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(2)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0.8500<sp/>0.3250<sp/>0.0980],<sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,<ref refid="stats__plotter_8m_1a783b7554bb0f3345db416486daad3178" kindref="member">lineThickness</ref>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">%<ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(3),<ref refid="stats__plotter_8m_1a48d23162b19df835c5c7a1d0636ea98f" kindref="member">avg_rssi</ref>(3)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0.9290<sp/>0.6940<sp/>0.1250],<sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,<ref refid="stats__plotter_8m_1a783b7554bb0f3345db416486daad3178" kindref="member">lineThickness</ref>);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)),<sp/><ref refid="stats__plotter_8m_1affaf51bc4fc62ee1757230a1b7835393" kindref="member">rssi</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0<sp/>0.3470<sp/>0.6410],...</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0<sp/>0.4470<sp/>0.7410],...</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)),<sp/><ref refid="stats__plotter_8m_1affaf51bc4fc62ee1757230a1b7835393" kindref="member">rssi</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0.7500<sp/>0.2250<sp/>0.0680],...</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0.8500<sp/>0.3250<sp/>0.0980],...</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="134"><highlight class="normal">%<ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)),<sp/><ref refid="stats__plotter_8m_1affaf51bc4fc62ee1757230a1b7835393" kindref="member">rssi</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0.8290<sp/>0.5940<sp/>0.0250],...</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%</highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0.9290<sp/>0.6940<sp/>0.1250],...</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%</highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">grid<sp/><ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref>;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><ref refid="stats__plotter_8m_1a99c085e92e737c5c6517252118197de8" kindref="member">ylim</ref>([-120<sp/>-30]);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><ref refid="stats__plotter_8m_1a2f08986a40e4937f644127afe67e2444" kindref="member">xlim</ref>([<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(1)<sp/><ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>+<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>+<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>)]);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><ref refid="stats__plotter_8m_1a5304cf5a0c05352e7926dbb2beaa07d1" kindref="member">xtickformat</ref>(</highlight><highlight class="stringliteral">&apos;mm:ss&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><ref refid="stats__plotter_8m_1a022c62f640943c97004fcf0075553331" kindref="member">legend</ref>(</highlight><highlight class="stringliteral">&apos;Node<sp/>1<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>2<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>3<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>1<sp/>Packets&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>2<sp/>Packets&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>3<sp/>Packets&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;Location&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;best&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><ref refid="stats__plotter_8m_1abe882a395248d0633f8beac19f3b6705" kindref="member">xlabel</ref>(</highlight><highlight class="stringliteral">&quot;Time<sp/>(mm:ss)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><ref refid="stats__plotter_8m_1a74b1ee69969fa8295a540e0893d9e8c2" kindref="member">ylabel</ref>(</highlight><highlight class="stringliteral">&quot;RSSI<sp/>(dB)&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="145"><highlight class="normal"></highlight></codeline>
 <codeline lineno="146"><highlight class="normal"></highlight></codeline>
-<codeline lineno="147"><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal">%%<sp/>Plot<sp/>Delays</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><ref refid="stats__plotter_8m_1aa6b23b11d06cc74c769d021090c7bfe3" kindref="member">figure</ref>();</highlight></codeline>
-<codeline lineno="151"><highlight class="normal">hold<sp/><ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref></highlight></codeline>
-<codeline lineno="152"><highlight class="normal"></highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(1),<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(1)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0<sp/>0.4470<sp/>0.7410]);</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(2),<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(2)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0.8500<sp/>0.3250<sp/>0.0980]);</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(3),<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(3)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0.9290<sp/>0.6940<sp/>0.1250]);</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"></highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)),<sp/><ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1))-<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a7f4dbf2e83cb0d899111266f80bf8137" kindref="member">indxs_dl</ref>(1:<ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref>,1)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0<sp/>0.3470<sp/>0.6410],...</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0<sp/>0.4470<sp/>0.7410],...</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)),<sp/><ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2))-<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a7f4dbf2e83cb0d899111266f80bf8137" kindref="member">indxs_dl</ref>(1:<ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref>,2)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0.7500<sp/>0.2250<sp/>0.0680],...</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0.8500<sp/>0.3250<sp/>0.0980],...</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)),<sp/><ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a2e2b4483cbbf8f6120048d7b25b0d662" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3))-<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1a7f4dbf2e83cb0d899111266f80bf8137" kindref="member">indxs_dl</ref>(1:<ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref>,3)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0.8290<sp/>0.5940<sp/>0.0250],...</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0.9290<sp/>0.6940<sp/>0.1250],...</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="169"><highlight class="normal">grid<sp/><ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref>;</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><ref refid="stats__plotter_8m_1a8e4b1e7c7c9ce5ee074791723e553ac1" kindref="member">ylim</ref>([195<sp/>210]);</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><ref refid="stats__plotter_8m_1a2f08986a40e4937f644127afe67e2444" kindref="member">xlim</ref>([<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(1)<sp/><ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>+<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>+<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>)]);</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><ref refid="stats__plotter_8m_1a5304cf5a0c05352e7926dbb2beaa07d1" kindref="member">xtickformat</ref>(</highlight><highlight class="stringliteral">&apos;mm:ss&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><ref refid="stats__plotter_8m_1a022c62f640943c97004fcf0075553331" kindref="member">legend</ref>(</highlight><highlight class="stringliteral">&apos;Node<sp/>1<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>2<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>3<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>1&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>2&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>3&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;Location&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;best&apos;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><ref refid="stats__plotter_8m_1abe882a395248d0633f8beac19f3b6705" kindref="member">xlabel</ref>(</highlight><highlight class="stringliteral">&quot;Time<sp/>(mm:ss)&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><ref refid="stats__plotter_8m_1a74b1ee69969fa8295a540e0893d9e8c2" kindref="member">ylabel</ref>(</highlight><highlight class="stringliteral">&quot;Packet<sp/>Delay<sp/>(ms)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">%%<sp/>Plot<sp/>SNR<sp/>vs<sp/>Time</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><ref refid="stats__plotter_8m_1aa6b23b11d06cc74c769d021090c7bfe3" kindref="member">figure</ref>();</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">hold<sp/><ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(1),<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(1)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0<sp/>0.4470<sp/>0.7410]);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(2),<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(2)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0.8500<sp/>0.3250<sp/>0.0980]);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">%<ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(3),<ref refid="stats__plotter_8m_1aff4712dbaa6e55c49644f1676bdd63eb" kindref="member">avg_snr</ref>(3)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0.9290<sp/>0.6940<sp/>0.1250]);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)),<sp/><ref refid="stats__plotter_8m_1ae6e82a215dff6b79fb6e9952a1b78453" kindref="member">snr</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0<sp/>0.3470<sp/>0.6410],...</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0<sp/>0.4470<sp/>0.7410],...</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)),<sp/><ref refid="stats__plotter_8m_1ae6e82a215dff6b79fb6e9952a1b78453" kindref="member">snr</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0.7500<sp/>0.2250<sp/>0.0680],...</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0.8500<sp/>0.3250<sp/>0.0980],...</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="163"><highlight class="normal">%<ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)),<sp/><ref refid="stats__plotter_8m_1ae6e82a215dff6b79fb6e9952a1b78453" kindref="member">snr</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0.8290<sp/>0.5940<sp/>0.0250],...</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%</highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0.9290<sp/>0.6940<sp/>0.1250],...</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%</highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="167"><highlight class="normal">grid<sp/><ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref>;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><ref refid="stats__plotter_8m_1a99c085e92e737c5c6517252118197de8" kindref="member">ylim</ref>([-5<sp/>13]);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><ref refid="stats__plotter_8m_1a2f08986a40e4937f644127afe67e2444" kindref="member">xlim</ref>([<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(1)<sp/><ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>+<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>+<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>)]);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><ref refid="stats__plotter_8m_1a5304cf5a0c05352e7926dbb2beaa07d1" kindref="member">xtickformat</ref>(</highlight><highlight class="stringliteral">&apos;mm:ss&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><ref refid="stats__plotter_8m_1a022c62f640943c97004fcf0075553331" kindref="member">legend</ref>(</highlight><highlight class="stringliteral">&apos;Node<sp/>1<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>2<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>3<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>1<sp/>Packets&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>2<sp/>Packets&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>3<sp/>Packets&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;Location&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;best&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><ref refid="stats__plotter_8m_1abe882a395248d0633f8beac19f3b6705" kindref="member">xlabel</ref>(</highlight><highlight class="stringliteral">&quot;Time<sp/>(mm:ss)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><ref refid="stats__plotter_8m_1a74b1ee69969fa8295a540e0893d9e8c2" kindref="member">ylabel</ref>(</highlight><highlight class="stringliteral">&quot;SNR<sp/>(dB)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
 <codeline lineno="176"><highlight class="normal"></highlight></codeline>
 <codeline lineno="177"><highlight class="normal"></highlight></codeline>
-<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal">%%<sp/>Plot<sp/>Delays</highlight></codeline>
 <codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><ref refid="stats__plotter_8m_1aa6b23b11d06cc74c769d021090c7bfe3" kindref="member">figure</ref>();</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">hold<sp/><ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(1),<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(1)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0<sp/>0.4470<sp/>0.7410]);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(2),<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(2)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0.8500<sp/>0.3250<sp/>0.0980]);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">%<ref refid="stats__plotter_8m_1a4703f9f75757fbfcf7d69cb4b9815a3a" kindref="member">line</ref>([min(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>),max(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>)],[<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(3),<ref refid="stats__plotter_8m_1aa45b1ad1f93707e46ae527480979c9b2" kindref="member">avg_delay</ref>(3)],<sp/></highlight><highlight class="stringliteral">&apos;Color&apos;</highlight><highlight class="normal">,<sp/>[0.9290<sp/>0.6940<sp/>0.1250]);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1)),<sp/><ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>,1))-<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(indxs_dl(1:<ref refid="stats__plotter_8m_1a1aabac6d068eef6a7bad3fdf50a05cc8" kindref="member">d</ref>,1)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0<sp/>0.3470<sp/>0.6410],...</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0<sp/>0.4470<sp/>0.7410],...</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2)),<sp/><ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>,2))-<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(indxs_dl(1:<ref refid="stats__plotter_8m_1a08a4415e9d594ff960030b921d42b91e" kindref="member">e</ref>,2)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0.7500<sp/>0.2250<sp/>0.0680],...</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0.8500<sp/>0.3250<sp/>0.0980],...</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="195"><highlight class="normal">%<ref refid="stats__plotter_8m_1a219ea83c9a62ed6c356b4b49af770b64" kindref="member">scatter</ref>(<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3)),<sp/><ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(<ref refid="stats__plotter_8m_1ad396e4a6c21dbd0e468dd60f37611d9d" kindref="member">indxs</ref>(1:<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>,3))-<ref refid="stats__plotter_8m_1a5b1f6f1eaa44ff5c4f80c23687f4f324" kindref="member">delay</ref>(indxs_dl(1:<ref refid="stats__plotter_8m_1a633de4b0c14ca52ea2432a3c8a5c4c31" kindref="member">f</ref>,3)),<ref refid="stats__plotter_8m_1af986b19d1d869059ed61b7f978023333" kindref="member">markerSize</ref>,</highlight><highlight class="stringliteral">&apos;MarkerEdgeColor&apos;</highlight><highlight class="normal">,[0.8290<sp/>0.5940<sp/>0.0250],...</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%</highlight><highlight class="stringliteral">&apos;MarkerFaceColor&apos;</highlight><highlight class="normal">,[0.9290<sp/>0.6940<sp/>0.1250],...</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>%</highlight><highlight class="stringliteral">&apos;LineWidth&apos;</highlight><highlight class="normal">,1);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="199"><highlight class="normal">grid<sp/><ref refid="stats__plotter_8m_1ac88aa5a5c67076097e4a0e87a0709ea0" kindref="member">on</ref>;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><ref refid="stats__plotter_8m_1a99c085e92e737c5c6517252118197de8" kindref="member">ylim</ref>([150<sp/>210]);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><ref refid="stats__plotter_8m_1a2f08986a40e4937f644127afe67e2444" kindref="member">xlim</ref>([<ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(1)<sp/><ref refid="stats__plotter_8m_1a70c092a6aebace0b1ea406e14da78a40" kindref="member">time</ref>(<ref refid="stats__plotter_8m_1a4124bc0a9335c27f086f24ba207a4912" kindref="member">a</ref>+<ref refid="stats__plotter_8m_1a21ad0bd836b90d08f4cf640b4c298e7c" kindref="member">b</ref>+<ref refid="stats__plotter_8m_1ae0323a9039add2978bf5b49550572c7c" kindref="member">c</ref>)]);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><ref refid="stats__plotter_8m_1a5304cf5a0c05352e7926dbb2beaa07d1" kindref="member">xtickformat</ref>(</highlight><highlight class="stringliteral">&apos;mm:ss&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><ref refid="stats__plotter_8m_1a022c62f640943c97004fcf0075553331" kindref="member">legend</ref>(</highlight><highlight class="stringliteral">&apos;Node<sp/>1<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>2<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>3<sp/>Average&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>1&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>2&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;Node<sp/>3&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;Location&apos;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&apos;best&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><ref refid="stats__plotter_8m_1abe882a395248d0633f8beac19f3b6705" kindref="member">xlabel</ref>(</highlight><highlight class="stringliteral">&quot;Time<sp/>(mm:ss)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><ref refid="stats__plotter_8m_1a74b1ee69969fa8295a540e0893d9e8c2" kindref="member">ylabel</ref>(</highlight><highlight class="stringliteral">&quot;Packet<sp/>Delay<sp/>(ms)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/sensor_network/network_manager/src/stats_plotter.m"/>
   </compounddef>

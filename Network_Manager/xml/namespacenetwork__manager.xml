@@ -64,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="282" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="282" bodyend="-1"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="292" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="292" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacenetwork__manager_1acc4164ba54c27fc7b03be9edabcbd673" prot="public" static="no" mutable="no">
         <type></type>
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="440" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="440" bodyend="-1"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="449" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="449" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacenetwork__manager_1a75d474fb30128f2556d856be5ec7b7c4" prot="public" static="no" mutable="no">
         <type></type>
@@ -92,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="441" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="441" bodyend="-1"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="450" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="450" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -108,7 +108,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="41" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="41" bodyend="56"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="41" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="41" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacenetwork__manager_1a02f4f77c104efb342a0251d052caa8c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def network_manager.idxFromID</definition>
+        <argsstring>(id)</argsstring>
+        <name>idxFromID</name>
+        <param>
+          <type>id</type>
+          <defname>id</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="56" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="56" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1ae9ccba5a3a49980f73334ca51677006b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -130,7 +147,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="58" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="58" bodyend="63"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="67" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="67" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1afb8ff37cf5a67151dc1a3617df6f70c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -148,7 +165,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="65" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="65" bodyend="70"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="74" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="74" bodyend="79"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1adab19d5a71fda2fec2f6e0bc9a5cf120" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -166,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="72" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="72" bodyend="85"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="81" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="81" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1ae45073fb519e114e675fa7db7027fd5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -180,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="87" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="87" bodyend="281"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="96" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="96" bodyend="291"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1a3e68c101dd76d685d0824d7bb5938eb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -198,7 +215,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="285" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="285" bodyend="347"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="295" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="295" bodyend="357"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1a2bc3663d311251c292b670a7246a35d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -212,7 +229,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="349" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="349" bodyend="439"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="359" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="359" bodyend="448"/>
       </memberdef>
       <memberdef kind="function" id="namespacenetwork__manager_1aae0fa25ef6b880dbca6ced8dc09fce6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>def</type>
@@ -226,7 +243,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/sensor_network/network_manager/src/network_manager.py" line="444" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="444" bodyend="520"/>
+        <location file="/sensor_network/network_manager/src/network_manager.py" line="453" column="1" bodyfile="/sensor_network/network_manager/src/network_manager.py" bodystart="453" bodyend="529"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

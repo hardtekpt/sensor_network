@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['xlabel_53',['xlabel',['../stats__plotter_8m.html#abe882a395248d0633f8beac19f3b6705',1,'stats_plotter.m']]],
-  ['xlim_54',['xlim',['../stats__plotter_8m.html#a2f08986a40e4937f644127afe67e2444',1,'stats_plotter.m']]],
-  ['xtickformat_55',['xtickformat',['../stats__plotter_8m.html#a5304cf5a0c05352e7926dbb2beaa07d1',1,'stats_plotter.m']]]
+  ['ul_5fpackets_58',['ul_packets',['../stats__plotter_8m.html#a2c144cdac64453e218a28b78d8cf5294',1,'stats_plotter.m']]],
+  ['updatetabs_59',['updateTabs',['../namespacenetwork__manager.html#a3e68c101dd76d685d0824d7bb5938eb4',1,'network_manager']]]
 ];
