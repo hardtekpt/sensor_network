@@ -32,11 +32,7 @@ void setup() {
 
   #if defined(ESP32)
     SPI.begin(SCK, MISO, MOSI, SS);
-  #endif
-  //LoRa.setTxPower(txPower);
-  
-  //LoRa.setSignalBandwidth(signalBandwidth);
-  //LoRa.setCodingRate4(codingRateDenominator);
+  #endif  
   LoRa.setPins(SS, RST, DIO0);
   
   if (!LoRa.begin(frequency)) {
@@ -44,8 +40,9 @@ void setup() {
     while (true);
   }
 
-  LoRa.setSpreadingFactor(7);
-  LoRa.setCodingRate4(8);
+  LoRa.setSpreadingFactor(spreadingFactor);
+  LoRa.setCodingRate4(codingRateDenominator);
+  LoRa.setSignalBandwidth(signalBandwidth);
 
   LoRa.setSyncWord(netID);
   LoRa.enableCrc();

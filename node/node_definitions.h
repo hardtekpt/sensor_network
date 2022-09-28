@@ -19,7 +19,7 @@
 // Node Settings
 const byte netID = 0xF3;
 
-#include "node_definitions/node_definitions_3.h"
+#include "node_definitions/node_definitions_1.h"
 
 const int sensN = sizeof(sensPin)/sizeof(int);
 const int actN = sizeof(actPin)/sizeof(int);

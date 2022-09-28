@@ -191,11 +191,45 @@ void sendStatus(byte msgID) {
  * @return void
  */
 void setActState(int ID, int val) {
-  Serial.print("Set actuator: ");
-  Serial.print(ID);
-  Serial.print(" with value: ");
-  Serial.println(val);
-  digitalWrite(actPin[ID], val);
+  if(ID == 250){
+    switch(val){
+      case 0:
+      LoRa.setSpreadingFactor(7);
+      LoRa.setCodingRate4(5);
+      LoRa.setSignalBandwidth(125E3);
+      break;
+
+      case 1:
+      LoRa.setSpreadingFactor(9);
+      LoRa.setCodingRate4(5);
+      LoRa.setSignalBandwidth(125E3);
+      break;
+
+      case 2:
+      LoRa.setSpreadingFactor(11);
+      LoRa.setCodingRate4(5);
+      LoRa.setSignalBandwidth(125E3);
+      break;
+
+      case 3:
+      LoRa.setSpreadingFactor(7);
+      LoRa.setCodingRate4(5);
+      LoRa.setSignalBandwidth(250E3);
+      break;
+
+      case 4:
+      LoRa.setSpreadingFactor(7);
+      LoRa.setCodingRate4(8);
+      LoRa.setSignalBandwidth(125E3);
+      break;
+    }
+  }else{
+    Serial.print("Set actuator: ");
+    Serial.print(ID);
+    Serial.print(" with value: ");
+    Serial.println(val);
+    digitalWrite(actPin[ID], val);
+  }
 }
 
 /**
@@ -331,6 +365,9 @@ void onReceive(int packetSize){
       Msg msg;
       msg_q.peek(&msg);
       if (p.nodeID == nodeID || p.nodeID == BROADCAST_ID) {
+        Serial.println("rssi,snr");
+        Serial.println(LoRa.packetRssi());
+        Serial.println(LoRa.packetSnr());
         if (p.flag == 'a') {
           if (p.msgID == msg.msgID) {
             Serial.print("Message with ID: ");
