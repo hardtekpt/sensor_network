@@ -24,7 +24,7 @@
 
 // LoRa msg payload settings
 #define MAX_N_RETRY 3
-#define TIMEOUT_INTERVAL 1000
+#define TIMEOUT_INTERVAL 6000
 #define MAX_QUEUE_SIZE 5
 
 #define BLOCK_SIZE 16

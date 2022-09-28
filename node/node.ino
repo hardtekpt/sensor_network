@@ -11,7 +11,9 @@
  */
 
 #include "comms_protocol.h"
-
+int motionState = 0;
+long t1;
+long t2;
 
 /**
  * @brief Arduino setup function
@@ -52,7 +54,6 @@ void setup() {
   prevMilSU = millis();
   
   Serial.println("Node startup complete");
-  sendSensorData(0, 3);
 }
 
 
@@ -85,4 +86,17 @@ void loop() {
     //sendStatus(msgID);
     prevMilSU = currentMillis;
   }
+
+  // Send sensor data
+  if(millis() > 30000){
+    int val = digitalRead(sensPin[0]);
+    if((val == 1) && (motionState == 0)){
+      Serial.println("motion detected");
+      sendSensorData(0, 1);
+      t1 = millis();
+    }
+    motionState = val;
+  }
+
+  
 }
